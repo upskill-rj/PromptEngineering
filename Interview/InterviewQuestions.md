@@ -3,12 +3,32 @@ Use the categories under which questions are listed below as clues to what the i
 How you see yourself
 
 • Tell me about yourself, or How would you describe yourself?
+
+Hello, I’m Rahul Kumar Jha. I have around 18+ years of experience in enterprise application development, architecture, and digital transformation, specializing in Java/J2EE, Spring Boot, microservices, and cloud-native platforms. Over the years, I have worked on designing scalable enterprise solutions, modernizing legacy systems, and driving AI-enabled transformation initiatives across finance and enterprise domains.
+
+Currently, I am working as a Senior IT Manager where I lead solution architecture, technology modernization, and enterprise delivery initiatives. My experience includes designing microservices-based applications, enterprise integrations, CI/CD and DevOps transformation, and deploying cloud-native solutions on OCI using Kubernetes and Docker.
+
+In recent years, I have been actively involved in AI-driven enterprise solutions using Generative AI, AI Agents, RAG, and Vector Search technologies. For example, in the UTIM platform, we leveraged AI capabilities for intelligent invoice validation, OCR-based extraction, and automation workflows. I also worked with AI Vector Search, where the result score is a numerical value indicating how semantically similar a stored data item is to the user query. It essentially measures the distance or closeness between the query vector and stored vectors in a multi-dimensional space, enabling more context-aware and intelligent retrieval compared to traditional keyword search.
+
+I have also integrated AI capabilities using Oracle Fusion AI Agent Studio, secure OAuth2-based integrations, and enterprise APIs to improve productivity and decision-making. My focus has been more on integrating AI into enterprise systems and business workflows rather than building ML models from scratch.
+
+From a leadership perspective, I work closely with business stakeholders, architects, product teams, and engineering teams to translate business requirements into scalable and secure technical solutions. I also mentor teams on architecture best practices, secure SDLC, cloud modernization, and AI adoption strategies.
+
+Domain-wise, I have strong experience in Finance Transformation, Oracle Fusion ERP, Oracle EPM, utility and telecom invoice management, and enterprise workflow automation.
+
+Overall, my strength lies in combining enterprise architecture, hands-on technical expertise, delivery leadership, and AI integration to build scalable, secure, and business-aligned enterprise solutions.
+
+
 • What are you good at? What are your key strengths?
 Listener
 • What 3 personal qualities do you possess that will help you in this job?
+
 • How do you behave in a crisis/when under pressure?
+
 • What motivates/drives you?
+
 • How would you describe your style? (Leadership style, working style, etc.)
+
 • What does success mean to you?
 
 How you see and interact with others
