@@ -1,50 +1,39 @@
 TOGAF = The Open Group Architecture Framework
 ======================================================
 
-ADM = Architecture Development Method
-EA = Enterprise Architecture: A holistic view of business, data, applications, and technology.
-ABB = Architecture Building Block: A reusable architectural component.
-SBB = Solution Building Block: A concrete implementation (e.g., a product or service).
-Architecture Vision = Define business drivers, scope, stakeholders, and high‑level vision.
-Business Architecture: Defines the business strategy, governance, and key business processes...Model business goals, processes, organization, and capabilities.
-Data Architecture: Describes the structure of an organization's logical and physical data assets and management resources.
-Application Architecture: Provides a blueprint for the individual applications to be deployed and their interactions.
-Technology Architecture: Details the software and hardware services needed to support the deployment of business, data, and application services.
+- ADM = Architecture Development Method
+- EA = Enterprise Architecture: A holistic view of business, data, applications, and technology.
+- ABB = Architecture Building Block: A reusable architectural component.
+- SBB = Solution Building Block: A concrete implementation (e.g., a product or service).
+- Architecture Vision = Define business drivers, scope, stakeholders, and high‑level vision.
+- Business Architecture: Defines the business strategy, governance, and key business processes...Model business goals, processes, organization, and capabilities.
+- Data Architecture: Describes the structure of an organization's logical and physical data assets and management resources.
+- Application Architecture: Provides a blueprint for the individual applications to be deployed and their interactions.
+- Technology Architecture: Details the software and hardware services needed to support the deployment of business, data, and application services.
 
-Architecture Vision = Define business drivers, scope, stakeholders, and high‑level vision.
-Business Architecture = Model business goals, processes, organization, and capabilities.
-Information Systems (Data + Application) Architecture = Define data and application landscapes and how they support the business.
-Technology Architecture = Define hardware, software, infrastructure, and platforms.
-Opportunities and Solutions = Identify projects, transition options, and candidate solutions.
-Migration Planning = Create a detailed migration plan from current (“baseline”) to target (“target”) architecture.
-Implementation Governance = Govern implementation, ensure it aligns with the architecture.
-Architecture Change Management = Review changes, update the architecture, and maintain it over time.
+- Architecture Vision = Define business drivers, scope, stakeholders, and high‑level vision.
+- Business Architecture = Model business goals, processes, organization, and capabilities.
+- Information Systems (Data + Application) Architecture = Define data and application landscapes and how they support the business.
+- Technology Architecture = Define hardware, software, infrastructure, and platforms.
+- Opportunities and Solutions = Identify projects, transition options, and candidate solutions.
+- Migration Planning = Create a detailed migration plan from current (“baseline”) to target (“target”) architecture.
+- Implementation Governance = Govern implementation, ensure it aligns with the architecture.
+- Architecture Change Management = Review changes, update the architecture, and maintain it over time.
 
 
 
-Enterprise Architecture (EA): A holistic view of business, data, applications, and technology.
-
-Architecture Framework: A structured set of methods, tools, and practices for developing and managing EA (TOGAF is one such framework).
-
-ADM (Architecture Development Method): The step‑by‑step process described above.
-
-Baseline Architecture: “As‑is” state of the current enterprise.
-
-Target Architecture: “To‑be” state you want to move toward.
-
-Architecture Vision: High‑level blueprint showing how architecture will support business goals.
-
-Architecture Content Framework: Templates, models, and artifacts used at each ADM phase.
-
-Enterprise Continuum: A classification system for reusing architecture and solution building blocks (from generic to specific).
-
-Architecture Building Block (ABB): A reusable architectural component.
-
-Solution Building Block (SBB): A concrete implementation (e.g., a product or service).
-
-Architecture Repository: The central place where architecture artifacts are stored and managed.
-
-Architecture Capability Framework: How to set up teams, governance, skills, and processes for EA.
+- Enterprise Architecture (EA): A holistic view of business, data, applications, and technology.
+- Architecture Framework: A structured set of methods, tools, and practices for developing and managing EA (TOGAF is one such framework).
+- ADM (Architecture Development Method): The step‑by‑step process described above.
+- Baseline Architecture: “As‑is” state of the current enterprise.
+- Target Architecture: “To‑be” state you want to move toward.
+- Architecture Vision: High‑level blueprint showing how architecture will support business goals.
+- Architecture Content Framework: Templates, models, and artifacts used at each ADM phase.
+- Enterprise Continuum: A classification system for reusing architecture and solution building blocks (from generic to specific).
+- Architecture Building Block (ABB): A reusable architectural component.
+- Solution Building Block (SBB): A concrete implementation (e.g., a product or service).
+- Architecture Repository: The central place where architecture artifacts are stored and managed.
+- Architecture Capability Framework: How to set up teams, governance, skills, and processes for EA.
 
 =============================================================================================================
 
