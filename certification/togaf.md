@@ -35,7 +35,7 @@ TOGAF = The Open Group Architecture Framework
 - Architecture Repository: The central place where architecture artifacts are stored and managed.
 - Architecture Capability Framework: How to set up teams, governance, skills, and processes for EA.
 
-=============================================================================================================
+============================================
 
 For **practical Enterprise / Solution / Application / AI‑centric architecture work**, treat TOGAF as your **backbone process** rather than a strict academic framework. Use it to structure how you think about business alignment, data, applications, and technology, especially when doing AI‑driven modernization projects. [togaf](http://www.togaf.org/chap02.html)
 
