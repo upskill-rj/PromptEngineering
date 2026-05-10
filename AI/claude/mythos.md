@@ -1,3 +1,84 @@
+==================Claude=========================
+
+Here's a comprehensive breakdown of **Claude Mythos** — Anthropic's most powerful and restricted frontier model, announced on April 7, 2026.
+
+---
+
+## What is Claude Mythos?
+
+Claude Mythos Preview is a new general-purpose frontier AI model from Anthropic. Many flaws in software go unnoticed for years because finding and exploiting them has required expertise held by only a few skilled security experts. With Mythos, the cost, effort, and level of expertise required to find and exploit software vulnerabilities have all dropped dramatically.
+
+Crucially, Anthropic did not explicitly train Mythos Preview to have these capabilities. Rather, they emerged as a downstream consequence of general improvements in code, reasoning, and autonomy.
+
+---
+
+## Current Flow & Architecture
+
+Anthropic used a simple agentic scaffold for all vulnerability-finding exercises. The system launches an isolated container running the project under test and its source code. It invokes Claude Code with Mythos Preview, prompting it to find a security vulnerability. In a typical run, the model reads the code to hypothesize vulnerabilities, runs the actual project to confirm or reject suspicions, adds debug logic or uses debuggers as needed, and finally outputs either a negative result or a bug report with a proof-of-concept exploit and reproduction steps.
+
+To increase diversity of bugs found, the system first asks the model to rank each file's likelihood of containing interesting bugs on a scale of 1 to 5, then starts with the highest-ranked files. After the runs complete, a final Mythos Preview agent receives the aggregated bug report.
+
+Here's a visual of that flow:---
+
+## Key Capabilities
+
+**Zero-day discovery at scale:** Mythos Preview was used to identify thousands of zero-day vulnerabilities — many of them critical — in every major operating system and every major web browser, along with a range of other important software. It was able to identify nearly all of these vulnerabilities and develop many related exploits entirely autonomously, without any human steering.
+
+**Landmark examples:**
+- Mythos Preview found a 27-year-old vulnerability in OpenBSD — an operating system known for its security — and wrote a web browser exploit that chained together four vulnerabilities, including a complex JIT heap spray that escaped both renderer and OS sandboxes.
+- It autonomously wrote a remote code execution exploit on FreeBSD's NFS server that granted full root access to unauthenticated users by splitting a 20-gadget ROP chain over multiple packets.
+
+**Generational leap over prior models:** Opus 4.6 turned Firefox JavaScript engine vulnerabilities into working exploits only two times out of several hundred attempts. Mythos Preview developed working exploits 181 times and achieved register control on 29 more.
+
+**Non-experts can use it:** Engineers at Anthropic with no formal security training could ask Mythos to find remote code execution vulnerabilities overnight and wake up the next morning to a complete, working exploit.
+
+---
+
+## Workflow: N-day Exploit Pipeline
+
+Anthropic provided Mythos Preview a list of 100 CVEs and known memory corruption vulnerabilities from 2024 and 2025 against the Linux kernel. The model filtered these down to 40 potentially exploitable vulnerabilities. For each, it was asked to write a privilege escalation exploit. More than half of these attempts succeeded.
+
+---
+
+## Security & Governance: Project Glasswing
+
+Because of Mythos's offensive potential, Anthropic chose a carefully controlled release strategy.
+
+Anthropic has chosen not to make Mythos Preview generally available, citing cybersecurity concerns. Instead, it announced Project Glasswing — an industry consortium — to "find and fix vulnerabilities or weaknesses in their foundational systems." Anthropic also granted monitored access to a group of over 40 organizations that build or maintain critical software.
+
+The consortium includes Amazon, Apple, Google, Cisco, CrowdStrike, JPMorgan Chase, Microsoft, and Nvidia, among other leading firms.
+
+**Responsible disclosure:** Vulnerabilities discovered were reported to the maintainers of the relevant software, and they have all now been patched. For many others, a cryptographic hash of the details was provided, with specifics to be revealed after a fix is in place.
+
+---
+
+## Use Cases
+
+**Defensive (current focus):**
+- Automated zero-day discovery in critical open-source software (Linux kernel, Firefox, OpenBSD)
+- Reverse-engineering closed-source binaries to find vulnerabilities before adversaries do
+- Turning N-day CVEs into exploits to validate patch urgency
+
+**Future (once models proliferate):**
+- Enterprises will have direct access to AI-powered discovery tools that can scan their own proprietary codebases with similar depth.
+- AI-assisted penetration testing and AppSec programs
+
+**Offensive risk (the reason for restricted access):**
+- In controlled evaluations, Mythos Preview could execute multi-stage attacks on vulnerable networks and discover and exploit vulnerabilities autonomously — tasks that would take human professionals days of work.
+
+---
+
+## Timeline & What's Next
+
+Anthropic estimates that similar capabilities will proliferate from other AI labs within six to eighteen months. OpenAI is reportedly developing a model with comparable abilities. The window for defenders to prepare is narrow.
+
+It is estimated to take roughly 12–18 months before these capabilities reach open-source models that anyone can run locally and without restrictions. From that point onwards, malicious actors will be able to use AI models to discover and weaponize zero-day vulnerabilities at scale, and also rapidly weaponize n-days within hours of their public disclosure.
+
+---
+
+In short, Claude Mythos is less a "product" and more a **watershed moment** — the first AI model deemed too dangerous for public release, now being deployed exclusively as a defensive tool through a curated industry consortium.
+================================ChatGPT=====================
+
 There are multiple meanings of “Mythos” in AI and technology right now.
 Based on current industry discussions, you are most likely referring to **Anthropic’s Claude Mythos Preview**, a frontier AI cybersecurity model. I’ll explain that in detail for interview and architecture understanding.
 
