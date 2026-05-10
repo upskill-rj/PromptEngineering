@@ -1,4 +1,6 @@
-==================Claude=========================
+==================
+Claude
+=========================
 
 Here's a comprehensive breakdown of **Claude Mythos** — Anthropic's most powerful and restricted frontier model, announced on April 7, 2026.
 
@@ -77,7 +79,10 @@ It is estimated to take roughly 12–18 months before these capabilities reach o
 ---
 
 In short, Claude Mythos is less a "product" and more a **watershed moment** — the first AI model deemed too dangerous for public release, now being deployed exclusively as a defensive tool through a curated industry consortium.
-================================ChatGPT=====================
+
+================================
+ChatGPT
+=====================
 
 There are multiple meanings of “Mythos” in AI and technology right now.
 Based on current industry discussions, you are most likely referring to **Anthropic’s Claude Mythos Preview**, a frontier AI cybersecurity model. I’ll explain that in detail for interview and architecture understanding.
