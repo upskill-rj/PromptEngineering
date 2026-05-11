@@ -162,36 +162,6 @@ Then decide based on:
 
 ---
 
-## Strong Closing Strategy
-
-When you’re ready:
-
-> “I’m genuinely excited about the opportunity and the impact I can create here. If we can align slightly better on compensation, I’d be happy to move forward quickly.”
-
----
-
-If you want, I can:
-
-* Craft **your exact salary answer** for interviews
-* Simulate a **real HR negotiation conversation**
-* Suggest a **market-aligned compensation range for your profile** (India + Architect + AI focus)
-
-
-
-Your situation is actually strong for negotiation.
-
-If you’re already getting:
-
-* strong fixed compensation, and
-* RSUs roughly equal to fixed salary,
-
-then the company already sees you as a **strategic/senior hire**, not just a delivery resource. That means your negotiation should now focus on:
-
-* positioning,
-* long-term upside,
-* and level calibration,
-
-rather than sounding like you’re chasing “more money.”
 
 At architect/principal level, the tone matters more than the ask.
 
