@@ -194,6 +194,132 @@ You can use features like Amazon EC2 Auto Scaling and Elastic Load Balancing to 
 ### 19. What is Amazon Machine Learning (Amazon ML)?
 Amazon ML is a service that enables you to build predictive models using machine learning technology. It's used to perform predictions on data and make informed decisions.
 
-### 20. What is Amazon EC2 Instance Connect?
+===========================
+
+
+### 1. What is AWS Lambda?
+AWS Lambda is a serverless compute service that lets you run code without provisioning or managing servers. It automatically scales and manages the infrastructure required to run your code in response to events.
+
+### 2. How does AWS Lambda work?
+You can upload your code to Lambda and define event sources that trigger the execution of your code. Lambda automatically manages the execution environment, scales it as needed, and provides monitoring and logging.
+
+### 3. What are the key benefits of using AWS Lambda?
+The benefits of AWS Lambda include automatic scaling, reduced operational overhead, cost efficiency (as you pay only for the compute time used), and the ability to build event-driven architectures.
+
+### 4. What types of events can trigger AWS Lambda functions?
+AWS Lambda functions can be triggered by various event sources, such as changes in Amazon S3 objects, updates to Amazon DynamoDB tables, HTTP requests through Amazon API Gateway, and more.
+
+### 5. How is concurrency managed in AWS Lambda?
+Lambda automatically handles concurrency by scaling out instances of your function in response to incoming requests. You can set a concurrency limit to control how many concurrent executions are allowed.
+
+### 6. What is the maximum execution duration for a single AWS Lambda invocation?
+The maximum execution duration for a single Lambda invocation is 15 minutes.
+
+### 7. How do you pass data to and from AWS Lambda functions?
+You can pass data to Lambda functions through event objects, which contain information about the triggering event. You can also return data by using the return statement or creating a response object.
+
+### 8. Can AWS Lambda functions communicate with external resources?
+Yes, Lambda functions can communicate with external resources such as databases, APIs, and other AWS services by using appropriate SDKs and APIs provided by AWS.
+
+### 9. What are AWS Lambda layers?
+AWS Lambda layers are a way to manage and share code that is common across multiple functions. Layers can include libraries, custom runtimes, and other function dependencies.
+
+### 10. How can you handle errors in AWS Lambda functions?
+You can handle errors by using try-catch blocks in your code. Lambda also provides CloudWatch Logs for monitoring, and you can set up error handling and retries for asynchronous invocations.
+
+### 11. Can AWS Lambda functions access the internet?
+Yes, Lambda functions can access the internet through the Virtual Private Cloud (VPC) or through public endpoints if your function is not configured within a VPC.
+
+### 12. What are the execution environments available for AWS Lambda functions?
+Lambda supports several runtimes, including Node.js, Python, Java, Go, Ruby, .NET Core, and custom runtimes using the Runtime API.
+
+### 13. How can you configure environment variables for AWS Lambda functions?
+You can set environment variables for Lambda functions when creating or updating the function. These variables can be accessed within your code.
+
+### 14. What is the difference between synchronous and asynchronous invocation of Lambda functions?
+Synchronous invocations wait for the function to complete and return a response, while asynchronous invocations return immediately, and the response is sent to a specified destination.
+
+### 15. What is the AWS Lambda Event Source Mapping?
+Event Source Mapping allows you to connect event sources like Amazon DynamoDB streams or Amazon Kinesis streams to Lambda functions. This enables the function to process events as they occur.
+
+### 16. How can you manage the permissions and execution roles for AWS Lambda functions?
+You can use AWS Identity and Access Management (IAM) roles to grant permissions to your Lambda functions. Execution roles define what AWS resources the function can access.
+
+### 17. What is AWS Step Functions?
+AWS Step Functions is a serverless orchestration service that lets you coordinate multiple AWS services into serverless workflows using visual workflows called state machines.
+
+### 18. How can you automate the deployment of AWS Lambda functions?
+You can use AWS Serverless Application Model (SAM) templates, AWS CloudFormation, or CI/CD tools like AWS CodePipeline to automate the deployment of Lambda functions.
+
+### 19. Can AWS Lambda functions connect to on-premises resources?
+Yes, Lambda functions can connect to on-premises resources by placing the function inside a VPC and using a VPN or Direct Connect connection to establish connectivity.
+
+### 20. What is the Cold Start issue in AWS Lambda?
+The Cold Start issue occurs when a Lambda function is invoked for the first time or after it has been idle for a while. The function needs to be initialized, causing a slight delay in response time.
+
+=================================
+
+### 1. What is AWS Elastic Beanstalk?
+AWS Elastic Beanstalk is a platform-as-a-service (PaaS) offering that simplifies application deployment and management. It handles infrastructure provisioning, deployment, monitoring, and scaling, allowing developers to focus on writing code.
+
+### 2. How does Elastic Beanstalk work?
+Elastic Beanstalk abstracts the infrastructure layer, allowing you to upload your code (web application or microservices) and configuration. It then automatically deploys, manages, and scales your application based on the platform, language, and environment settings you choose.
+
+### 3. What languages and platforms does Elastic Beanstalk support?
+Elastic Beanstalk supports multiple programming languages and platforms, including Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker.
+
+### 4. What is an Elastic Beanstalk environment?
+An Elastic Beanstalk environment is a specific instance of your application that includes the runtime, resources, and configuration settings. You can have multiple environments (e.g., development, testing, production) for the same application.
+
+### 5. How does Elastic Beanstalk handle updates and deployments?
+Elastic Beanstalk supports both All at Once and Rolling deployments. All at Once deploys updates to all instances simultaneously, while Rolling deploys updates in batches to reduce downtime.
+
+### 6. Can you customize the infrastructure in Elastic Beanstalk?
+Yes, Elastic Beanstalk allows you to customize the environment's resources, configuration, and scaling settings through environment configuration files or the AWS Management Console.
+
+### 7. How can you monitor the health of an Elastic Beanstalk environment?
+Elastic Beanstalk provides health monitoring through CloudWatch. You can set up alarms based on metrics like CPU utilization, latency, and request count.
+
+### 8. What is the Elastic Beanstalk Command Line Interface (EB CLI)?
+The EB CLI is a command-line tool that provides an interface for interacting with Elastic Beanstalk. It enables developers to manage applications and environments using commands.
+
+### 9. How does Elastic Beanstalk handle automatic scaling?
+Elastic Beanstalk can automatically scale your application based on the configured scaling triggers, such as CPU utilization, network traffic, or other custom metrics.
+
+### 10. Explain the difference between Single Instance and Load Balanced environments in Elastic Beanstalk.
+In a Single Instance environment, your application runs on a single EC2 instance. In a Load Balanced environment, your application runs on multiple instances behind a load balancer, improving availability and scalability.
+
+### 11. How does Elastic Beanstalk support rolling back deployments?
+Elastic Beanstalk supports rolling back to a previous version if an update results in errors or issues. You can initiate a rollback through the AWS Management Console or the EB CLI.
+
+### 12. Can Elastic Beanstalk deploy applications to multiple availability zones?
+Yes, Elastic Beanstalk can automatically deploy your application to multiple availability zones within a region to enhance high availability.
+
+### 13. How can you handle environment-specific configurations in Elastic Beanstalk?
+You can use configuration files, environment variables, or Parameter Store to manage environment-specific configurations, ensuring your application behaves consistently across environments.
+
+### 14. Describe how you would configure environment variables in Elastic Beanstalk.
+Environment variables can be configured using the AWS Management Console, the EB CLI, or Elastic Beanstalk configuration files. They provide a way to pass dynamic values to your application.
+
+### 15. Can Elastic Beanstalk deploy applications stored in containers?
+Yes, Elastic Beanstalk supports deploying Docker containers. You can specify a Docker image repository and Elastic Beanstalk will handle deployment and management of the containerized application.
+
+### 16. How can you automate deployments to Elastic Beanstalk?
+You can use the AWS CodePipeline service to automate the deployment process to Elastic Beanstalk. This helps create a continuous integration and continuous delivery (CI/CD) pipeline.
+
+### 17. What is the difference between an environment URL and a CNAME in Elastic Beanstalk?
+An environment URL is a unique URL automatically generated for each Elastic Beanstalk environment. A CNAME (Canonical Name) is an alias that you can configure to map a custom domain to your Elastic Beanstalk environment.
+
+### 18. Can Elastic Beanstalk be used for serverless applications?
+While Elastic Beanstalk handles infrastructure provisioning, it is not a serverless service like AWS Lambda. It's designed to manage and scale applications on virtual machines.
+
+### 19. What are worker environments in Elastic Beanstalk?
+Worker environments in Elastic Beanstalk are used for background tasks and processing. They handle tasks asynchronously, separate from the main application environment.
+
+### 20. How can you back up and restore an Elastic Beanstalk environment?
+Elastic Beanstalk does not provide built-in backup and restore capabilities. However, you can use AWS services like Amazon RDS for database backups and CloudFormation for environment configuration versioning.
+
+### 21. What is Amazon EC2 Instance Connect?
 Amazon EC2 Instance Connect provides a simple and secure way to connect to your instances using Secure Shell (SSH). It eliminates the need to use key pairs and allows you to connect using your AWS Management Console credentials.
+
 
