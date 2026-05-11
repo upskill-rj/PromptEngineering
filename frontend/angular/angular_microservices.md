@@ -1,18 +1,18 @@
-# 🚀 Detailed React + Spring Boot Microservices Architecture (Enterprise Project)
+# 🚀 Angular + Spring Boot Microservices Architecture (Enterprise Project)
 
-This is a real-world architecture commonly used in:
+This architecture is widely used in:
 
-* E-commerce platforms
-* Banking systems
+* Banking platforms
+* Insurance systems
 * ERP applications
-* Insurance portals
-* SaaS products
+* Government portals
+* Enterprise SaaS platforms
 
-Frontend is built using:
+Frontend:
 
-* React
+* Angular
 
-Backend is built using:
+Backend:
 
 * Spring Boot microservices
 
@@ -26,135 +26,228 @@ Deployment:
 
 ---
 
-# 🏗️ 1. Complete High-Level Architecture
+# 🏗️ 1. High-Level Architecture
 
-```text id="z7l7ho"
-                    ┌──────────────────────┐
-                    │     React UI         │
-                    │  (Single Page App)   │
-                    └──────────┬───────────┘
-                               │ HTTPS/REST
-                               ▼
+```text id="g14dwd"
+                    ┌─────────────────────┐
+                    │   Angular Frontend  │
+                    │   (SPA Application) │
+                    └─────────┬───────────┘
+                              │ REST APIs
+                              ▼
                  ┌──────────────────────────┐
                  │ API Gateway / Ingress    │
                  │ Spring Cloud Gateway     │
                  └──────────┬───────────────┘
                             │
-       ┌────────────────────┼────────────────────┐
-       ▼                    ▼                    ▼
+      ┌─────────────────────┼────────────────────┐
+      ▼                     ▼                    ▼
 ┌─────────────┐     ┌─────────────┐      ┌─────────────┐
 │ Auth Service│     │ Order Svc   │      │ Product Svc │
 └──────┬──────┘     └──────┬──────┘      └──────┬──────┘
        ▼                   ▼                    ▼
-   AUTH_DB             ORDER_DB             PRODUCT_DB
+    AUTH_DB            ORDER_DB             PRODUCT_DB
 
-                 ┌────────────────────┐
-                 │ Kafka / RabbitMQ   │
-                 └────────────────────┘
+                    ┌────────────────┐
+                    │ Kafka/RabbitMQ │
+                    └────────────────┘
 ```
 
 ---
 
-# 🌐 2. Frontend Layer – React Architecture
+# 🌐 2. Angular Frontend Architecture
 
-React acts as the presentation layer.
+Angular acts as the enterprise presentation layer.
 
 ---
 
-# 🔥 React Project Structure
+# 🔥 Angular Project Structure
 
-```text id="c3hm1q"
-src/
- ├── assets/
- ├── components/
+```text id="jlwmx8"
+src/app/
+ ├── core/
+ ├── shared/
  ├── features/
  │    ├── auth/
  │    ├── products/
- │    ├── cart/
- │    └── orders/
+ │    ├── orders/
+ │    └── dashboard/
+ │
  ├── services/
- ├── hooks/
- ├── routes/
- ├── store/
- └── utils/
+ ├── guards/
+ ├── interceptors/
+ ├── models/
+ └── app-routing.module.ts
 ```
 
 ---
 
-# 🔹 Components Layer
+# 🔹 Core Module
 
-Reusable UI blocks:
+Contains singleton/global functionality:
+
+* Authentication service
+* HTTP interceptors
+* Global error handling
+* Logging
+
+Loaded once during app startup.
+
+---
+
+# 🔹 Shared Module
+
+Contains reusable UI components:
 
 * Header
-* Sidebar
-* Product Card
-* Cart
-* Payment Form
+* Footer
+* Buttons
+* Dialogs
+* Pipes
+
+Used across multiple feature modules.
+
+---
+
+# 🔹 Feature Modules
+
+Each business domain becomes an Angular module.
+
+Example:
+
+```text id="yj4e9j"
+orders/
+products/
+payments/
+```
+
+Supports:
+
+* Lazy loading
+* Better scalability
+* Team separation
+
+---
+
+# 🔹 Components
+
+Each component contains:
+
+* `.ts` → Logic
+* `.html` → UI
+* `.scss` → Styling
+* `.spec.ts` → Unit tests
+
+Example:
+
+```text id="m7l4e5"
+order.component.ts
+order.component.html
+order.component.scss
+order.component.spec.ts
+```
+
+---
+
+# 🔹 Services Layer
+
+Handles:
+
+* API calls
+* Business logic
+* Shared functionality
+
+Example:
+
+```typescript id="jlwm1g"
+this.http.get('/api/orders')
+```
 
 ---
 
 # 🔹 Routing Layer
 
-Handled using:
-
-* React Router
+Managed using Angular Router.
 
 Example:
 
-```jsx id="7i4p7z"
-<Route path="/orders" element={<Orders />} />
+```typescript id="3pj2sr"
+{ path: 'orders', component: OrdersComponent }
 ```
 
-Supports SPA navigation without page refresh.
+Supports SPA navigation.
 
 ---
 
-# 🔹 State Management Layer
+# 🔹 Guards
 
-Usually implemented using:
+Used for:
 
-* Redux Toolkit
-* Context API
-
-Stores:
-
-* User session
-* JWT token
-* Cart state
-* Product cache
-
----
-
-# 🔹 API Service Layer
-
-Centralized backend communication.
+* Authentication
+* Authorization
 
 Example:
 
-```javascript id="tk1qkr"
-axios.get('/api/products')
+```text id="2y1k6r"
+CanActivate
 ```
 
-All APIs are usually placed under:
+Protects routes from unauthorized access.
 
-```text id="7gw7yb"
-services/
+---
+
+# 🔹 HTTP Interceptors
+
+Intercept all outgoing/incoming HTTP requests.
+
+Used for:
+
+* JWT token injection
+* Logging
+* Error handling
+
+---
+
+# 🔹 RxJS & Observables
+
+Angular uses:
+
+* Reactive programming
+* Observables
+
+Example:
+
+```typescript id="m1hb4s"
+this.orderService.getOrders()
+  .subscribe(data => {});
 ```
 
 ---
 
-# 🔥 React Request Flow
+# 🔥 Angular Request Flow
 
-```text id="4y5c6h"
-User Clicks Button
+```text id="wb9v6n"
+User Action
       ↓
-Component Event Triggered
+Angular Template Event
       ↓
-Redux State Updated
+Component Logic
       ↓
-Axios API Call
+Service Layer
+      ↓
+HTTP Client
       ↓
 API Gateway
+      ↓
+Spring Boot Microservice
+      ↓
+Oracle Database
+      ↓
+Response Returned
+      ↓
+Observable Updated
+      ↓
+Change Detection Updates UI
 ```
 
 ---
@@ -171,13 +264,13 @@ Usually implemented using:
 
 # 🔥 Responsibilities
 
-| Responsibility | Purpose                               |
-| -------------- | ------------------------------------- |
-| Routing        | Sends request to correct microservice |
-| JWT Validation | Security                              |
-| Rate Limiting  | Prevent abuse                         |
-| Logging        | Request tracing                       |
-| CORS Handling  | Frontend access                       |
+| Responsibility | Purpose          |
+| -------------- | ---------------- |
+| Routing        | Forward requests |
+| JWT Validation | Security         |
+| Rate Limiting  | Prevent abuse    |
+| Logging        | API tracing      |
+| CORS           | Angular access   |
 
 ---
 
@@ -185,25 +278,25 @@ Usually implemented using:
 
 ---
 
-## Login Flow
+# 🔥 Login Flow
 
-```text id="wzhj0y"
-React Login Form
-      ↓
+```text id="5bm5cg"
+Angular Login Page
+       ↓
 Auth Service API
-      ↓
+       ↓
 JWT Token Generated
-      ↓
+       ↓
 Stored in Browser
-      ↓
-Token Sent in Headers
+       ↓
+Interceptor Adds Token to APIs
 ```
 
 ---
 
-## Example Header
+# 🔹 JWT Header Example
 
-```text id="mx0g5w"
+```text id="vh5gj3"
 Authorization: Bearer eyJhbGci...
 ```
 
@@ -211,29 +304,26 @@ Authorization: Bearer eyJhbGci...
 
 # 🧩 5. Spring Boot Microservices Layer
 
-Each service handles one business capability.
+Each microservice owns one business domain.
 
 ---
 
-# 🔥 Example Services
+# 🔥 Example Microservices
 
-| Microservice         | Responsibility     |
-| -------------------- | ------------------ |
-| Auth Service         | Login/JWT          |
-| User Service         | Profile management |
-| Product Service      | Product catalog    |
-| Cart Service         | Shopping cart      |
-| Order Service        | Orders             |
-| Payment Service      | Payments           |
-| Notification Service | Email/SMS          |
+| Service              | Responsibility  |
+| -------------------- | --------------- |
+| Auth Service         | Login/JWT       |
+| User Service         | User profiles   |
+| Product Service      | Product catalog |
+| Order Service        | Orders          |
+| Payment Service      | Payments        |
+| Notification Service | Email/SMS       |
 
 ---
 
-# 📦 6. Internal Structure of a Microservice
+# 📦 6. Internal Structure of a Spring Boot Service
 
-Example:
-
-```text id="hzvy7r"
+```text id="fgzkq2"
 order-service/
  ├── controller/
  ├── service/
@@ -241,8 +331,8 @@ order-service/
  ├── entity/
  ├── dto/
  ├── config/
- ├── exception/
- └── security/
+ ├── security/
+ └── exception/
 ```
 
 ---
@@ -253,43 +343,34 @@ Exposes REST APIs.
 
 Example:
 
-```java id="v5s5s4"
-@PostMapping("/orders")
+```java id="a6shut"
+@GetMapping("/orders")
 ```
 
 ---
 
 # 🔹 Service Layer
 
-Contains business logic.
+Contains:
 
-Example:
-
-* Order validation
-* Pricing calculation
-* Inventory checks
+* Business logic
+* Validation
+* Workflow orchestration
 
 ---
 
 # 🔹 Repository Layer
 
-Handles DB operations using:
+Handles database operations using:
 
 * Spring Data JPA
 * Hibernate
 
 ---
 
-# 🔹 Entity Layer
+# 🔹 DTO Layer
 
-Maps Java classes to database tables.
-
-Example:
-
-```java id="l3ehye"
-@Entity
-public class Order {}
-```
+Transfers request/response objects between frontend and backend.
 
 ---
 
@@ -301,21 +382,21 @@ Using:
 
 ---
 
-# 🔥 Recommended Enterprise Pattern
+# 🔥 Recommended Pattern
 
 ## Database Per Service
 
-```text id="htun6z"
-Auth Service      → AUTH_DB
-Product Service   → PRODUCT_DB
-Order Service     → ORDER_DB
+```text id="y3gvjlwm"
+Auth Service     → AUTH_DB
+Order Service    → ORDER_DB
+Product Service  → PRODUCT_DB
 ```
 
 Benefits:
 
 * Loose coupling
 * Independent scaling
-* Fault isolation
+* Better fault isolation
 
 ---
 
@@ -325,11 +406,11 @@ Benefits:
 
 # 🔹 Synchronous Communication
 
-REST API calls between services.
+REST communication.
 
 Example:
 
-```text id="bmjlwm"
+```text id="dbbwe7"
 Order Service → Product Service
 ```
 
@@ -344,15 +425,15 @@ Using:
 
 ---
 
-# 🔥 Event-Driven Flow
+# 🔥 Event Flow Example
 
-```text id="wwu5or"
+```text id="qjlwm9"
 Order Created
-     ↓
+      ↓
 Kafka Event Published
-     ↓
+      ↓
 Inventory Updated
-     ↓
+      ↓
 Notification Sent
 ```
 
@@ -360,12 +441,11 @@ Notification Sent
 
 # 🚀 9. Docker Architecture
 
-Each component runs inside a container.
+Each service runs in containers.
 
-```text id="m06o4t"
-React Container
+```text id="2sjh8q"
+Angular Container
 Gateway Container
-Auth Service Container
 Order Service Container
 Kafka Container
 ```
@@ -376,14 +456,14 @@ Kafka Container
 
 ---
 
-# 🔥 Kubernetes Flow
+# 🔥 Kubernetes Architecture
 
-```text id="t7obce"
+```text id="h9dfuw"
 Internet
    ↓
 Ingress Controller
    ↓
-React Pod
+Angular Pod
    ↓
 Gateway Pod
    ↓
@@ -396,14 +476,14 @@ Oracle DB
 
 # 🔹 Kubernetes Components
 
-| Component  | Purpose            |
-| ---------- | ------------------ |
-| Pod        | Running container  |
-| Deployment | Replica management |
-| Service    | Networking         |
-| Ingress    | External access    |
-| ConfigMap  | Configuration      |
-| Secret     | Sensitive data     |
+| Component  | Purpose               |
+| ---------- | --------------------- |
+| Pod        | Running container     |
+| Deployment | Replica management    |
+| Service    | Networking            |
+| Ingress    | External routing      |
+| ConfigMap  | Configuration         |
+| Secret     | Sensitive credentials |
 
 ---
 
@@ -413,10 +493,8 @@ Oracle DB
 
 # 🔥 Horizontal Scaling
 
-During high traffic:
-
-```text id="y6w33y"
-Product Service:
+```text id="lr86a7"
+Order Service:
 2 Pods → 20 Pods
 ```
 
@@ -430,7 +508,7 @@ Using:
 
 Used for:
 
-* Product catalog
+* Product data
 * User sessions
 * Frequently used APIs
 
@@ -444,12 +522,12 @@ Tools:
 * Grafana
 * ELK Stack
 
-Monitors:
+Tracks:
 
-* CPU
-* Memory
 * API latency
-* Error rate
+* JVM metrics
+* Errors
+* Resource utilization
 
 ---
 
@@ -461,8 +539,8 @@ Monitors:
 
 | Layer      | Security       |
 | ---------- | -------------- |
-| React      | Route Guards   |
-| Gateway    | JWT Validation |
+| Angular    | Route Guards   |
+| Gateway    | JWT validation |
 | Services   | RBAC           |
 | Kubernetes | Secrets        |
 | Network    | HTTPS          |
@@ -471,17 +549,17 @@ Monitors:
 
 # 🔄 14. CI/CD Pipeline
 
-```text id="33yq8e"
+```text id="uhjlwm"
 Developer
-   ↓
+    ↓
 Git Commit
-   ↓
+    ↓
 Jenkins Pipeline
-   ↓
+    ↓
 Docker Build
-   ↓
+    ↓
 Push to Registry
-   ↓
+    ↓
 Kubernetes Deployment
 ```
 
@@ -491,25 +569,26 @@ Kubernetes Deployment
 
 ---
 
-# 🔥 Frontend Best Practices
+# 🔥 Angular Best Practices
 
-* Feature-based architecture
+* Feature modules
 * Lazy loading
-* Error boundaries
-* API abstraction layer
+* Shared/Core separation
+* Interceptors
+* Route guards
 
 ---
 
 # 🔥 Backend Best Practices
 
-* Circuit breaker
+* Circuit breakers
 * Retry mechanism
-* Centralized logging
 * API versioning
+* Centralized logging
 * Idempotency
 
 ---
 
 # 🎯 16. Strong Interview Answer
 
-> “In a React and Spring Boot microservices architecture, React acts as the SPA frontend communicating with backend services through an API Gateway using REST APIs secured by JWT. Each Spring Boot microservice handles a specific business domain with its own database, while asynchronous communication is handled through Kafka. The entire platform is containerized using Docker and orchestrated with Kubernetes for scalability, resilience, and high availability.”
+> “In an Angular and Spring Boot microservices architecture, Angular acts as the SPA frontend using components, services, RxJS observables, and HTTP interceptors for secure API communication. Requests pass through an API Gateway to independently deployable Spring Boot microservices, each owning a business capability and database. The platform is secured with JWT, uses Kafka for asynchronous communication, and is deployed using Docker and Kubernetes for scalability and resilience.”
