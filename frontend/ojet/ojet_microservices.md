@@ -1,22 +1,20 @@
-# 🚀 Detailed Microservices Architecture Project
+# 🚀 OJET + Spring Boot Microservices Architecture (Enterprise Project)
 
-# React + Spring Boot + Oracle + Kubernetes
+This architecture is commonly used in:
 
-This is a **real enterprise architecture** used in:
-
-* E-commerce
-* Banking
-* Insurance
-* ERP
-* SaaS products
+* Oracle ERP systems
+* HRMS platforms
+* Banking dashboards
+* Enterprise reporting systems
+* Oracle Fusion extensions
 
 Frontend:
 
-* React
+* Oracle JET
 
 Backend:
 
-* Spring Boot Microservices
+* Spring Boot microservices
 
 Database:
 
@@ -24,147 +22,173 @@ Database:
 
 Deployment:
 
-* Docker + Kubernetes
+* Docker + Kubernetes / Oracle Cloud
 
 ---
 
-# 🏗️ 1. End-to-End Architecture Diagram
+# 🏗️ 1. High-Level Architecture
 
-```text id="nlc6wr"
-                    ┌────────────────────┐
-                    │   User Browser     │
-                    └─────────┬──────────┘
-                              │
+```text id="9x8lmd"
+                    ┌─────────────────────┐
+                    │    OJET Frontend    │
+                    │  (Enterprise UI)    │
+                    └─────────┬───────────┘
+                              │ REST APIs
                               ▼
-                    ┌────────────────────┐
-                    │ React Frontend SPA │
-                    └─────────┬──────────┘
-                              │ REST API
-                              ▼
-               ┌────────────────────────────┐
-               │ API Gateway / LoadBalancer │
-               │ Spring Cloud Gateway       │
-               └───────────┬────────────────┘
-                           │
- ┌─────────────────────────┼──────────────────────────┐
- ▼                         ▼                          ▼
-Auth Service         Product Service           Order Service
- ▼                         ▼                          ▼
-AUTH_DB              PRODUCT_DB                ORDER_DB
+                 ┌──────────────────────────┐
+                 │ API Gateway / Ingress    │
+                 │ Spring Cloud Gateway     │
+                 └──────────┬───────────────┘
+                            │
+      ┌─────────────────────┼────────────────────┐
+      ▼                     ▼                    ▼
+┌─────────────┐     ┌─────────────┐      ┌─────────────┐
+│ Auth Service│     │ EmployeeSvc │      │ PayrollSvc  │
+└──────┬──────┘     └──────┬──────┘      └──────┬──────┘
+       ▼                   ▼                    ▼
+    AUTH_DB            EMPLOYEE_DB          PAYROLL_DB
 
-                           ▼
-                  Kafka / RabbitMQ
-                           ▼
-               Notification Service
+                    ┌────────────────┐
+                    │ Kafka/RabbitMQ │
+                    └────────────────┘
 ```
 
 ---
 
-# 🌐 2. React Frontend Architecture
+# 🌐 2. OJET Frontend Architecture
 
-React acts as:
-
-* UI Layer
-* State management layer
-* API communication layer
+OJET acts as the enterprise presentation layer.
 
 ---
 
-# 🔥 React Project Structure
+# 🔥 OJET Project Structure
 
-```text id="l7h08v"
+```text id="3r25sr"
 src/
- ├── assets/
- ├── components/
- ├── features/
- │    ├── auth/
- │    ├── products/
- │    ├── orders/
- │    └── cart/
- ├── services/
- ├── routes/
- ├── hooks/
- ├── store/
- └── utils/
+ ├── js/
+ │    ├── viewModels/
+ │    ├── services/
+ │    ├── utils/
+ │    └── router.js
+ │
+ ├── views/
+ │
+ ├── css/
+ │
+ ├── resources/
+ │
+ └── index.html
 ```
 
 ---
 
-# 🔹 Components Layer
+# 🔹 Views Layer (`views/`)
 
-Reusable UI modules:
-
-* Header
-* Product card
-* Login form
-* Cart panel
-
----
-
-# 🔹 Routing Layer
-
-Using:
-
-* React Router
+Contains HTML UI templates.
 
 Example:
 
-```jsx id="eph4nd"
-<Route path="/products" element={<Products />} />
+```html id="j9l0g6"
+<oj-table></oj-table>
 ```
 
-Supports SPA navigation.
+Used for:
+
+* Forms
+* Tables
+* Dashboards
+* Charts
 
 ---
 
-# 🔹 State Management Layer
+# 🔹 ViewModel Layer (`viewModels/`)
 
-Usually implemented using:
+Contains:
 
-* Redux Toolkit
-* Context API
-
-Stores:
-
-* JWT token
-* User profile
-* Shopping cart
-* UI state
-
----
-
-# 🔹 API Layer
-
-Handles backend communication.
+* Business logic
+* Event handling
+* API integration
+* Observable data models
 
 Example:
 
-```javascript id="7yl5j0"
-axios.get('/api/products')
-```
-
-Usually centralized in:
-
-```text id="1kn4vr"
-services/
+```javascript id="n9v3fi"
+self.employeeList = ko.observableArray([]);
 ```
 
 ---
 
-# 🔥 React Runtime Flow
+# 🔹 Services Layer (`services/`)
 
-```text id="wnjm8w"
-User Click
-    ↓
-React Component Event
-    ↓
-Redux State Updated
-    ↓
-API Call Triggered
-    ↓
+Centralized API communication layer.
+
+Example:
+
+```javascript id="vafiw8"
+fetch('/api/employees')
+```
+
+Used for:
+
+* REST API calls
+* Token management
+* Error handling
+
+---
+
+# 🔹 Data Binding
+
+OJET uses:
+
+* Knockout observables
+
+Flow:
+
+```text id="25u5gw"
 Backend Response
-    ↓
-Virtual DOM Re-render
+      ↓
+Observable Updated
+      ↓
+UI Automatically Updated
+```
+
+---
+
+# 🔹 Routing
+
+OJET supports SPA navigation using:
+
+* ojRouter / CoreRouter
+
+Allows:
+
+* Dynamic module loading
+* Page navigation without refresh
+
+---
+
+# 🔥 OJET User Request Flow
+
+```text id="0u5a2n"
+User Clicks Dashboard
+       ↓
+OJET Component Event
+       ↓
+ViewModel Logic
+       ↓
+REST API Call
+       ↓
+API Gateway
+       ↓
+Spring Boot Service
+       ↓
+Oracle Database
+       ↓
+Response Returned
+       ↓
+Observable Updated
+       ↓
+UI Re-rendered
 ```
 
 ---
@@ -174,77 +198,72 @@ Virtual DOM Re-render
 Usually implemented using:
 
 * Spring Cloud Gateway
+* Oracle API Gateway
+* NGINX
 
 ---
 
 # 🔥 Responsibilities
 
-| Feature        | Purpose                         |
-| -------------- | ------------------------------- |
-| Routing        | Send request to correct service |
-| JWT Validation | Authentication                  |
-| Rate Limiting  | Prevent abuse                   |
-| Logging        | Request tracing                 |
-| CORS           | Allow frontend access           |
+| Responsibility | Purpose          |
+| -------------- | ---------------- |
+| Routing        | Forward requests |
+| JWT Validation | Security         |
+| Rate Limiting  | Prevent abuse    |
+| Logging        | API tracking     |
+| CORS           | Frontend access  |
 
 ---
 
 # 🔐 4. Authentication Flow
 
-JWT-based authentication.
+Typically uses:
+
+* JWT
+* OAuth2
+* Oracle Identity Cloud Service (IDCS)
 
 ---
 
-# 🔥 Login Flow
+# 🔥 Authentication Flow
 
-```text id="hifk7v"
-React Login Form
+```text id="m7guxc"
+OJET Login Page
       ↓
-Auth Service API
+Auth Service
       ↓
 JWT Token Generated
       ↓
 Stored in Browser
       ↓
-Sent in Authorization Header
+Token Sent with API Requests
 ```
 
 ---
 
-# 🔥 Example Header
+# 🧩 5. Spring Boot Microservices Layer
 
-```text id="pjlwmu"
-Authorization: Bearer eyJhbGci...
-```
+Each service handles one domain/business capability.
 
 ---
 
-# 🧩 5. Spring Boot Microservices Architecture
-
-Each service owns one business capability.
-
----
-
-# 🔥 Common Microservices
+# 🔥 Example Microservices
 
 | Service              | Responsibility      |
 | -------------------- | ------------------- |
-| Auth Service         | Login/JWT           |
-| User Service         | Profile management  |
-| Product Service      | Product catalog     |
-| Cart Service         | Shopping cart       |
-| Order Service        | Orders              |
-| Payment Service      | Payment integration |
+| Auth Service         | Authentication      |
+| Employee Service     | Employee management |
+| Payroll Service      | Salary processing   |
+| Leave Service        | Leave management    |
 | Notification Service | Email/SMS           |
+| Reporting Service    | Analytics           |
 
 ---
 
-# 📦 6. Internal Spring Boot Structure
+# 📦 6. Internal Structure of a Spring Boot Service
 
-Example:
-
-```text id="9v8b8y"
-order-service/
+```text id="t30ghk"
+employee-service/
  ├── controller/
  ├── service/
  ├── repository/
@@ -259,49 +278,44 @@ order-service/
 
 # 🔹 Controller Layer
 
-Exposes REST APIs.
+Exposes REST endpoints.
 
 Example:
 
-```java id="76x95n"
-@PostMapping("/orders")
+```java id="it22mj"
+@GetMapping("/employees")
 ```
 
 ---
 
 # 🔹 Service Layer
 
-Contains business logic:
+Contains:
 
-* Pricing
 * Validation
-* Inventory checks
+* Business rules
+* Workflow logic
 
 ---
 
 # 🔹 Repository Layer
 
-Handles database access using:
+Handles database operations using:
 
-* Spring Data JPA
+* JPA
 * Hibernate
 
 ---
 
-# 🔹 Entity Layer
+# 🔹 DTO Layer
 
-Maps Java objects to DB tables.
+Used for request/response transformation.
 
-Example:
-
-```java id="4vf8k4"
-@Entity
-public class Product {}
-```
+Helps avoid exposing entities directly.
 
 ---
 
-# 🗄️ 7. Oracle Database Architecture
+# 🗄️ 7. Database Architecture
 
 Using:
 
@@ -309,21 +323,21 @@ Using:
 
 ---
 
-# 🔥 Recommended Pattern
+# 🔥 Recommended Enterprise Pattern
 
 ## Database Per Service
 
-```text id="tdj4j4"
-Auth Service      → AUTH_DB
-Product Service   → PRODUCT_DB
-Order Service     → ORDER_DB
+```text id="gw7uh3"
+Employee Service → EMPLOYEE_DB
+Payroll Service  → PAYROLL_DB
+Leave Service    → LEAVE_DB
 ```
 
 Benefits:
 
-* Loose coupling
-* Independent deployment
+* Independent deployments
 * Better scalability
+* Fault isolation
 
 ---
 
@@ -333,12 +347,12 @@ Benefits:
 
 # 🔹 Synchronous Communication
 
-Using REST APIs.
+REST APIs between services.
 
 Example:
 
-```text id="6w8k5i"
-Order Service → Product Service
+```text id="d4qyg3"
+Payroll Service → Employee Service
 ```
 
 ---
@@ -352,48 +366,48 @@ Using:
 
 ---
 
-# 🔥 Event-Driven Flow
+# 🔥 Event Flow Example
 
-```text id="u6n8gc"
-Order Created
-     ↓
+```text id="6s2rxs"
+Employee Joined
+      ↓
 Kafka Event Published
-     ↓
-Inventory Updated
-     ↓
-Email Notification Sent
+      ↓
+Payroll Service Triggered
+      ↓
+Notification Sent
 ```
 
 ---
 
 # 🚀 9. Docker Architecture
 
-Every application runs inside a container.
+Each service runs inside containers.
 
-```text id="m5drsu"
-React Container
+```text id="d6gc6m"
+OJET Container
 Gateway Container
-Auth Container
-Product Container
+Employee Service Container
+Payroll Service Container
 Kafka Container
 ```
 
 ---
 
-# ☸️ 10. Kubernetes Deployment Architecture
+# ☸️ 10. Kubernetes Deployment
 
 ---
 
-# 🔥 Kubernetes Flow
+# 🔥 Kubernetes Architecture
 
-```text id="ajw3pb"
+```text id="8m4xgf"
 Internet
    ↓
 Ingress Controller
    ↓
-React Pod
+OJET Pod
    ↓
-API Gateway Pod
+Gateway Pod
    ↓
 Microservice Pods
    ↓
@@ -404,14 +418,13 @@ Oracle DB
 
 # 🔹 Kubernetes Components
 
-| Component  | Purpose             |
-| ---------- | ------------------- |
-| Pod        | Running container   |
-| Deployment | Replica management  |
-| Service    | Internal networking |
-| Ingress    | External routing    |
-| ConfigMap  | Configuration       |
-| Secret     | Credentials         |
+| Component  | Purpose            |
+| ---------- | ------------------ |
+| Pod        | Running container  |
+| Deployment | Replica management |
+| Service    | Networking         |
+| ConfigMap  | Configurations     |
+| Secret     | Credentials        |
 
 ---
 
@@ -421,11 +434,11 @@ Oracle DB
 
 # 🔥 Horizontal Scaling
 
-During traffic spikes:
+Example:
 
-```text id="uvux7p"
-Product Service:
-2 Pods → 20 Pods
+```text id="rlg76q"
+Reporting Service:
+2 Pods → 15 Pods
 ```
 
 Using:
@@ -438,8 +451,8 @@ Using:
 
 Used for:
 
-* Product catalog
-* Sessions
+* Dashboard data
+* Session management
 * Frequently accessed APIs
 
 ---
@@ -454,9 +467,10 @@ Tools:
 
 Tracks:
 
-* API latency
-* CPU/memory
-* Error rates
+* API performance
+* JVM memory
+* Errors
+* Response time
 
 ---
 
@@ -468,7 +482,7 @@ Tracks:
 
 | Layer      | Security       |
 | ---------- | -------------- |
-| React      | Route Guards   |
+| OJET       | Route security |
 | Gateway    | JWT validation |
 | Services   | RBAC           |
 | Kubernetes | Secrets        |
@@ -478,17 +492,17 @@ Tracks:
 
 # 🔄 14. CI/CD Pipeline
 
-```text id="yxdwya"
+```text id="wupjlwm"
 Developer
-   ↓
-Git Commit
-   ↓
+    ↓
+Git Repository
+    ↓
 Jenkins Pipeline
-   ↓
-Docker Image Build
-   ↓
+    ↓
+Docker Build
+    ↓
 Push to Registry
-   ↓
+    ↓
 Kubernetes Deployment
 ```
 
@@ -500,23 +514,22 @@ Kubernetes Deployment
 
 # 🔥 Frontend Best Practices
 
-* Feature-based structure
-* Lazy loading
-* Centralized API layer
-* Error boundaries
+* Modular architecture
+* Reusable components
+* Observable-based updates
+* API abstraction layer
 
 ---
 
 # 🔥 Backend Best Practices
 
-* Circuit breaker
-* Retry mechanisms
-* Distributed tracing
-* API versioning
+* Circuit breakers
 * Centralized logging
+* Retry mechanism
+* API versioning
 
 ---
 
 # 🎯 16. Strong Interview Answer
 
-> “In a React and Spring Boot microservices architecture, React acts as the SPA frontend communicating with backend microservices through an API Gateway using REST APIs secured with JWT. Each Spring Boot microservice owns a specific business domain and database, while Kafka enables asynchronous event-driven communication. The platform is containerized using Docker and orchestrated using Kubernetes for scalability, resilience, and high availability.”
+> “In an OJET and Spring Boot microservices architecture, OJET acts as the enterprise frontend using MVVM architecture and observables for reactive UI updates. It communicates with Spring Boot microservices through an API Gateway using secure REST APIs. Each microservice owns a business capability and database, while asynchronous communication is handled using Kafka. The platform is containerized with Docker and deployed on Kubernetes or Oracle Cloud for scalability and high availability.”
