@@ -147,7 +147,65 @@ As good practice, remember to clean up resources that you no longer need to avoi
 2. Go to the AWS Management Console, navigate to the Amazon ECR service, and select your repository.
 3. Click on "Delete" and confirm the action.
 
+### 1. What is Amazon Elastic Container Registry (ECR)?
+Amazon Elastic Container Registry (ECR) is a fully managed Docker container registry that makes it easy to store, manage, and deploy Docker container images.
 
+### 2. How does Amazon ECR work?
+Amazon ECR allows you to push Docker container images to a repository and then pull those images to deploy containers on Amazon ECS, Kubernetes, or other container orchestrators.
+
+### 3. What are the key features of Amazon ECR?
+Key features of Amazon ECR include secure and private Docker image storage, integration with AWS Identity and Access Management (IAM), lifecycle policies, and image vulnerability scanning.
+
+### 4. What is a Docker container image?
+A Docker container image is a lightweight, standalone, and executable software package that contains everything needed to run a piece of software, including code, runtime, libraries, and settings.
+
+### 5. How do you push Docker images to Amazon ECR?
+You can use the `docker push` command to push Docker images to Amazon ECR repositories after authenticating with your AWS credentials.
+
+### 6. How can you pull Docker images from Amazon ECR?
+You can use the `docker pull` command to pull Docker images from Amazon ECR repositories after authenticating with your AWS credentials.
+
+### 7. What is the significance of Amazon ECR lifecycle policies?
+Amazon ECR lifecycle policies allow you to define rules that automatically clean up and manage images based on conditions like image age, count, and usage.
+
+### 8. How does Amazon ECR support image vulnerability scanning?
+Amazon ECR supports image vulnerability scanning by integrating with Amazon ECR Public and AWS Security Hub to provide insights into the security posture of your container images.
+
+### 9. How can you ensure private and secure image storage in Amazon ECR?
+Amazon ECR repositories are private by default and can be accessed only by authorized users and roles. You can control access using IAM policies and resource-based policies.
+
+### 10. How does Amazon ECR integrate with Amazon ECS?
+Amazon ECR integrates seamlessly with Amazon ECS, allowing you to use your ECR repositories to store and manage container images for your ECS tasks and services.
+
+### 11. What are ECR lifecycle policies?
+ECR lifecycle policies are rules you define to manage the retention of images in your repositories. They help keep your image repositories organized and free up storage space.
+
+### 12. Can you use Amazon ECR for multi-region deployments?
+Yes, you can use Amazon ECR in multi-region deployments by replicating images across different regions and using cross-region replication.
+
+### 13. What is Amazon ECR Public?
+Amazon ECR Public is a feature that allows you to store and share publicly accessible container images. It's useful for distributing open-source software or other public content.
+
+### 14. How can you improve image build and deployment speed using Amazon ECR?
+You can improve image build and deployment speed by using Amazon ECR's image layer caching and pulling pre-built base images from the registry.
+
+### 15. What is the Amazon ECR Docker Credential Helper?
+The Amazon ECR Docker Credential Helper is a tool that simplifies authentication to Amazon ECR repositories, allowing Docker to authenticate with ECR using IAM credentials.
+
+### 16. How does Amazon ECR support image versioning?
+Amazon ECR supports image versioning by allowing you to tag images with different version labels. This helps in maintaining different versions of the same image.
+
+### 17. Can you use Amazon ECR with Kubernetes?
+Yes, you can use Amazon ECR with Kubernetes by configuring the necessary authentication and pulling container images from ECR repositories when deploying pods.
+
+### 18. How does Amazon ECR handle image replication?
+Amazon ECR provides cross-region replication to replicate images to different AWS regions, improving availability and reducing latency for users in different regions.
+
+### 19. What is the cost structure of Amazon ECR?
+Amazon ECR charges based on the amount of data stored in your repositories and the data transferred out to other AWS regions or services.
+
+### 20. How can you ensure high availability for images in Amazon ECR?
+Amazon ECR provides high availability by replicating images across multiple Availability Zones within a region, ensuring durability and availability of your container images.
 
 ===============================
 
@@ -285,7 +343,65 @@ Monitor your ECS service using AWS CloudWatch metrics and logs.
 
 In conclusion, AWS ECS offers a robust and user-friendly platform for deploying and managing containerized applications. We covered the fundamentals of ECS, compared it with its alternatives, discussed its pros and cons, and walked through the installation, configuration, and deployment of a sample application.
 
+### 1. What is Amazon ECS?
+Amazon Elastic Container Service (Amazon ECS) is a fully managed container orchestration service that allows you to run, manage, and scale Docker containers on a cluster of Amazon EC2 instances or AWS Fargate.
 
+### 2. How does Amazon ECS work?
+Amazon ECS simplifies the deployment and management of containers by providing APIs to launch and stop containerized applications. It handles the underlying infrastructure and scaling for you.
+
+### 3. What is a container in the context of Amazon ECS?
+A container is a lightweight, standalone executable package that includes everything needed to run a piece of software, including the code, runtime, libraries, and system tools.
+
+### 4. What is a task definition in Amazon ECS?
+A task definition is a blueprint for running a Docker container as part of a task in Amazon ECS. It defines container configurations, resources, networking, and more.
+
+### 5. How are tasks and services related in Amazon ECS?
+A task is a running container or a group of related containers defined by a task definition. A service in ECS manages the desired number of tasks to maintain availability and desired state.
+
+### 6. What is the difference between Amazon ECS and AWS Fargate?
+Amazon ECS gives you control over EC2 instances to run containers, while AWS Fargate is a serverless compute engine for containers. With Fargate, you don't need to manage the underlying infrastructure.
+
+### 7. How can you schedule tasks in Amazon ECS?
+Tasks in Amazon ECS can be scheduled using services, which maintain a desired count of tasks in a cluster. You can also use Amazon ECS Events to trigger task execution based on events.
+
+### 8. What is the purpose of the Amazon ECS cluster?
+An Amazon ECS cluster is a logical grouping of container instances and tasks. It provides a way to manage and organize your containers within a scalable infrastructure.
+
+### 9. How can you scale containers in Amazon ECS?
+You can scale containers by adjusting the desired task count of an ECS service. Amazon ECS automatically adjusts the number of tasks based on your scaling policies.
+
+### 10. What is Amazon ECS Agent?
+The Amazon ECS Agent is a component that runs on each EC2 instance in your ECS cluster. It's responsible for communicating with the ECS control plane and managing tasks on the instance.
+
+### 11. What is the difference between a task and a container instance in Amazon ECS?
+A task is a running instance of a containerized application, while a container instance is an Amazon EC2 instance that's part of an ECS cluster and runs the ECS Agent.
+
+### 12. How can you manage container secrets in Amazon ECS?
+You can manage container secrets using AWS Secrets Manager or AWS Systems Manager Parameter Store. Secrets can be injected into containers at runtime as environment variables.
+
+### 13. What is the purpose of Amazon ECS Capacity Providers?
+ECS Capacity Providers allow you to manage capacity and scaling for your tasks. They define how tasks are placed and whether to use On-Demand Instances or Spot Instances.
+
+### 14. Can you use Amazon ECS to orchestrate non-Docker workloads?
+Yes, Amazon ECS supports running tasks with the Fargate launch type that allow you to specify images from various sources, including Amazon ECR, Docker Hub, and more.
+
+### 15. How does Amazon ECS integrate with other AWS services?
+Amazon ECS integrates with other AWS services like Amazon CloudWatch for monitoring, AWS Identity and Access Management (IAM) for access control, and Amazon VPC for networking.
+
+### 16. What is the difference between the Fargate and EC2 launch types in Amazon ECS?
+The Fargate launch type lets you run containers without managing the underlying infrastructure, while the EC2 launch type gives you control over the EC2 instances where containers are deployed.
+
+### 17. How can you manage container networking in Amazon ECS?
+Amazon ECS uses Amazon VPC networking for containers. You can configure networking using task definitions, security groups, and subnets to control communication between containers.
+
+### 18. What is the purpose of the Amazon ECS Task Placement Strategy?
+Task Placement Strategy allows you to define rules for how tasks are distributed across container instances. It can help optimize resource usage and ensure high availability.
+
+### 19. What is the role of the ECS Service Scheduler?
+The ECS Service Scheduler is responsible for placing and managing tasks across the cluster. It ensures tasks are launched, monitored, and replaced as needed.
+
+### 20. How can you ensure high availability in Amazon ECS?
+To achieve high availability, you can use Amazon ECS services with multiple tasks running across multiple Availability Zones (AZs), combined with Auto Scaling to maintain the desired task count.
 
 ===============================
 
@@ -484,6 +600,69 @@ By configuring IAM policies and associating them with IAM roles, you grant speci
 
 By completing these steps, your AWS environment is ready to host an Amazon EKS cluster. You can proceed with creating an EKS cluster using the AWS Management Console or AWS CLI as described in section 3.
 
+
+### 1. What is Amazon EKS?
+Amazon Elastic Kubernetes Service (Amazon EKS) is a fully managed Kubernetes service that makes it easier to deploy, manage, and scale containerized applications using Kubernetes.
+
+### 2. How does Amazon EKS work?
+Amazon EKS eliminates the need to install, operate, and maintain your own Kubernetes control plane. It provides a managed environment for deploying, managing, and scaling containerized applications using Kubernetes.
+
+### 3. What is Kubernetes?
+Kubernetes is an open-source container orchestration platform that automates the deployment, scaling, and management of containerized applications.
+
+### 4. What are the key features of Amazon EKS?
+Key features of Amazon EKS include automatic upgrades, integration with AWS services, high availability with multiple availability zones, security with IAM and VPC, and simplified Kubernetes operations.
+
+### 5. What is a Kubernetes cluster?
+A Kubernetes cluster is a collection of nodes (Amazon EC2 instances) that run containerized applications managed by Kubernetes. It includes a control plane and worker nodes.
+
+### 6. How do you create a Kubernetes cluster in Amazon EKS?
+To create an EKS cluster, you use the AWS Management Console, AWS CLI, or AWS CloudFormation. EKS automatically provisions the control plane and worker nodes.
+
+### 7. What are Kubernetes nodes?
+Kubernetes nodes are the worker machines that run containers. They host pods, which are the smallest deployable units in Kubernetes.
+
+### 8. How does Amazon EKS manage Kubernetes control plane updates?
+Amazon EKS automatically handles the upgrades of the Kubernetes control plane. It schedules and applies updates while ensuring minimal disruption to the applications running on the cluster.
+
+### 9. What is the difference between Amazon EKS and Amazon ECS?
+Amazon EKS provides managed Kubernetes clusters, while Amazon ECS provides managed Docker container orchestration. EKS is better suited for complex microservices architectures using Kubernetes.
+
+### 10. How can you scale applications in Amazon EKS?
+You can scale applications in EKS by adjusting the desired replica count of Kubernetes Deployments or StatefulSets. EKS automatically manages the scaling of underlying resources.
+
+### 11. What is the role of Amazon EKS Managed Node Groups?
+Amazon EKS Managed Node Groups simplify the deployment and management of worker nodes in an EKS cluster. They automatically provision, configure, and scale nodes.
+
+### 12. How does Amazon EKS handle networking?
+Amazon EKS uses Amazon VPC for networking. It creates a VPC and subnets for your cluster, and each pod in the cluster gets an IP address from the subnet.
+
+### 13. What is the Kubernetes Pod in Amazon EKS?
+A Kubernetes Pod is the smallest deployable unit in Kubernetes. It represents a single instance of a running process in the cluster and can consist of one or more containers.
+
+### 14. How does Amazon EKS integrate with AWS services?
+Amazon EKS integrates with various AWS services like IAM for access control, Amazon VPC for networking, and CloudWatch for monitoring and logging.
+
+### 15. Can you run multiple Kubernetes clusters on Amazon EKS?
+Yes, you can run multiple Kubernetes clusters on Amazon EKS, each with its own set of worker nodes and applications.
+
+### 16. What is the difference between Kubernetes Deployment and StatefulSet?
+A Kubernetes Deployment is suitable for stateless applications, while a StatefulSet is designed for stateful applications that require stable network identifiers and ordered, graceful scaling.
+
+### 17. How can you secure an Amazon EKS cluster?
+You can secure an EKS cluster by using AWS Identity and Access Management (IAM) roles, integrating with Amazon VPC for networking isolation, and applying security best practices to your Kubernetes workloads.
+
+### 18. What is the Kubernetes Operator in Amazon EKS?
+A Kubernetes Operator is a method of packaging, deploying, and managing an application using Kubernetes-native APIs. It allows for more automated management of complex applications.
+
+### 19. How can you automate application deployments in Amazon EKS?
+You can use Kubernetes Deployments or other tools like Helm to automate application deployments in Amazon EKS. These tools help manage the lifecycle of containerized applications.
+
+### 20. How does Amazon EKS handle high availability?
+Amazon EKS supports high availability by distributing control plane components across multiple availability zones. It also offers features like managed node groups and Auto Scaling for worker nodes.
+
+
+
 ===========================
 
 # AWS Lambda Deep Dive for Beginners
@@ -527,5 +706,73 @@ Now, let's explore some real-world use cases to better understand how AWS Lambda
 4. **Real-Time Analytics**: Lambda can process streaming data from IoT devices, social media, or other sources, allowing you to perform real-time analytics and gain insights instantly.
 
 5. **API Backends**: Develop scalable API backends for web and mobile applications using Lambda. It automatically handles the incoming API requests and executes the corresponding functions.
+
+==============================
+
+Certainly! Here are 20 interview questions related to Elastic Load Balancers (ELBs) in AWS, along with detailed answers in Markdown format:
+
+## Elastic Load Balancers (ELBs) Interview Questions
+
+### 1. What is an Elastic Load Balancer (ELB)?
+An Elastic Load Balancer (ELB) is a managed AWS service that automatically distributes incoming application traffic across multiple targets, such as Amazon EC2 instances, containers, or IP addresses, to ensure high availability and fault tolerance.
+
+### 2. What are the three types of Elastic Load Balancers available in AWS?
+There are three types of Elastic Load Balancers: Application Load Balancer (ALB), Network Load Balancer (NLB), and Gateway Load Balancer (GWLB).
+
+### 3. What is the main difference between Application Load Balancer (ALB) and Network Load Balancer (NLB)?
+ALB operates at the application layer and supports advanced routing, including content-based routing and path-based routing. NLB operates at the transport layer and provides ultra-low latency and high throughput.
+
+### 4. What are some key features of Application Load Balancer (ALB)?
+ALB supports features like dynamic port mapping, path-based routing, support for HTTP/2 and WebSocket protocols, and content-based routing using listeners and rules.
+
+### 5. When should you use Network Load Balancer (NLB)?
+NLB is suitable for scenarios that require extreme performance, high throughput, and low latency, such as gaming applications and real-time streaming.
+
+### 6. What is a target group in Elastic Load Balancing?
+A target group is a logical grouping of targets (such as EC2 instances) registered with a load balancer. ALB and NLB use target groups to route requests to registered targets.
+
+### 7. How does health checking work in Elastic Load Balancers?
+Elastic Load Balancers perform health checks on registered targets to ensure they are available to receive traffic. Unhealthy targets are temporarily removed from rotation.
+
+### 8. How can you route requests to different target groups based on URL paths in Application Load Balancer (ALB)?
+ALB supports path-based routing, where you define listeners and rules to route requests to different target groups based on specific URL paths.
+
+### 9. What is cross-zone load balancing?
+Cross-zone load balancing is a feature that evenly distributes traffic across all registered targets in all availability zones, helping to achieve even distribution and better resource utilization.
+
+### 10. How can you enable SSL/TLS encryption for traffic between clients and the load balancer?
+You can configure an SSL/TLS certificate on the load balancer, enabling it to terminate SSL/TLS connections and communicate with registered targets over HTTP.
+
+### 11. Can you use Elastic Load Balancer (ELB) with resources outside AWS?
+Yes, ELB can be used with on-premises resources using Network Load Balancer with IP addresses as targets or with AWS Global Accelerator to route traffic to resources outside AWS.
+
+### 12. What is a sticky session, and how can you enable it in Elastic Load Balancers?
+Sticky sessions ensure that a user's session is consistently directed to the same target. In ALB, you can enable sticky sessions using the `stickiness` option in the target group settings.
+
+### 13. What is the purpose of pre-warming in Elastic Load Balancers?
+Pre-warming involves sending a low volume of traffic to a new load balancer to allow it to scale up its capacity and establish connections gradually.
+
+### 14. How does Elastic Load Balancer support IPv6?
+Elastic Load Balancer (ALB and NLB) supports both IPv4 and IPv6 addresses, allowing applications to be accessed over the IPv6 protocol.
+
+### 15. What is connection draining, and when is it useful?
+Connection draining is the process of gradually stopping traffic to an unhealthy target instance before removing it from the target group. It's useful to ensure active requests are completed before taking the instance out of rotation.
+
+### 16. How can you enable access logs for Elastic Load Balancers?
+You can enable access logs for Elastic Load Balancers to capture detailed information about requests, responses, and client IP addresses. These logs can be stored in an Amazon S3 bucket.
+
+### 17. What is the purpose of an idle timeout setting in Elastic Load Balancers?
+The idle timeout setting defines the maximum time an idle connection can remain open between the load balancer and a client. After this duration, the connection is closed.
+
+### 18. Can you associate Elastic IP addresses with Elastic Load Balancers?
+No, Elastic Load Balancers do not have static IP addresses. They have DNS names that are used to route traffic to registered targets.
+
+### 19. How can you configure health checks for targets in Elastic Load Balancers?
+You can configure health checks by defining a health check path, interval, timeout, and thresholds. ELB sends periodic requests to targets to verify their health.
+
+### 20. Can you use Elastic Load Balancers to distribute traffic across regions?
+Elastic Load Balancers can distribute traffic only within the same region. For distributing traffic across regions, you can use AWS Global Accelerator.
+
+Remember that while these answers provide depth, it's important to personalize your responses based on your experience and understanding of Elastic Load Balancers and AWS load balancing concepts.
 
 
