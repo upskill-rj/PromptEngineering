@@ -1,3 +1,67 @@
+### 1. What is Amazon S3?
+Amazon Simple Storage Service (Amazon S3) is a scalable object storage service designed to store and retrieve any amount of data from anywhere on the web. It's commonly used to store files, backups, images, videos, and more.
+
+### 2. What are the key features of Amazon S3?
+Amazon S3 offers features like data durability, high availability, security options, scalable storage, and the ability to store data in different storage classes based on access patterns.
+
+### 3. What is an S3 bucket?
+An S3 bucket is a container for storing objects, which can be files, images, videos, and more. Each object in S3 is identified by a unique key within a bucket.
+
+### 4. How can you control access to objects in S3?
+Access to S3 objects can be controlled using bucket policies, access control lists (ACLs), and IAM (Identity and Access Management) policies. You can define who can read, write, and delete objects.
+
+### 5. What is the difference between S3 Standard, S3 Intelligent-Tiering, and S3 One Zone-IA storage classes?
+- S3 Standard: Offers high durability, availability, and performance.
+- S3 Intelligent-Tiering: Automatically moves objects between two access tiers based on changing access patterns.
+- S3 One Zone-IA: Stores objects in a single availability zone with lower storage costs, but without the multi-AZ resilience of S3 Standard.
+
+### 6. How does S3 provide data durability?
+S3 provides 99.999999999% (11 9's) durability by automatically replicating objects across multiple facilities within a region.
+
+### 7. What is Amazon S3 Glacier used for?
+Amazon S3 Glacier is a storage service designed for data archiving. It offers lower-cost storage with retrieval times ranging from minutes to hours.
+
+### 8. How can you secure data in Amazon S3?
+You can secure data in Amazon S3 by using access control mechanisms, like bucket policies and IAM policies, and by enabling encryption using server-side encryption or client-side encryption.
+
+### 9. What is S3 versioning?
+S3 versioning is a feature that allows you to preserve, retrieve, and restore every version of every object in a bucket. It helps protect against accidental deletion and overwrites.
+
+### 10. What is a pre-signed URL in S3?
+A pre-signed URL is a URL that grants temporary access to an S3 object. It can be generated using your AWS credentials and shared with others to provide temporary access.
+
+### 11. How can you optimize costs in Amazon S3?
+You can optimize costs by using storage classes that match your data access patterns, utilizing lifecycle policies to transition objects to less expensive storage tiers, and setting up cost allocation tags for billing visibility.
+
+### 12. What is S3 Cross-Region Replication?
+S3 Cross-Region Replication is a feature that automatically replicates objects from one S3 bucket in one AWS region to another bucket in a different region.
+
+### 13. How can you automate the movement of objects between different storage classes?
+You can use S3 Lifecycle policies to automate the transition of objects between storage classes based on predefined rules and time intervals.
+
+### 14. What is the purpose of S3 event notifications?
+S3 event notifications allow you to trigger AWS Lambda functions or SQS queues when certain events, like object creation or deletion, occur in an S3 bucket.
+
+### 15. What is the AWS Snowball device?
+The AWS Snowball is a physical data transport solution used for migrating large amounts of data into and out of AWS. It's ideal for scenarios where the network transfer speed is not sufficient.
+
+### 16. What is Amazon S3 Select?
+Amazon S3 Select is a feature that allows you to retrieve specific data from an object using SQL-like queries, without the need to retrieve the entire object.
+
+### 17. What is the difference between Amazon S3 and Amazon EBS?
+Amazon S3 is object storage used for storing files, while Amazon EBS (Elastic Block Store) is block storage used for attaching to EC2 instances as volumes.
+
+### 18. How can you enable server access logging in Amazon S3?
+You can enable server access logging to track all requests made to your bucket. The logs are stored in a target bucket and can help analyze access patterns.
+
+### 19. What is S3 Transfer Acceleration?
+S3 Transfer Acceleration is a feature that speeds up transferring files to and from Amazon S3 by utilizing Amazon CloudFront's globally distributed edge locations.
+
+### 20. How can you replicate data between S3 buckets within the same region?
+You can use S3 Cross-Region Replication to replicate data between S3 buckets within the same region by specifying the same source and destination region.
+
+===========================
+
 # AWS S3
 
 ## About 
@@ -177,6 +241,69 @@ Q: What is an AWS managed policy?
 A: An AWS managed policy is a predefined policy created and managed by AWS. These policies cover common use cases and provide predefined permissions for specific AWS services or actions. AWS managed policies are maintained and updated by AWS, ensuring they stay up to date with new AWS services and features. They can be attached to IAM users, groups, or roles in your AWS account.
 
 =============================
+
+### 1. What is AWS Identity and Access Management (IAM)?
+AWS IAM is a service that allows you to manage users, groups, and permissions for accessing AWS resources. It provides centralized control over authentication and authorization.
+
+### 2. What are the key components of AWS IAM?
+Key components of AWS IAM include users, groups, roles, policies, permissions, and identity providers.
+
+### 3. How does AWS IAM work?
+AWS IAM allows you to create users and groups, assign policies that define permissions, and use roles to delegate permissions to AWS services and resources.
+
+### 4. What is the difference between authentication and authorization in AWS IAM?
+Authentication is the process of verifying the identity of users or entities, while authorization is the process of granting or denying access to resources based on policies and permissions.
+
+### 5. How can you secure your AWS account using IAM?
+You can secure your AWS account by enforcing the principle of least privilege, creating strong password policies, enabling multi-factor authentication (MFA), and regularly reviewing permissions.
+
+### 6. How do IAM users differ from IAM roles?
+IAM users are individuals or entities that have a fixed set of permissions associated with them. IAM roles are temporary credentials that can be assumed by users or AWS services to access resources.
+
+### 7. What is an IAM policy?
+An IAM policy is a JSON document that defines permissions. It specifies what actions are allowed or denied on which AWS resources for whom (users, groups, or roles).
+
+### 8. What is the AWS Management Console?
+The AWS Management Console is a web-based interface that allows you to interact with and manage AWS resources. IAM users can use the console to access resources based on their permissions.
+
+### 9. How does IAM manage access keys?
+IAM users can have access keys (access key ID and secret access key) associated with their accounts, which are used for programmatic access to AWS resources.
+
+### 10. What is the purpose of IAM groups?
+IAM groups allow you to group users and apply policies to them collectively, simplifying permission management by granting the same set of permissions to multiple users.
+
+### 11. What is the role of an IAM policy document?
+An IAM policy document defines the permissions and actions that are allowed or denied. It is written in JSON format and attached to users, groups, or roles.
+
+### 12. How can you grant permissions to an IAM user?
+You can grant permissions to an IAM user by attaching policies to the user directly or by adding the user to groups with associated policies.
+
+### 13. How can you delegate permissions to AWS services using IAM roles?
+IAM roles allow you to delegate permissions to AWS services like EC2 instances, Lambda functions, and more, without exposing long-term credentials.
+
+### 14. What is cross-account access in AWS IAM?
+Cross-account access allows you to grant permissions to users or entities from one AWS account to access resources in another AWS account.
+
+### 15. How does IAM support identity federation?
+IAM supports identity federation by allowing users to access AWS resources using temporary security credentials obtained from trusted identity providers (e.g., SAML, OpenID Connect).
+
+### 16. What is the purpose of an IAM access advisor?
+IAM access advisors provide insights into the services that users accessed and the actions they performed. This helps in auditing and understanding resource usage.
+
+### 17. How does IAM enforce the principle of least privilege?
+IAM enforces the principle of least privilege by allowing you to define specific permissions for users, groups, or roles, reducing the risk of unauthorized access.
+
+### 18. What is the difference between IAM policies and resource-based policies?
+IAM policies are attached to identities (users, groups, roles), while resource-based policies are attached to AWS resources (e.g., S3 buckets, Lambda functions) to control access from different identities.
+
+### 19. How can you implement multi-factor authentication (MFA) in IAM?
+You can enable MFA for IAM users to require an additional authentication factor (e.g., a code from a virtual MFA device) along with their password when signing in.
+
+### 20. What is the IAM policy evaluation logic?
+IAM uses an explicit deny model, which means that if a user's permissions include an explicit deny statement, it overrides any allow statements in the policy.
+
+
+===================
 
 # IAM
 
