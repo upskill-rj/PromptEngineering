@@ -1,4 +1,5 @@
-# AI, ML, Deep Learning, and Related Concepts — Complete Interview Guide
+# AI, ML, Deep Learning, and Related Concepts
+====================
 
 # 1. What is Artificial Intelligence (AI)?
 
