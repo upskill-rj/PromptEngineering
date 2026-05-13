@@ -2,6 +2,7 @@
 ---------------------------
 - Kubernetes
 - kafka
+- Rabbitmq
 - Pyhton
 - Azure
 - Scaling
