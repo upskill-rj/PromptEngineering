@@ -4,6 +4,8 @@
 - kafka
 - Rabbitmq
 - Pyhton
+- Langchain
+- Langgraph
 - Azure
 - Scaling
 - High Traffic
