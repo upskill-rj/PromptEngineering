@@ -1,4 +1,28 @@
+# Tools
+- Antigravity
+- Claude Sonnet 4.6
+- React
+- Phython
+- Node.js
+- fastapi>=0.110.0
+- uvicorn[standard]>=0.29.0
+- chromadb>=0.5.0
+- sentence-transformers>=3.0.0
+- pypdf>=4.0.0
+- python-docx>=1.1.0
+- requests>=2.31.0
+- python-multipart>=0.0.9
+- Ollama
+  - Deepseek-deepseek-coder
+  - Google-gemma4:8b
+  - Qwen-qwen2.5
+  - Qwen-qwen3.5:4b
+  - Microsoft-phi3
+  - Meta-llama3
+  - TheBloke-mistral
+
 # RAG Chatbot — Quick Start
+
 
 ## Prerequisites
 - Python 3.10+
