@@ -427,15 +427,15 @@ I’ve worked across distributed systems, monolithick, microservices, cloud-nati
 
 In recent years, my focus has expanded significantly into Generative AI and intelligent enterprise automation. I have worked on integrating GenAI capabilities into enterprise systems using:
 
-Oracle Funsion AI Agent Studio
-RAG architectures
-Vector Search
-OCR-based extraction
-AI-assisted workflows
-LLM integrations
-Prompt orchestration
-OpenAI Codex
-Claude Sonnet 4.6
+* Oracle Funsion AI Agent Studio
+* RAG architectures
+* Vector Search
+* OCR-based extraction
+* AI-assisted workflows
+* LLM integrations
+* Prompt orchestration
+* OpenAI Codex
+* Claude Sonnet 4.6
 
 I enjoy solving complex business problems through technology while mentoring teams and driving architecture strategy.
 
@@ -445,13 +445,12 @@ Over the years, I have led and delivered large-scale enterprise applications in 
 
 From a technical perspective, my core expertise includes:
 
-Microservices architecture
-Monolithick architecture
-Cloud-native application design
-Kubernetes and Docker
-CI/CD and DevOps
-API and integration architecture
-Enterprise security and governance
+* Microservices architecture
+* Cloud-native application design
+* Kubernetes and Docker
+* CI/CD and DevOps
+* API and integration architecture
+* Enterprise security and governance
 
 My experience is more focused on practical enterprise AI integration rather than theoretical AI research. I enjoy solving complex enterprise problems, mentoring teams, and building scalable, secure, and business-aligned AI-enabled solutions.
 
