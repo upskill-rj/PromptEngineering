@@ -23,11 +23,42 @@ Below are common **basic-to-starting interview questions** with strong sample an
 
 ### Sample Answer
 
-“I have 18+ years of experience in enterprise application development and solution architecture. My background includes Java, Spring Boot, microservices, cloud-native architecture, Kubernetes, and enterprise integrations.
+Hello, I’m Rahul Kumar Jha. I have around 18+ years of experience in enterprise application development, architecture, modernization, and digital transformation. 
 
-I have worked across full software delivery lifecycle including architecture design, development, DevOps, production support, and modernization initiatives.
+I’ve worked across distributed systems, monolithick, microservices, cloud-native platforms, Oracle ecosystems, and modern engineering practices. 
 
-In recent years, I have been focusing on scalable microservices, observability, cloud platforms, and AI-native enterprise solutions. I also mentor teams, drive architecture governance, and collaborate with business stakeholders for strategic initiatives.”
+In recent years, my focus has expanded significantly into Generative AI and intelligent enterprise automation. I have worked on integrating GenAI capabilities into enterprise systems using:
+
+Oracle Funsion AI Agent Studio
+RAG architectures
+Vector Search
+OCR-based extraction
+AI-assisted workflows
+LLM integrations
+Prompt orchestration
+OpenAI Codex
+Claude Sonnet 4.6
+
+I enjoy solving complex business problems through technology while mentoring teams and driving architecture strategy.
+
+For example, in the UTIM platform, we implemented AI-powered invoice validation using OCR, semantic retrieval, and contextual analysis to improve automation accuracy and reduce manual intervention. 
+
+Over the years, I have led and delivered large-scale enterprise applications in finance and enterprise domains, with strong exposure to Oracle Fusion ERP, workflow automation, invoice management systems, and cloud modernization initiatives.
+
+From a technical perspective, my core expertise includes:
+
+Microservices architecture
+Monolithick architecture
+Cloud-native application design
+Kubernetes and Docker
+CI/CD and DevOps
+API and integration architecture
+Enterprise security and governance
+
+My experience is more focused on practical enterprise AI integration rather than theoretical AI research. I enjoy solving complex enterprise problems, mentoring teams, and building scalable, secure, and business-aligned AI-enabled solutions.
+
+Overall, I see myself as someone who can bridge traditional enterprise engineering with modern AI-driven architectures while ensuring scalability, governance, and operational reliability.
+
 
 ---
 
