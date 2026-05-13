@@ -1,3 +1,381 @@
+# RAG Chatbot — Quick Start
+
+## Prerequisites
+- Python 3.10+
+- Node.js 18+
+- [Ollama](https://ollama.com) running locally with a model pulled
+
+## 1. Pull an Ollama model (if not done)
+```
+ollama pull llama3.2
+```
+
+## 2. Start the backend
+```
+cd backend
+pip install -r requirements.txt
+uvicorn main:app --reload --port 8000
+```
+
+## 3. Start the frontend
+```
+cd frontend
+npm install
+npm run dev
+```
+
+## 4. Open the app
+Visit: http://localhost:5173
+
+## Usage
+1. Upload a PDF/TXT/DOCX in the left sidebar
+2. Wait for indexing to complete
+3. Ask questions — the AI will cite sources from your documents
+
+
+==================
+
+
+# Frontend
+
+These are core technologies commonly used to build a modern **frontend web application**, especially for AI dashboards, copilots, chatbots, admin portals, and enterprise applications.
+
+Let’s explain each one clearly and interview-ready 👇
+
+---
+
+# 🧩 Frontend Technology Stack Overview
+
+```txt id="vqby7p"
+react
+react-dom
+lucide-react
+node
+npm
+vite.config.js
+```
+
+Together, they help developers:
+
+* Build UI components
+* Render web pages
+* Use icons
+* Manage packages
+* Run development servers
+* Configure frontend builds
+
+---
+
+# 🔹 1. React
+
+## ➤ What it is:
+
+A popular JavaScript library for building modern user interfaces (UI), created by Meta.
+
+## ➤ Main Idea:
+
+UI is built using reusable **components**.
+
+Example:
+
+```jsx id="h94m59"
+function Button() {
+  return <button>Submit</button>
+}
+```
+
+---
+
+## ➤ Key Features:
+
+* Component-based architecture
+* Virtual DOM for fast rendering
+* State management
+* Reactive UI updates
+
+---
+
+## ➤ Common Use Cases:
+
+* AI chatbot UI
+* Dashboards
+* Enterprise portals
+* Single Page Applications (SPA)
+
+---
+
+## ➤ In AI Applications:
+
+Used to create:
+
+* Chat interfaces
+* Document upload screens
+* AI copilots
+* Analytics dashboards
+
+---
+
+# 🔹 2. React DOM
+
+## ➤ What it is:
+
+A package that connects React components to the browser DOM.
+
+## ➤ Simple Understanding:
+
+* React creates components
+* ReactDOM renders them into HTML/webpage
+
+Example:
+
+```jsx id="5r4igk"
+ReactDOM.createRoot(document.getElementById('root')).render(<App />)
+```
+
+---
+
+## ➤ Role:
+
+Acts as the bridge between:
+
+```text id="7v5jtx"
+React Components → Browser DOM
+```
+
+---
+
+# 🔹 3. Lucide (`lucide-react`)
+
+## ➤ What it is:
+
+A lightweight modern icon library for React applications.
+
+## ➤ Why Used:
+
+Provides clean SVG icons.
+
+Example:
+
+```jsx id="hsp7h2"
+import { Search } from "lucide-react"
+
+<Search />
+```
+
+---
+
+## ➤ Common Icons:
+
+* Search
+* Upload
+* Settings
+* User
+* Bot
+* Menu
+
+---
+
+## ➤ AI Application Use Cases:
+
+* Chatbot icons
+* Upload buttons
+* Navigation menus
+* AI assistant indicators
+
+---
+
+# 🔹 4. Node.js
+
+## ➤ What it is:
+
+A JavaScript runtime environment that allows JavaScript to run outside the browser.
+
+## ➤ Why Important:
+
+Frontend tools like React/Vite/npm require Node.js.
+
+---
+
+## ➤ Common Uses:
+
+* Running development servers
+* Installing packages
+* Backend APIs
+* Build tooling
+
+---
+
+## ➤ Example:
+
+```bash id="b4du2q"
+node app.js
+```
+
+---
+
+## ➤ In React Projects:
+
+Node.js powers:
+
+* npm
+* Vite
+* Webpack
+* Build systems
+
+---
+
+# 🔹 5. npm
+
+## ➤ What it is:
+
+The default package manager for Node.js.
+
+## ➤ Purpose:
+
+Used to install/manage frontend dependencies.
+
+Example:
+
+```bash id="q83qlf"
+npm install react
+```
+
+---
+
+## ➤ Common Commands:
+
+| Command         | Purpose                  |
+| --------------- | ------------------------ |
+| `npm install`   | Install dependencies     |
+| `npm run dev`   | Start development server |
+| `npm run build` | Build production app     |
+
+---
+
+## ➤ Role in AI Apps:
+
+Installs:
+
+* React
+* Tailwind CSS
+* Chat UI libraries
+* AI SDKs
+
+---
+
+# 🔹 6. `vite.config.js`
+
+## ➤ What it is:
+
+Configuration file for Vite.
+
+## ➤ What is Vite?
+
+A modern frontend build tool and development server for React/Vue/etc.
+
+Much faster than older tools like Webpack.
+
+---
+
+## ➤ Purpose of `vite.config.js`
+
+Used to configure:
+
+* Build settings
+* Aliases
+* API proxies
+* Environment variables
+* Plugins
+
+---
+
+## ➤ Example:
+
+```js id="nrt9kn"
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  server: {
+    port: 3000
+  }
+})
+```
+
+---
+
+## ➤ Common AI Use Cases:
+
+Proxy frontend requests to FastAPI backend:
+
+```text id="zftjfc"
+React Frontend → FastAPI Backend
+```
+
+---
+
+# 🏗️ How These Work Together
+
+```text id="4o6n5j"
+React Components
+       ↓
+ReactDOM renders UI
+       ↓
+Lucide icons improve UI
+       ↓
+npm installs dependencies
+       ↓
+Node.js runs tooling/dev server
+       ↓
+Vite builds and serves app
+       ↓
+Frontend connects to AI backend APIs
+```
+
+---
+
+# 🧠 Real AI Chatbot Frontend Example
+
+## Components:
+
+| Technology | Role                           |
+| ---------- | ------------------------------ |
+| React      | Build chatbot UI               |
+| ReactDOM   | Render UI                      |
+| Lucide     | Chat/send/upload icons         |
+| Node.js    | Runtime environment            |
+| npm        | Dependency management          |
+| Vite       | Fast frontend build/dev server |
+
+---
+
+# 🔹 Example Architecture
+
+```text id="r3vm1m"
+React Frontend (Vite)
+       ↓
+FastAPI Backend
+       ↓
+LLM APIs / Vector DB
+```
+
+---
+
+# 🧠 Interview-Ready One-Line Explanations
+
+| Technology     | Simple Interview Explanation                              |
+| -------------- | --------------------------------------------------------- |
+| React          | Component-based frontend library for building dynamic UIs |
+| ReactDOM       | Renders React components into browser DOM                 |
+| lucide-react   | Modern React SVG icon library                             |
+| Node.js        | JavaScript runtime used for frontend/backend tooling      |
+| npm            | Package manager for installing JavaScript dependencies    |
+| vite.config.js | Configuration file for Vite frontend build tool           |
+
+
+=========================
+
+# Backend
+
 These are Python package dependencies commonly used for building an **AI/LLM application**, especially a **RAG (Retrieval-Augmented Generation)** or document-based chatbot system.
 
 Let’s explain each one in simple interview-ready terms 👇
