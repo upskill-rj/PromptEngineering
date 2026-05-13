@@ -1,0 +1,11 @@
+# Happiestmind - 13MAY2026
+---------------------------
+- Kubernetes
+- kafka
+- Pyhton
+- Azure
+- Scaling
+- High Traffic
+- RAG
+- Chunking
+- focuse on Open Source technology
