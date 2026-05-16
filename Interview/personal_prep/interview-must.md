@@ -170,7 +170,27 @@ and
 “invoice mismatch”
 may not match in keyword search but are semantically related in vector search.
 
-Common similarity algorithms include:
+# Popular Vector Databases
+* Pinecone
+* Weaviate
+* FAISS (Facebook AI Similarity Search, library-based)
+* Milvus
+* Chroma
+* Qdrant
+
+# Popular Vector Databases
+
+| Database                                                     | Usage                 |
+| ------------------------------------------------------------ | --------------------- |
+| [Pinecone](https://www.pinecone.io?utm_source=chatgpt.com)   | Managed vector DB     |
+| [Weaviate](https://weaviate.io?utm_source=chatgpt.com)       | AI-native DB          |
+| [ChromaDB](https://www.trychroma.com?utm_source=chatgpt.com) | Lightweight vector DB |
+| [FAISS](https://faiss.ai?utm_source=chatgpt.com)             | High-speed search     |
+
+---
+
+
+# Common similarity algorithms include:
 
 * Cosine similarity
 * Euclidean distance
