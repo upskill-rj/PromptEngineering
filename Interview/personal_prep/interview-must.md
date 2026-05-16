@@ -116,6 +116,98 @@ Enterprise documents such as invoices, policies, contracts, or KB articles are i
 ### Step 2 — Chunking
 
 Documents are divided into smaller semantic chunks to improve retrieval precision.
+Here are the most popular and effective chunking tools and libraries for RAG systems:
+
+## **1. LangChain Text Splitters** ⭐ Most Popular
+
+**Why it's popular:**
+- Intelligent hierarchy of separators
+- Preserves semantic boundaries
+- Multiple specialized splitters for different content types
+- Easy integration with LangChain ecosystem
+
+## **2. LlamaIndex (GPT Index)** ⭐ Advanced
+
+**Why it's popular:**
+- Advanced parsing strategies (hierarchical, sentence window)
+- Metadata preservation
+- Context-aware chunking
+- Great for complex documents
+
+## **3. Semantic Chunker** ⭐ Context-Aware
+
+**Why it's popular:**
+- Uses embeddings to find natural break points
+- Maintains semantic coherence
+- Better than arbitrary character counts
+
+## **4. Unstructured.io** ⭐ Document Processing
+
+**Why it's popular:**
+- Handles multiple formats (PDF, DOCX, HTML, etc.)
+- Document-structure aware
+- Preserves formatting and metadata
+- Production-ready
+
+## **5. NLTK Sentence Tokenizer** 📚 Classic
+
+**Why it's popular:**
+- Time-tested NLP library
+- Accurate sentence boundaries
+- Multilingual support
+
+## **6. spaCy NLP Pipeline** 🚀 Advanced NLP
+
+**Why it's popular:**
+- Entity-aware chunking
+- Linguistic features (POS, dependencies)
+- Fast and accurate
+- Great for technical documents
+
+## **7. tiktoken** (OpenAI) 🔧 Token-Aware
+
+**Why it's popular:**
+- Precise token counting for LLM limits
+- Matches OpenAI's tokenization
+- Essential for API cost management
+
+## **8. Haystack** 🏗️ Production RAG
+
+**Why it's popular:**
+- Built for production RAG pipelines
+- Multiple preprocessing options
+- Integration with vector databases
+- End-to-end RAG framework
+
+## **9. Chonkie** 🆕 Modern Chunking
+
+**Why it's popular:**
+- Modern, focused library
+- Multiple strategies
+- Good performance
+
+
+## **Comparison Table**
+
+| Tool | Best For | Complexity | Speed | Semantic Aware |
+|------|----------|------------|-------|----------------|
+| **LangChain** | General use, easy integration | Low | Fast | Partial |
+| **LlamaIndex** | Complex docs, hierarchical | Medium | Medium | Yes |
+| **Semantic Chunker** | Maximum coherence | Medium | Slow | Yes |
+| **Unstructured** | Multi-format documents | Low | Fast | Yes |
+| **NLTK** | Sentence-level precision | Low | Fast | No |
+| **spaCy** | Entity/linguistic features | High | Fast | Yes |
+| **tiktoken** | Token budget control | Low | Very Fast | No |
+| **Haystack** | Production pipelines | Medium | Fast | Partial |
+| **Custom** | Specific requirements | Variable | Fast | Depends |
+
+## **For TEM Invoice Data - Recommended Approach:**
+
+```python
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+import tiktoken
+
+
 
 ### Step 3 — Embedding Generation
 
