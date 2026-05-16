@@ -201,13 +201,7 @@ Here are the most popular and effective chunking tools and libraries for RAG sys
 | **Haystack** | Production pipelines | Medium | Fast | Partial |
 | **Custom** | Specific requirements | Variable | Fast | Depends |
 
-## **For TEM Invoice Data - Recommended Approach:**
-
-```python
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-import tiktoken
-
-
+==================================
 
 ### Step 3 — Embedding Generation
 
