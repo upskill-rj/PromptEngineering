@@ -8,14 +8,11 @@
 - DevSecOps - HasiCrop Vault
 - Docker / Podman
 - Linux
-- Pyhton
-- Langchain
-- Langgraph
+- Pyhton, Langchain, Langgraph, TensorFlow, PyTorch
 - Azure
 - Scaling
 - High Traffic
-- RAG
-- Chunking
+- RAG, Chunking
 - focuse on Open Source technology
 - Configuration Management - Ansible
 - kafka
