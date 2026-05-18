@@ -16,10 +16,14 @@ These answers are designed to sound:
 
 ## Answer
 
-Hello, I’m Rahul Kumar Jha. I have around 18+ years of experience in enterprise application development, architecture, modernization, and digital transformation. 
+Hello, I’m Rahul Kumar Jha. I have around 18+ years of experience in enterprise application development, architecture, modernization, and digital transformation.
+
+* I have done my post-graduation from Madan Mohan Malaviya Technology University. After that, I started my professional journey with IBM, where I worked on BFSI domain applications for Switzerland govt.
+* Later, I joined Navisite and worked with one of its subsidiaries, America Job Exchange basically a US govt job portal site.
+* After that, I joined Sopra Steria, where I worked on multiple projects for European clients including Airbus and Evalon Banking Solutions. 
+* Most recently, at Oracle, I am working as Senior IT Manager on multiple projects out of these key projects are ServicePortal, Scheduler2.0, UTIM, VCDB, Oracle EPM.
 
 I’ve worked across distributed systems, monolithick, microservices, cloud-native platforms, Oracle ecosystems, and modern engineering practices. 
-
 In recent years, my focus has expanded significantly into Generative AI and intelligent enterprise automation. I have worked on integrating GenAI capabilities into enterprise systems using:
 
 * Oracle Funsion AI Agent Studio
@@ -515,56 +519,6 @@ For senior IT professionals (10–20+ years experience), interviewers usually ex
 Below are common **basic-to-starting interview questions** with strong sample answers for senior professionals.
 
 ---
-
-# 1. Tell Me About Yourself
-
-### What interviewer checks
-
-* Communication
-* Career progression
-* Technical depth
-* Leadership exposure
-
-### Sample Answer
-
-Hello, I’m Rahul Kumar Jha. I have around 18+ years of experience in enterprise application development, architecture, modernization, and digital transformation. 
-
-I’ve worked across distributed systems, monolithick, microservices, cloud-native platforms, Oracle ecosystems, and modern engineering practices. 
-
-In recent years, my focus has expanded significantly into Generative AI and intelligent enterprise automation. I have worked on integrating GenAI capabilities into enterprise systems using:
-
-* Oracle Funsion AI Agent Studio
-* RAG architectures
-* Vector Search
-* OCR-based extraction
-* AI-assisted workflows
-* LLM integrations
-* Prompt orchestration
-* OpenAI Codex
-* Claude Sonnet 4.6
-
-I enjoy solving complex business problems through technology while mentoring teams and driving architecture strategy.
-
-For example, in the UTIM platform, we implemented AI-powered invoice validation using OCR, semantic retrieval, and contextual analysis to improve automation accuracy and reduce manual intervention. 
-
-Over the years, I have led and delivered large-scale enterprise applications in finance and enterprise domains, with strong exposure to Oracle Fusion ERP, workflow automation, invoice management systems, and cloud modernization initiatives.
-
-From a technical perspective, my core expertise includes:
-
-* Microservices architecture
-* Cloud-native application design
-* Kubernetes and Docker
-* CI/CD and DevOps
-* API and integration architecture
-* Enterprise security and governance
-
-My experience is more focused on practical enterprise AI integration rather than theoretical AI research. I enjoy solving complex enterprise problems, mentoring teams, and building scalable, secure, and business-aligned AI-enabled solutions.
-
-Overall, I see myself as someone who can bridge traditional enterprise engineering with modern AI-driven architectures while ensuring scalability, governance, and operational reliability.
-
-
----
-
 # 2. Explain Your Current Project
 
 ### Best Structure
