@@ -20,3 +20,8 @@
 - Configuration Management - Ansible
 - kafka
 - Rabbitmq
+- AutoGen
+- crewAI
+- OpenAI Agent SDK
+- event-driven architectures
+- stream processing, event
