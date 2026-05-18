@@ -8,7 +8,7 @@
 - DevSecOps - HasiCrop Vault
 - Docker / Podman
 - Linux
-- Pyhton, Langchain, Langgraph, TensorFlow, PyTorch
+- Pyhton, Langchain, Langgraph, TensorFlow, PyTorch, crewAI
 - Azure
 - Scaling
 - High Traffic
@@ -17,8 +17,7 @@
 - Configuration Management - Ansible
 - kafka
 - Rabbitmq
-- AutoGen
-- crewAI
+- AutoGen 
 - OpenAI Agent SDK
 - event-driven architectures
 - stream processing, event
