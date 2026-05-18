@@ -1,8 +1,13 @@
 # Happiestmind - 13MAY2026
 ---------------------------
-- Kubernetes
-- kafka
-- Rabbitmq
+- IAC - Terraform, OpenTofu
+- CI/CD - GitHub Action, GitLab pipelines
+- COE - Kubernetes
+- Obseversability / Monitoring - grafana, prometheus, efk, ebpf
+- GitOps - Argo CD
+- DevSecOps - HasiCrop Vault
+- Docker / Podman
+- Linux
 - Pyhton
 - Langchain
 - Langgraph
@@ -12,3 +17,6 @@
 - RAG
 - Chunking
 - focuse on Open Source technology
+- Configuration Management - Ansible
+- kafka
+- Rabbitmq
