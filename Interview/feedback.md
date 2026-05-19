@@ -8,7 +8,8 @@
 - DevSecOps - HasiCrop Vault
 - Docker / Podman
 - Linux
-- Pyhton, Langchain, Langgraph, TensorFlow, PyTorch, crewAI
+- Pyhton, Langchain, Langgraph, 
+- DL/ML - TensorFlow, PyTorch, crewAI
 - Azure
 - Scaling
 - High Traffic
