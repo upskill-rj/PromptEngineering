@@ -18,6 +18,8 @@ Monitoring tools trigger alerts to DevOps/SRE teams before users are impacted.
 
 # What is Observability?
 
+Observability → Centralized log storage.
+
 Observability is the ability to understand the internal state of a system using:
 
 * Logs

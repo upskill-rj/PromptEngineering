@@ -64,9 +64,9 @@ Static Code Analysis
    ↓
 OWASP Security Scan
    ↓
-Artifact Packaging
+Artifact Packaging (JFrog)
    ↓
-Artifact Repository
+Artifact Repository(JFrog)
    ↓
 Docker Image Build
    ↓
