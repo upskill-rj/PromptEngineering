@@ -67,7 +67,7 @@ The challenge was that invoice validation was highly manual because invoices arr
 
 We designed an AI-assisted invoice processing workflow using:
 
-* OCR for document extraction
+* OCI Document Vision using Optical Character Recognition (OCR) for document extraction
 * Vector Search for semantic retrieval
 * RAG-based contextual validation
 * LLM-based intelligent recommendations
