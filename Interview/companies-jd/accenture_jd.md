@@ -1,6 +1,75 @@
 Accenture JD
 ======================
 
+Job Description
+×
+Project Role : Custom Software Engineer
+Project Role Description : Develop custom software solutions to design, code, and enhance components across systems or applications. Use modern frameworks and agile practices to deliver scalable, high-performing solutions tailored to specific business needs.
+Must have skills : Java Full Stack Development
+Good to have skills : extension js, jquery
+Minimum 15 year(s) of experience is required
+Educational Qualification : 15 years full time education
+
+# Summary: 
+
+The Principal Engineer is a key leadership role within the engineering team, responsible for overseeing and guiding complex technical projects, driving innovation, and ensuring the successful delivery of high-quality software products. This role involves a combination of hands-on technical work, strategic planning, and team mentorship. If you have drive to lead and mentor engineering teams, ability to set technical direction for greenfield SaaS products and excellent communication skills to work with cross-functional teams, including product management and other stakeholders, this position is for you 
+
+# Roles & Responsibilities: 
+
+Prepare technical design specifications based on functional requirements and analysis documents.Provide written knowledge transfer material. Review functional requirements, analysis, and design documents and provide feedback. Implement, test, maintain and support software, based on technical design specifications. Improve system quality by identifying issues and common patterns and developing standard operating procedures. Enhance applications by identifying opportunities for improvement, making recommendations, and designing and implementing systems. Maintain and improve existing codebases and peer review code changes. Liason with colleagues to implement technical designs. Investigate and use new technologies where relevant. 
+Assist customer support with technical problems and questions. Ability to work independently with wide latitude for independent decision making. Experience in leading the work of others and mentor less experienced developers in the context of a project is a plus. Ability to listen and understand information and communicate the same. 
+Participate in architecture and code reviews. Lead or participate in other projects or duties as need arises. 
+
+# Technical experience & Professional attributes: -
+
+The Winning Way behaviors that all employees need in order to meet the expectations of each other, our customers, and our partners. 
+- Communicate with Clarity - Be clear, concise and actionable. Be relentlessly constructive. Seek and provide meaningful feedback. 
+- Act with Urgency 
+- Adopt an agile mentality 
+- frequent iterations, improved speed, resilience. 80/20 rule 
+- better is the enemy of done. Don t spend hours when minutes are enough. 
+- Work with Purpose 
+- Exhibit a We Can mindset. Results outweigh effort. Everyone understands how their role contributes. Set aside personal objectives for team results. 
+- Drive to Decision 
+- Cut the swirl with defined deadlines and decision points. Be clear on individual accountability and decision authority. Guided by a commitment to and accountability for customer outcomes. 
+- Own the Outcome - Defined milestones, commitments and intended results. Assess your work in context, if you re unsure, ask. Demonstrate unwavering support for decisions. 
+- (MUST HAVE) 10+ years of experience developing systems/software for large business environments 
+- (MUST HAVE) Strong OOD and SOA principles, with ability to implement them in a language of choice (Java preferable) 
+- (MUST HAVE) Strong experience leading architecture, design and implementation of robust and highly scalable web services. 
+- (MUST HAVE) Experience working with AWS and/or Azure SaaS infrastructure and CI/CD DevOps technologies, and extensive debugging experience. 
+- (MUST HAVE) An understanding of unit testing, test driven development, functional testing, and performance testing. 
+- Experience building front end with React is a big plus. 
+- Knowledge of database systems (SQL, NoSQL) and data architecture. 
+- Experience working and integrating with Event Bus like Pulsar is a big plus. 
+- Experience working and integrating with cloud based big data solutions like Snowflake is a big plus. 
+- Working experience with software security-enhancing tools and best practices. 
+- Knowledge of at least one shell scripting language. 
+- Understanding of industry-leading technology/solutions in big data and machine learning. 
+- Ability to operate at highly varying levels of abstraction, from business strategy to product strategy to high-level technical design to detailed technical design to implementation. 
+- Ability to work effectively in a fast-paced, complex technical environment. 
+- Experience driving for results across cross-functional teams while maintaining effective working relationships. 
+- Must possess strong interpersonal, organizational, presentation and facilitation skills. 
+- Must be results oriented and customer focused with an ability to make successful trade-offs that balance short- and long-term product goals. - High-energy, self-starter with a positive mindset and with a can do attitude. 
+- Proven experience leading cloud, DevOps, or AI modernization initiatives. 
+- Strong understanding of LLMs, automation, and engineering toolchains. 
+- Ability to translate AI innovation into business and productivity impact. 
+
+# Education qualifications: 
+
+- The candidate should have minimum 12 years of experience in Java Enterprise Edition. 
+- Bachelor s degree in computer science, Information Systems, or related field or equivalent combination of education/experience. Master s degree is a plus. 
+- 10 years or more of extensive experience developing mission critical and low latency solutions for large business environments. 
+- At least 5 years of experience with developing and debugging distributed systems and working with big data systems in the cloud 
+
+# Additional Information: 
+
+- The candidate should have minimum 15 years of experience in Java Full Stack Development. 
+- A 15 years full time education is required.
+
+
+
+
+
 * Project Role : Custom Software Engineer
 * Project Role Description :Project Role : Custom Software Engineer
 * Project Role Description : Develop custom software solutions to design, code, and enhance components across systems or applications. Use modern frameworks and agile practices to deliver scalable, high-performing solutions tailored to specific business needs.
