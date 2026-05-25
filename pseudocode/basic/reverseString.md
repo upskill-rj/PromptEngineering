@@ -1,6 +1,6 @@
 
 
-# Prblem == Reverse String
+# Problem == Reverse String
 
 
 ```pseudocode
