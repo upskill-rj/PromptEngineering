@@ -631,3 +631,380 @@ CI/CD continuously deploys these services.
 # 32. Architect-Level Interview Answer
 
 > “In our enterprise DevOps architecture, developers pushed code into Git repositories which triggered Jenkins CI/CD pipelines. Maven handled builds, JUnit executed automated tests, SonarQube performed quality scans, Docker containerized applications, and Kubernetes orchestrated deployments. Monitoring and observability were implemented using Prometheus, Grafana, and centralized logging platforms like ELK and Splunk.”
+
+===========
+
+
+# DevOps & Monitoring Tools Interview Cheat Sheet
+
+---
+
+# 1. Sensu
+
+Sensu is an infrastructure and application monitoring tool used for observability, health checks, alerting, and automated incident response in distributed environments, Kubernetes, and cloud-native systems.
+
+## Core Components
+
+| Component     | Purpose                   |
+| ------------- | ------------------------- |
+| Sensu Backend | Central monitoring server |
+| Sensu Agent   | Runs checks on nodes      |
+| Checks        | Health monitoring scripts |
+| Handlers      | Process alerts/actions    |
+| Assets        | Plugins and scripts       |
+| Dashboard     | Visualization             |
+
+---
+
+## Use Cases
+
+* Server monitoring
+* Kubernetes monitoring
+* API health checks
+* Infrastructure alerting
+* Auto-remediation workflows
+
+---
+
+## Example
+
+```yaml id="w6yxsk"
+type: CheckConfig
+api_version: core/v2
+metadata:
+  name: cpu-check
+
+spec:
+  command: check-cpu.sh
+  interval: 60
+```
+
+---
+
+# 2. Ansible
+
+Ansible is an agentless automation and configuration management tool used for infrastructure provisioning, deployments, patching, and DevOps automation.
+
+---
+
+## Core Components
+
+| Component       | Purpose                     |
+| --------------- | --------------------------- |
+| Inventory       | Target servers list         |
+| Playbook        | YAML automation scripts     |
+| Roles           | Reusable automation modules |
+| Modules         | Built-in automation tasks   |
+| Controller Node | Executes automation         |
+
+---
+
+## Use Cases
+
+* Server provisioning
+* Kubernetes deployment
+* CI/CD automation
+* Cloud infrastructure setup
+* Application deployment
+
+---
+
+## Example Playbook
+
+```yaml id="m1cjlwm"
+- hosts: webservers
+
+  tasks:
+   - name: Install nginx
+     apt:
+       name: nginx
+       state: present
+```
+
+---
+
+# 3. Splunk
+
+Splunk is a centralized log management and analytics platform used for monitoring, troubleshooting, security analysis, and operational intelligence.
+
+---
+
+## Core Components
+
+| Component   | Purpose                 |
+| ----------- | ----------------------- |
+| Forwarder   | Collects logs           |
+| Indexer     | Stores and indexes logs |
+| Search Head | Query and visualization |
+| Dashboard   | Analytics visualization |
+
+---
+
+## Use Cases
+
+* Centralized logging
+* Security monitoring
+* API troubleshooting
+* Application debugging
+* SIEM integration
+
+---
+
+## Splunk Query Example
+
+```sql id="p6w49w"
+index=application_logs ERROR
+| stats count by service
+```
+
+---
+
+# 4. Gradle
+
+Gradle is a build automation and dependency management tool widely used for Java, Spring Boot, Android, and microservices projects.
+
+---
+
+## Core Components
+
+| Component    | Purpose                   |
+| ------------ | ------------------------- |
+| build.gradle | Build configuration       |
+| Plugins      | Extend functionality      |
+| Dependencies | External libraries        |
+| Tasks        | Build/test/deploy actions |
+
+---
+
+## Use Cases
+
+* Java builds
+* Dependency management
+* CI/CD integration
+* Automated testing
+
+---
+
+## Example
+
+```gradle id="u2f6ow"
+plugins {
+    id 'java'
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+}
+```
+
+---
+
+# 5. Atlassian Bamboo
+
+Bamboo is a CI/CD tool used for automated builds, testing, deployments, and release management integrated with Jira and Bitbucket.
+
+---
+
+## Core Components
+
+| Component              | Purpose                  |
+| ---------------------- | ------------------------ |
+| Build Plan             | CI pipeline              |
+| Deployment Project     | Automated deployment     |
+| Agent                  | Executes jobs            |
+| Repository Integration | Git/Bitbucket connection |
+
+---
+
+## Use Cases
+
+* CI/CD pipelines
+* Automated deployment
+* Test automation
+* Release management
+
+---
+
+# 6. JUnit
+
+JUnit is a Java testing framework used for unit testing, TDD, integration testing, and automated testing in Spring Boot applications.
+
+---
+
+## Core Components
+
+| Component   | Purpose               |
+| ----------- | --------------------- |
+| Test Case   | Unit validation       |
+| Assertions  | Verify output         |
+| Test Runner | Execute tests         |
+| Mocking     | Simulate dependencies |
+
+---
+
+## Example
+
+```java id="vx4b2z"
+@Test
+public void testAdd() {
+   assertEquals(5, 2+3);
+}
+```
+
+---
+
+## Use Cases
+
+* Unit testing
+* TDD
+* CI/CD validation
+* Regression testing
+
+---
+
+# 7. Puppet
+
+Puppet is an infrastructure automation and configuration management tool used for provisioning, compliance, and environment consistency.
+
+---
+
+## Core Components
+
+| Component     | Purpose                  |
+| ------------- | ------------------------ |
+| Puppet Master | Central controller       |
+| Puppet Agent  | Managed node             |
+| Manifest      | Configuration definition |
+| Modules       | Reusable configurations  |
+
+---
+
+## Example
+
+```puppet id="r1g8w7"
+package { 'nginx':
+  ensure => installed,
+}
+```
+
+---
+
+## Use Cases
+
+* Infrastructure automation
+* Configuration management
+* Compliance enforcement
+* Server provisioning
+
+---
+
+# 8. Nagios
+
+Nagios is an infrastructure and network monitoring tool used for server monitoring, alerting, availability checks, and system health management.
+
+---
+
+## Core Components
+
+| Component   | Purpose           |
+| ----------- | ----------------- |
+| Nagios Core | Monitoring engine |
+| Plugins     | Health checks     |
+| NRPE        | Remote monitoring |
+| Dashboard   | Visualization     |
+
+---
+
+## Use Cases
+
+* Server monitoring
+* Network monitoring
+* Alerting
+* Infrastructure uptime
+
+---
+
+## Example
+
+```bash id="qgnm8g"
+check_http -H example.com
+```
+
+---
+
+# 9. PMD
+
+PMD is a static code analysis tool used to identify code quality issues, unused variables, duplicate code, complexity, and coding standard violations.
+
+---
+
+## Core Components
+
+| Component              | Purpose            |
+| ---------------------- | ------------------ |
+| Rulesets               | Coding standards   |
+| Static Analysis Engine | Scans code         |
+| Reports                | Quality reports    |
+| CI/CD Integration      | Automated scanning |
+
+---
+
+## Use Cases
+
+* Code quality validation
+* Security scanning
+* Maintainability checks
+* CI/CD code review
+
+---
+
+## Example PMD Rule
+
+```xml id="bzpsh0"
+<rule ref="category/java/bestpractices.xml"/>
+```
+
+---
+
+# Enterprise DevOps Architecture
+
+```text id="6r6wfx"
+Developer Commit
+        ↓
+Gradle Build
+        ↓
+JUnit Testing
+        ↓
+PMD Static Analysis
+        ↓
+Bamboo CI/CD Pipeline
+        ↓
+Ansible/Puppet Deployment
+        ↓
+Kubernetes/Cloud
+        ↓
+Sensu/Nagios Monitoring
+        ↓
+Splunk Log Analysis
+```
+
+---
+
+# Cloud & Infrastructure Integration
+
+| Area            | Tools                                                             |
+| --------------- | ----------------------------------------------------------------- |
+| Cloud Platforms | Oracle Cloud Infrastructure, Amazon Web Services, Microsoft Azure |
+| Containers      | Docker                                                            |
+| Kubernetes      | OKE, EKS, AKS                                                     |
+| Monitoring      | Sensu, Nagios                                                     |
+| Logging         | Splunk                                                            |
+| CI/CD           | Bamboo                                                            |
+| Automation      | Ansible, Puppet                                                   |
+
+---
+
+# Interview Summary
+
+“I have experience with DevOps, automation, monitoring, and code quality tools including Sensu, Nagios, Splunk, Gradle, Bamboo, JUnit, Puppet, Ansible, and PMD. These tools are used for infrastructure automation, CI/CD pipelines, testing, centralized logging, monitoring, static code analysis, and cloud-native enterprise application deployment across OCI, AWS, and Kubernetes environments.”
+
