@@ -2,6 +2,8 @@
 
 # Problem = Bubble Sort
 
+
+```pseudocode
 BEGIN
 
     READ list
@@ -18,3 +20,4 @@ BEGIN
     PRINT list
 
 END
+```

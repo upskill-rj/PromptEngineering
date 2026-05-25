@@ -3,6 +3,7 @@
 # Problem == Sum of First N Natural Numbers
 
 
+```pseudocode
 BEGIN
     READ n
     SET sum = 0
@@ -11,3 +12,4 @@ BEGIN
     END FOR
     PRINT "Sum = " + sum
 END
+```

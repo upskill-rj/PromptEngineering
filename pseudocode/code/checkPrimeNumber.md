@@ -1,6 +1,8 @@
 
 # Problem = Check Prime Number
 
+
+```pseudocode
 BEGIN
 
     READ n
@@ -23,3 +25,4 @@ BEGIN
     END IF
 
 END
+```

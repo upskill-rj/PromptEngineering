@@ -12,6 +12,8 @@ For example, n! = n * (n-1) * (n-2) * ... * 1
 - Zero Factorial: By mathematical convention, 0! = 1
 - One Factorial: 1! = 1
 
+
+```pseudocode
 BEGIN
     READ n
     SET result = 1
@@ -22,3 +24,4 @@ BEGIN
 
     PRINT "FACTORIAL = " + result
 END
+```

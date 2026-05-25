@@ -2,6 +2,8 @@
 
 # Problem = Find the largest number in a list.
 
+
+```pseudocode
 BEGIN
     FUNCTION findMax(list)
         SET max = list[0]
@@ -15,3 +17,4 @@ BEGIN
         RETURN MAX
     END FUNCTION
 END
+```

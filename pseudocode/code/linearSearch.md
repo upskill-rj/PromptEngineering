@@ -2,7 +2,7 @@
 
 # Problem == Linear Search
 
-
+```pseudocode
 BEGIN
     READ list, target
     SET found = FALSE
@@ -18,3 +18,4 @@ BEGIN
         PRINT "Not Found"
     END IF
 END
+```

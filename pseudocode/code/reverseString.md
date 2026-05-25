@@ -2,6 +2,8 @@
 
 # Prblem == Reverse String
 
+
+```pseudocode
 BEGIN
     READ str
     SET reversed = ""
@@ -12,3 +14,4 @@ BEGIN
 
     PRINT reversed
 END
+```

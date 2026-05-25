@@ -2,6 +2,8 @@
 
 # Problem == Find even and odd number.
 
+
+```pseudocode
 BEGIN
     INPUT number
     IF number % 2 == 0 THEN
@@ -10,3 +12,4 @@ BEGIN
         PRINT "The number is odd."
     ENDIF
 END
+```
