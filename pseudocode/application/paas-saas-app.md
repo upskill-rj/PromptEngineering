@@ -2416,9 +2416,10 @@ STEP 10 — Same request 2 minutes later:
   Response header: X-Data-Source: CACHE
 
 
-────────────────────────────────────────────────────────────────────────────
-23. COMPONENT MAP
-────────────────────────────────────────────────────────────────────────────
+# 23. COMPONENT MAP
+
+
+```MAP
 
 INTERNET
   └─► OCI DNS (erp.company.com) + Traffic Management (failover)
@@ -2481,6 +2482,6 @@ Observability:
   ├─ OCI Synthetics (synthetic monitoring)
   └─ Splunk SIEM (security events, audit, compliance)
 
-═══════════════════════════════════════════════════════════════════════════════
-END — PaaS ↔ OCI ERP Fusion SaaS Microservices Pseudocode Architecture
-═══════════════════════════════════════════════════════════════════════════════
+```
+
+# END — PaaS ↔ OCI ERP Fusion SaaS Microservices Pseudocode Architecture
