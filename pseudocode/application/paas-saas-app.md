@@ -2,9 +2,11 @@
 # Complete Architecture Pseudocode
 # GL · AP · AR · Tax · SharePoint · AI Agent Studio · WebLogic
 
-═══════════════════════════════════════════════════════════════════════════════
-TABLE OF CONTENTS
-═══════════════════════════════════════════════════════════════════════════════
+
+# TABLE OF CONTENTS
+
+```step00
+
  01. Architecture Overview & Topology
  02. Cloud Infrastructure (OCI PaaS)
  03. DNS Resolution & Traffic Routing
@@ -32,12 +34,13 @@ TABLE OF CONTENTS
  21. Security & Secrets Management
  22. End-to-End Request Flow
  23. Component Map
-═══════════════════════════════════════════════════════════════════════════════
 
+```
 
-────────────────────────────────────────────────────────────────────────────
-01. ARCHITECTURE OVERVIEW & TOPOLOGY
-────────────────────────────────────────────────────────────────────────────
+# 01. ARCHITECTURE OVERVIEW & TOPOLOGY
+
+```step1
+
 
 TOPOLOGY paas_to_saas_architecture:
 
@@ -86,10 +89,11 @@ TOPOLOGY paas_to_saas_architecture:
     replicates events via Kafka to ADW for analytics.
     All write-back to ERP goes through ERP Integration Service.
 
+```
 
-────────────────────────────────────────────────────────────────────────────
-02. CLOUD INFRASTRUCTURE (OCI PaaS)
-────────────────────────────────────────────────────────────────────────────
+# 02. CLOUD INFRASTRUCTURE (OCI PaaS)
+
+```step2
 
 INFRASTRUCTURE oci_paas_foundation:
 
@@ -167,10 +171,12 @@ INFRASTRUCTURE oci_paas_foundation:
       - api.erp.company.com
       - sharepoint.erp.company.com
 
+```
 
-────────────────────────────────────────────────────────────────────────────
-03. DNS RESOLUTION & TRAFFIC ROUTING
-────────────────────────────────────────────────────────────────────────────
+# 03. DNS RESOLUTION & TRAFFIC ROUTING
+
+```step3
+
 
 COMPONENT dns (OCI DNS + Traffic Management):
 
@@ -215,10 +221,11 @@ COMPONENT dns (OCI DNS + Traffic Management):
       REVERT A record → LBaaS_IP_primary after 5 consecutive passes
       NOTIFY recovery
 
+```
 
-────────────────────────────────────────────────────────────────────────────
-04. WAF — WEB APPLICATION FIREWALL
-────────────────────────────────────────────────────────────────────────────
+# 04. WAF — WEB APPLICATION FIREWALL
+
+```step4
 
 COMPONENT waf (OCI WAF):
 
@@ -274,10 +281,11 @@ COMPONENT waf (OCI WAF):
     LOG waf_pass_event(request) → OCI Logging (sampled 10%)
     RETURN PASS → LBaaS
 
+```
 
-────────────────────────────────────────────────────────────────────────────
-05. LBaaS — LOAD BALANCER AS A SERVICE
-────────────────────────────────────────────────────────────────────────────
+# 05. LBaaS — LOAD BALANCER AS A SERVICE
+
+```step5
 
 COMPONENT lbaas (OCI Load Balancer):
 
@@ -347,10 +355,11 @@ COMPONENT lbaas (OCI Load Balancer):
       REMOVE Server
       REMOVE X-Powered-By
 
+```
 
-────────────────────────────────────────────────────────────────────────────
-06. API GATEWAY (OCI API Gateway + Kong Gateway on OKE)
-────────────────────────────────────────────────────────────────────────────
+# 06. API GATEWAY (OCI API Gateway + Kong Gateway on OKE)
+
+```step6
 
 COMPONENT api_gateway:
 
@@ -460,10 +469,11 @@ COMPONENT api_gateway:
     response = response_transformer.clean(response)
     RETURN response
 
+```
 
-────────────────────────────────────────────────────────────────────────────
-07. OAUTH 2.0 / JWT — IDENTITY & TOKEN MANAGEMENT
-────────────────────────────────────────────────────────────────────────────
+# 07. OAUTH 2.0 / JWT — IDENTITY & TOKEN MANAGEMENT
+
+```step7
 
 COMPONENT identity_platform (OCI IDCS / Keycloak on OKE):
 
@@ -590,10 +600,11 @@ COMPONENT identity_platform (OCI IDCS / Keycloak on OKE):
       redis.setex("erp:fusion:token", token.expires_in - 60, token.access_token)
       RETURN token.access_token
 
+```
 
-────────────────────────────────────────────────────────────────────────────
-08. KUBERNETES (OKE) — CONTAINER ORCHESTRATION
-────────────────────────────────────────────────────────────────────────────
+# 08. KUBERNETES (OKE) — CONTAINER ORCHESTRATION
+
+```step8
 
 COMPONENT kubernetes (OCI Container Engine for Kubernetes):
 
@@ -737,10 +748,11 @@ COMPONENT kubernetes (OCI Container Engine for Kubernetes):
         - destination: { host: name, subset: stable } weight=90
         - destination: { host: name, subset: canary } weight=10
 
+```
 
-────────────────────────────────────────────────────────────────────────────
-09. WEBLOGIC SERVER (OCI WLS PaaS)
-────────────────────────────────────────────────────────────────────────────
+# 09. WEBLOGIC SERVER (OCI WLS PaaS)
+
+```step9
 
 COMPONENT weblogic_server (OCI WebLogic Suite on OCI):
 
@@ -821,10 +833,13 @@ COMPONENT weblogic_server (OCI WebLogic Suite on OCI):
           ROUTE → cached_data_service (serve from Redis/ADW)
           EMIT circuit_breaker_open event → monitoring
 
+```
 
-────────────────────────────────────────────────────────────────────────────
-10. OCI ERP FUSION SAAS INTEGRATION LAYER
-────────────────────────────────────────────────────────────────────────────
+# 10. OCI ERP FUSION SAAS INTEGRATION LAYER
+
+
+```step10
+
 
 COMPONENT erp_integration_service (Spring Boot, port 8090):
 
@@ -962,9 +977,13 @@ COMPONENT erp_integration_service (Spring Boot, port 8090):
       LOG error(response) with correlationId
       THROW ERPFusionWriteException(response.detail)
 
-  ──────────────────────────────────────────
-  10b. ACCOUNTS PAYABLE (AP) INTEGRATION
-  ──────────────────────────────────────────
+  
+```
+
+  # 10b. ACCOUNTS PAYABLE (AP) INTEGRATION
+  
+  ```step10b
+
 
   FUNCTION getAPInvoices(params):
     // params: { supplier_id, status, date_from, date_to, page, limit }
@@ -1027,9 +1046,11 @@ COMPONENT erp_integration_service (Spring Boot, port 8090):
     redis.setex(cache_key, 120, result)
     RETURN result
 
-  ──────────────────────────────────────────
-  10c. ACCOUNTS RECEIVABLE (AR) INTEGRATION
-  ──────────────────────────────────────────
+```
+
+  # 10c. ACCOUNTS RECEIVABLE (AR) INTEGRATION
+  
+```step10c
 
   FUNCTION getARInvoices(params):
     cache_key = "ar:invoices:" + hash(params)
@@ -1086,9 +1107,11 @@ COMPONENT erp_integration_service (Spring Boot, port 8090):
       PUBLISH kafka_event("erp.ar.receipt.created", response)
       RETURN response
 
-  ──────────────────────────────────────────
-  10d. TAX INTEGRATION
-  ──────────────────────────────────────────
+```
+
+  # 10d. TAX INTEGRATION
+ 
+ ```step10d
 
   FUNCTION getTaxRates(params):
     // params: { tax_regime_code, tax_type, effective_date, country }
@@ -1154,12 +1177,13 @@ COMPONENT erp_integration_service (Spring Boot, port 8090):
     redis.setex(cache_key, 3600, result)
     RETURN result
 
+```
 
-────────────────────────────────────────────────────────────────────────────
-11. MICROSERVICES — SPRING BOOT
-────────────────────────────────────────────────────────────────────────────
+# 11. MICROSERVICES — SPRING BOOT
 
-// ─── SHARED BASE PATTERN ───────────────────────────────────────────────
+```step11
+
+// ─── SHARED BASE PATTERN ───
 
 PATTERN spring_boot_microservice:
 
@@ -1194,7 +1218,7 @@ PATTERN spring_boot_microservice:
     CircuitBreakerOpenException     → 503 + retry_after
     Throwable (catch-all)           → 500 + correlationId (NEVER leak stack trace)
 
-// ─── FINANCE ORCHESTRATION SERVICE ────────────────────────────────────
+// ─── FINANCE ORCHESTRATION SERVICE ─────
 
 SERVICE finance_orchestration_service (port 8080):
 
@@ -1227,7 +1251,7 @@ SERVICE finance_orchestration_service (port 8080):
     PUBLISH kafka_event("ap.three_way_match.approved", { po, gr, invoice })
     RETURN { status: APPROVED }
 
-// ─── PROCUREMENT SERVICE ───────────────────────────────────────────────
+// ─── PROCUREMENT SERVICE ────
 
 SERVICE procurement_service (port 8081):
 
@@ -1251,7 +1275,7 @@ SERVICE procurement_service (port 8081):
 
     RETURN po
 
-// ─── REPORTING SERVICE ────────────────────────────────────────────────
+// ─── REPORTING SERVICE ────
 
 SERVICE reporting_service (port 8084):
 
@@ -1277,10 +1301,10 @@ SERVICE reporting_service (port 8084):
     PUBLISH kafka_event("report.generated", { report_id, report_type })
     RETURN { report_id, download_url }
 
+```
+# 12. AI AGENT STUDIO — INTELLIGENT AUTOMATION
 
-────────────────────────────────────────────────────────────────────────────
-12. AI AGENT STUDIO — INTELLIGENT AUTOMATION
-────────────────────────────────────────────────────────────────────────────
+```step12
 
 COMPONENT ai_agent_studio (OCI AI Agent Studio + custom agents):
 
@@ -1388,10 +1412,12 @@ COMPONENT ai_agent_studio (OCI AI Agent Studio + custom agents):
         PUBLISH kafka_event("ai.anomaly.detected", anomaly)
       RETURN anomalies
 
+```
 
-────────────────────────────────────────────────────────────────────────────
-13. REACT FRONTEND
-────────────────────────────────────────────────────────────────────────────
+# 13. REACT FRONTEND
+
+```step13
+
 
 COMPONENT react_frontend (React 18 + TypeScript):
 
@@ -1502,10 +1528,12 @@ COMPONENT react_frontend (React 18 + TypeScript):
       <ExportButton onClick={exportToExcel} />
       <SharePointUploadButton onClick={uploadToSharePoint} />
 
+```
 
-────────────────────────────────────────────────────────────────────────────
-14. REST API CONTRACTS
-────────────────────────────────────────────────────────────────────────────
+# 14. REST API CONTRACTS
+
+```step14
+
 
 REST_API_CONTRACTS:
 
@@ -1591,10 +1619,11 @@ REST_API_CONTRACTS:
     AP/AR invoices:       Cache-Control: max-age=60, must-revalidate
     Tax calculation:      Cache-Control: no-store  (real-time)
 
+```
 
-────────────────────────────────────────────────────────────────────────────
-15. KAFKA — EVENT STREAMING
-────────────────────────────────────────────────────────────────────────────
+# 15. KAFKA — EVENT STREAMING
+
+```step15
 
 COMPONENT kafka_cluster (OCI Streaming / Confluent on OKE):
 
@@ -1683,10 +1712,13 @@ COMPONENT kafka_cluster (OCI Streaming / Confluent on OKE):
         IF event.severity == HIGH:
           FORWARD → Splunk SIEM immediately
 
+```
 
-────────────────────────────────────────────────────────────────────────────
-16. REDIS — CACHING & STATE
-────────────────────────────────────────────────────────────────────────────
+# 16. REDIS — CACHING & STATE
+
+
+```step16
+
 
 COMPONENT redis_cluster (OCI Cache with Redis):
 
@@ -1754,10 +1786,11 @@ COMPONENT redis_cluster (OCI Cache with Redis):
       script = "if redis.call('get',KEYS[1])==ARGV[1] then return redis.call('del',KEYS[1]) else return 0 end"
       redis.eval(script, [lock_key], [lock_val])  // atomic check-and-delete
 
+```
 
-────────────────────────────────────────────────────────────────────────────
-17. DATABASE LAYER (PaaS)
-────────────────────────────────────────────────────────────────────────────
+# 17. DATABASE LAYER (PaaS)
+
+```step17
 
 COMPONENT database_layer:
 
@@ -1841,10 +1874,12 @@ COMPONENT database_layer:
     baseline = V1__initial_schema.sql
     VALIDATE on startup, FAIL_FAST on checksum mismatch
 
+```
 
-────────────────────────────────────────────────────────────────────────────
-18. AZURE SHAREPOINT INTEGRATION
-────────────────────────────────────────────────────────────────────────────
+
+# 18. AZURE SHAREPOINT INTEGRATION
+
+```step18
 
 COMPONENT sharepoint_proxy_service (Spring Boot, port 8085):
 
@@ -1954,10 +1989,12 @@ COMPONENT sharepoint_proxy_service (Spring Boot, port 8085):
             erp_entity_id:   event.report_id
           })
 
+```
 
-────────────────────────────────────────────────────────────────────────────
-19. DEVSECOPS / CI / CD PIPELINE
-────────────────────────────────────────────────────────────────────────────
+
+# 19. DEVSECOPS / CI / CD PIPELINE
+
+```step19
 
 COMPONENT devsecops_pipeline:
 
@@ -2119,10 +2156,11 @@ COMPONENT devsecops_pipeline:
     REDIS_AUTH_TOKEN:      rotate every 90 days
     SHAREPOINT_SECRET:     rotate every 30 days
 
+```
 
-────────────────────────────────────────────────────────────────────────────
-20. MONITORING & OBSERVABILITY
-────────────────────────────────────────────────────────────────────────────
+# 20. MONITORING & OBSERVABILITY
+
+```MONITORING
 
 COMPONENT observability_stack:
 
@@ -2292,10 +2330,12 @@ COMPONENT observability_stack:
       CLOSE circuit_breaker (half-open → healthy)
       NOTIFY recovery
 
+```
 
-────────────────────────────────────────────────────────────────────────────
-21. SECURITY & SECRETS MANAGEMENT
-────────────────────────────────────────────────────────────────────────────
+
+# 21. SECURITY & SECRETS MANAGEMENT
+
+```SECURITY
 
 COMPONENT security_framework:
 
@@ -2335,10 +2375,11 @@ COMPONENT security_framework:
     - PII masking in logs (user names, account numbers redacted)
     - GDPR: right to erasure supported via data classification tags
 
+```
 
-────────────────────────────────────────────────────────────────────────────
-22. END-TO-END REQUEST FLOW
-────────────────────────────────────────────────────────────────────────────
+# 22. END-TO-END REQUEST FLOW
+
+```step22
 
 SCENARIO: Finance Manager queries GL Trial Balance via React dashboard
 
@@ -2415,6 +2456,7 @@ STEP 10 — Same request 2 minutes later:
   Redis CACHE HIT → return in < 10ms (no ERP Fusion call)
   Response header: X-Data-Source: CACHE
 
+```
 
 # 23. COMPONENT MAP
 
