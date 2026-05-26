@@ -191,7 +191,7 @@ COMPONENT dns (OCI DNS + Traffic Management):
     CNAME sharepoint.erp.company.com     → lbaas.erp.company.com
     CNAME ai.erp.company.com             → lbaas.erp.company.com
     CNAME admin.erp.company.com          → weblogic-admin-lb.internal
-    TTL   = 300
+    TTL   = 300                     //Time-to-Live (TTL)
 
   PRIVATE DNS RECORDS (VCN-internal):
     A  api-gateway.erp.internal          → API_gateway_cluster_ip
@@ -489,14 +489,14 @@ COMPONENT identity_platform (OCI IDCS / Keycloak on OKE):
       grant_type        = AUTHORIZATION_CODE + PKCE (S256)
       redirect_uris     = ["https://app.erp.company.com/callback"]
       scopes            = [openid, profile, erp:read, erp:write, ai:use]
-      access_token_ttl  = 15 minutes
-      refresh_token_ttl = 8 hours
+      access_token_ttl  = 15 minutes            //Time-to-Live (TTL)
+      refresh_token_ttl = 8 hours               //Time-to-Live (TTL)
       token_binding     = httpOnly cookie for refresh token
 
     spring_microservices:
       grant_type        = CLIENT_CREDENTIALS
       scopes            = [erp:read, erp:write, kafka:publish]
-      access_token_ttl  = 10 minutes
+      access_token_ttl  = 10 minutes            //Time-to-Live (TTL)
 
     weblogic_integration:
       grant_type        = CLIENT_CREDENTIALS
@@ -506,7 +506,7 @@ COMPONENT identity_platform (OCI IDCS / Keycloak on OKE):
     ai_agent_client:
       grant_type        = CLIENT_CREDENTIALS
       scopes            = [erp:read, ai:query]  // read-only + AI
-      access_token_ttl  = 5 minutes
+      access_token_ttl  = 5 minutes             //Time-to-Live (TTL)
 
     erp_fusion_callback:
       grant_type        = CLIENT_CREDENTIALS  // ERP calls back to PaaS
@@ -571,7 +571,7 @@ COMPONENT identity_platform (OCI IDCS / Keycloak on OKE):
     RETURN payload.claims
 
   FUNCTION revoke_token(jti, exp):
-    ttl = exp - now()
+    ttl = exp - now()                   //Time-to-Live (TTL)
     redis.setex("token:revoked:" + jti, ttl, "1")
 
   FUNCTION refresh_access_token(refresh_token):
@@ -898,7 +898,7 @@ COMPONENT erp_integration_service (Spring Boot, port 8090):
       offset += 500
 
     result = map_to_domain_gl_journals(all_data)
-    redis.setex(cache_key, 300, result)  // 5min TTL
+    redis.setex(cache_key, 300, result)  // 5min TTL (Time-to-Live)
     PUBLISH kafka_event("erp.gl.journals.fetched", { count: result.size, params })
     RETURN result
 
@@ -925,7 +925,7 @@ COMPONENT erp_integration_service (Spring Boot, port 8090):
       }
 
     data  = parse_bip_xml_response(response)
-    redis.setex(cache_key, 600, data)   // 10min TTL
+    redis.setex(cache_key, 600, data)   // 10min TTL (Time-to-Live)
     RETURN data
 
   FUNCTION getGLAccountBalances(account_combination, period_range):
@@ -1726,7 +1726,7 @@ COMPONENT redis_cluster (OCI Cache with Redis):
   SECURITY: TLS + AUTH token (from OCI Vault), IP whitelist (data_subnet only)
   PERSISTENCE: AOF (appendonly yes) + RDB snapshot every 60s
 
-  KEY_NAMESPACES AND TTLs:
+  KEY_NAMESPACES AND TTLs (Time-to-Live) :
 
     Authentication & Authorization:
       "token:refresh:{user_id}"           TTL = 28800  (8h)
