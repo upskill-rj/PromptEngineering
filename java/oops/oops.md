@@ -4,6 +4,42 @@ An **object** represents a real-world entity and contains:
 
 * **Data (attributes / variables)**
 * **Behavior (methods / functions)**
+* In Java, variables declared inside a class are called "attributes".
+
+* OOP stands for Object-Oriented Programming.
+
+* Procedural programming is about writing procedures or methods that perform operations on the data, while object-oriented programming is about creating objects that contain both data and methods.
+
+* Object-oriented programming has several advantages over procedural programming:
+
+* OOPS is faster and easier to execute
+* OOPS provides a clear structure for the programs
+* OOPS helps to keep the Java code DRY "Don't Repeat Yourself", and makes the code easier to maintain, modify and debug
+* OOPS makes it possible to create full reusable applications with less code and shorter development time
+* OOPS "Don't Repeat Yourself" (DRY) principle is about reducing the repetition of code. You should extract out the codes that are common for the application, and place them at a single place and reuse them instead of repeating it.
+
+Think of it like real life:
+
+* public - a public park, everyone can enter
+* private - your house key, only you can use it
+* A static method belongs to the class itself. You can call it without creating an object, but it cannot use variables or methods that belong to an object.
+
+
+# Non-Access Modifiers List
+
+* final == The class cannot be inherited by other classes (You will learn more about inheritance in the Inheritance chapter)	
+* abstract == The class cannot be used to create objects (To access an abstract class, it must be inherited from another class. You will learn more about inheritance and abstraction in the Inheritance and Abstraction chapters)	
+
+# For attributes and methods, you can use the one of the following:
+
+
+* final == Attributes and methods cannot be overridden/modified
+* static == Attributes and methods belong to the class, not to objects. This means all objects share the same static attribute, and static methods can be called without creating objects.
+* abstract == Can only be used in an abstract class, and can only be used on methods. The method does not have a body, for example abstract void run();. The body is provided by the subclass (inherited from). You will learn more about inheritance and abstraction in the Inheritance and Abstraction chapters
+* transient == Attributes and methods are skipped when serializing the object containing them
+* synchronized == Methods can only be accessed by one thread at a time
+* volatile == The value of an attribute is not cached thread-locally, and is always read from the "main memory"
+
 
 ---
 

@@ -1,0 +1,415 @@
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-sans); }
+h2.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+
+.nav { display: flex; gap: 8px; flex-wrap: wrap; padding: 1rem 0 0.5rem; border-bottom: 0.5px solid var(--color-border-tertiary); margin-bottom: 1.25rem; }
+.nav button { font-size: 13px; padding: 5px 14px; border-radius: 20px; border: 0.5px solid var(--color-border-secondary); background: transparent; color: var(--color-text-secondary); cursor: pointer; transition: all .15s; }
+.nav button:hover { background: var(--color-background-secondary); }
+.nav button.active { background: var(--color-background-info); color: var(--color-text-info); border-color: transparent; font-weight: 500; }
+
+.pillar-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-bottom: 1.25rem; }
+.pillar-card { border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 12px 14px; cursor: pointer; transition: all .15s; }
+.pillar-card:hover { border-color: var(--color-border-secondary); background: var(--color-background-secondary); }
+.pillar-card.selected { border-width: 1.5px; }
+.pillar-icon { font-size: 20px; margin-bottom: 6px; }
+.pillar-name { font-size: 13px; font-weight: 500; color: var(--color-text-primary); line-height: 1.3; }
+.pillar-tag { font-size: 11px; color: var(--color-text-secondary); margin-top: 3px; }
+
+.detail-panel { border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1.25rem; margin-bottom: 1.25rem; background: var(--color-background-primary); }
+.detail-header { display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; }
+.detail-icon { font-size: 28px; }
+.detail-title { font-size: 18px; font-weight: 500; color: var(--color-text-primary); }
+.detail-subtitle { font-size: 13px; color: var(--color-text-secondary); margin-top: 2px; }
+
+.phase-row { display: flex; gap: 10px; margin-bottom: 10px; }
+.phase-badge { font-size: 11px; padding: 3px 10px; border-radius: 12px; white-space: nowrap; font-weight: 500; flex-shrink: 0; align-self: flex-start; margin-top: 2px; }
+.phase-0 { background: var(--color-background-secondary); color: var(--color-text-secondary); }
+.phase-1 { background: #EAF3DE; color: #3B6D11; }
+.phase-2 { background: #E6F1FB; color: #185FA5; }
+.phase-3 { background: #EEEDFE; color: #534AB7; }
+@media (prefers-color-scheme: dark) {
+  .phase-1 { background: #27500A; color: #C0DD97; }
+  .phase-2 { background: #0C447C; color: #B5D4F4; }
+  .phase-3 { background: #3C3489; color: #CECBF6; }
+}
+
+.phase-content { flex: 1; }
+.phase-label { font-size: 12px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 4px; }
+.phase-items { font-size: 12px; color: var(--color-text-secondary); line-height: 1.7; }
+.phase-items span { display: inline-block; background: var(--color-background-secondary); border-radius: 4px; padding: 1px 7px; margin: 2px 3px 2px 0; font-size: 11px; }
+
+.certs-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.cert { font-size: 11px; padding: 3px 9px; border-radius: 10px; border: 0.5px solid var(--color-border-secondary); color: var(--color-text-secondary); }
+
+.roadmap-view { }
+.timeline-step { display: flex; gap: 14px; margin-bottom: 0; }
+.timeline-left { display: flex; flex-direction: column; align-items: center; width: 36px; flex-shrink: 0; }
+.tl-dot { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 500; flex-shrink: 0; }
+.tl-line { width: 1.5px; flex: 1; min-height: 20px; background: var(--color-border-tertiary); margin: 4px 0; }
+.timeline-right { flex: 1; padding-bottom: 20px; }
+.tl-phase-title { font-size: 15px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 4px; }
+.tl-phase-dur { font-size: 12px; color: var(--color-text-secondary); margin-bottom: 8px; }
+.tl-pillars { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+.tl-pillar { font-size: 11px; padding: 3px 9px; border-radius: 10px; font-weight: 500; }
+.tl-desc { font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; }
+.tl-outcome { font-size: 12px; padding: 8px 12px; border-radius: var(--border-radius-md); background: var(--color-background-secondary); margin-top: 8px; color: var(--color-text-secondary); }
+.tl-outcome strong { color: var(--color-text-primary); font-weight: 500; }
+
+.ask-btn { font-size: 12px; margin-top: 10px; padding: 5px 12px; border: 0.5px solid var(--color-border-secondary); border-radius: 14px; background: transparent; color: var(--color-text-secondary); cursor: pointer; }
+.ask-btn:hover { background: var(--color-background-secondary); }
+
+.progress-bar-wrap { height: 5px; background: var(--color-background-secondary); border-radius: 3px; margin: 8px 0 4px; overflow: hidden; }
+.progress-bar { height: 100%; border-radius: 3px; transition: width .4s; }
+</style>
+
+<h2 class="sr-only">Solution Architect career roadmap across 8 pillars: UI/UX, Cloud-Native, AI/ML, Security, DevOps, Performance, Accessibility, and Microservices</h2>
+
+<div class="nav" id="nav">
+  <button class="active" onclick="showView('pillars')">8 Pillars deep dive</button>
+  <button onclick="showView('roadmap')">Career roadmap</button>
+  <button onclick="showView('metrics')">Mastery tracker</button>
+</div>
+
+<div id="view-pillars">
+  <div class="pillar-grid" id="pillar-grid"></div>
+  <div class="detail-panel" id="detail-panel"></div>
+</div>
+
+<div id="view-roadmap" style="display:none">
+  <div class="roadmap-view" id="roadmap-content"></div>
+</div>
+
+<div id="view-metrics" style="display:none">
+  <div id="metrics-content"></div>
+</div>
+
+<script>
+const pillars = [
+  {
+    id: 0,
+    name: "UI/UX Technologies",
+    icon: "🎨",
+    color: "#EEEDFE",
+    textColor: "#534AB7",
+    barColor: "#7F77DD",
+    tag: "Experience layer",
+    goal: "Design systems that are intuitive, consistent, and delightful at scale",
+    phases: [
+      { label: "Foundation", items: ["HTML/CSS/JS fundamentals", "Responsive design principles", "Figma basics", "Usability heuristics", "Component thinking"], certs: ["Google UX Design Certificate"] },
+      { label: "Practitioner", items: ["React / Angular / Vue", "Design systems (Storybook)", "Tailwind / CSS-in-JS", "Micro-frontends", "Design tokens", "State management (Redux, Zustand)"], certs: ["AWS Frontend Specialty", "Figma Professional"] },
+      { label: "Architect", items: ["Design system governance", "Multi-product design scaling", "Brand consistency frameworks", "Design-to-code pipelines", "Web Components strategy"], certs: [] },
+    ],
+    keyMetrics: ["Component adoption rate", "Design consistency score", "Developer onboarding time"],
+    deepDive: "A Solution Architect must govern the entire design system lifecycle — from token definition through component library to multi-product scaling. Focus on design-to-code pipelines (Figma → Storybook → CI), micro-frontend architecture for independent team delivery, and state management patterns that support complex UX flows without performance degradation."
+  },
+  {
+    id: 1,
+    name: "Cloud-Native Architecture",
+    icon: "☁️",
+    color: "#E6F1FB",
+    textColor: "#185FA5",
+    barColor: "#378ADD",
+    tag: "Scale & resilience",
+    goal: "Build platforms that scale elastically with zero downtime globally",
+    phases: [
+      { label: "Foundation", items: ["Linux & networking basics", "Containers (Docker)", "Cloud fundamentals (AWS/Azure/GCP)", "Serverless concepts", "Basic Kubernetes"], certs: ["AWS Cloud Practitioner", "AZ-900"] },
+      { label: "Practitioner", items: ["Kubernetes (EKS/GKE/AKS)", "Service mesh (Istio)", "IaC (Terraform, CDK)", "Multi-region design", "FinOps principles", "CDN & edge computing"], certs: ["AWS Solutions Architect Associate", "CKA", "GCP Professional Cloud Architect"] },
+      { label: "Architect", items: ["Multi-cloud strategy", "Zero-downtime deployment patterns", "Chaos engineering", "Global load balancing", "DR & BCP design", "Cost optimization at scale"], certs: ["AWS Solutions Architect Professional", "GCP Fellow", "Azure Expert Solutions Architect"] },
+    ],
+    keyMetrics: ["99.99% availability SLA", "P95 latency < 200ms globally", "Cloud cost per user"],
+    deepDive: "Cloud-native architecture for UX-focused platforms means tying infrastructure decisions directly to user experience thresholds. Define auto-scaling policies based on user-perceived latency, not just CPU. Design edge caching strategies that serve dynamic personalized content. Master resilience patterns — circuit breaker, bulkhead, retry with backoff — and implement chaos engineering to validate UX remains intact under failures."
+  },
+  {
+    id: 2,
+    name: "AI/ML Systems",
+    icon: "🤖",
+    color: "#EAF3DE",
+    textColor: "#3B6D11",
+    barColor: "#639922",
+    tag: "Intelligent UX",
+    goal: "Embed intelligence that personalizes and anticipates user needs",
+    phases: [
+      { label: "Foundation", items: ["Python for ML", "Statistics & probability", "ML fundamentals", "Supervised/unsupervised learning", "Neural network basics"], certs: ["DeepLearning.AI ML Specialization", "Google ML Crash Course"] },
+      { label: "Practitioner", items: ["LLMs & RAG pipelines", "Recommendation engines", "MLOps (MLflow, Kubeflow)", "A/B testing frameworks", "Feature stores", "Model serving (TorchServe, TF Serving)"], certs: ["AWS ML Specialty", "GCP Professional ML Engineer", "DeepLearning.AI MLOps Specialization"] },
+      { label: "Architect", items: ["AI platform architecture", "Responsible AI governance", "Bias detection frameworks", "Real-time inference at scale", "Personalization at enterprise scale", "LLM integration patterns"], certs: ["Stanford ML Certificate", "Coursera AI for Everyone"] },
+    ],
+    keyMetrics: ["Personalization CTR uplift", "Model inference latency", "Recommendation acceptance rate"],
+    deepDive: "For customer-centric platforms, AI/ML's primary role is anticipating user intent and reducing friction. Architect real-time inference pipelines that serve personalized content in < 100ms. Design RAG systems that make conversational interfaces feel native. Build MLOps platforms that enable safe, fast model iteration. Always embed responsible AI — fairness audits, explainability, bias detection — as first-class architectural requirements."
+  },
+  {
+    id: 3,
+    name: "Security & IAM",
+    icon: "🔐",
+    color: "#FAECE7",
+    textColor: "#993C1D",
+    barColor: "#D85A30",
+    tag: "Trust & compliance",
+    goal: "Build invisible, frictionless security that users trust without noticing",
+    phases: [
+      { label: "Foundation", items: ["Networking security basics", "OWASP Top 10", "Authentication vs Authorization", "TLS/PKI fundamentals", "Basic IAM concepts"], certs: ["CompTIA Security+"] },
+      { label: "Practitioner", items: ["OAuth 2.0 / OIDC / SAML", "Zero Trust Architecture", "RBAC & ABAC design", "Secrets management (Vault)", "SIEM & logging", "Penetration testing basics"], certs: ["AWS Security Specialty", "AZ-500", "CEH"] },
+      { label: "Architect", items: ["Enterprise IAM architecture", "Zero Trust design at scale", "Threat modeling (STRIDE)", "Compliance frameworks (SOC2, ISO27001, GDPR)", "Data sovereignty design", "Security by design"], certs: ["CISSP", "CISM", "SABSA"] },
+    ],
+    keyMetrics: ["MTTD < 1 hour", "Zero critical CVEs", "MFA adoption rate", "Compliance audit pass rate"],
+    deepDive: "Security architecture for digital platforms must balance protection with UX. Passwordless authentication (passkeys, magic links) removes friction without sacrificing security. Design token-based IAM that supports federation across enterprise, partner, and consumer identities. Implement data classification frameworks that enforce least-privilege automatically. Shift-left security means threat modeling happens at design time, not after deployment."
+  },
+  {
+    id: 4,
+    name: "DevOps & Observability",
+    icon: "⚙️",
+    color: "#E1F5EE",
+    textColor: "#0F6E56",
+    barColor: "#1D9E75",
+    tag: "Delivery velocity",
+    goal: "Enable fast, safe delivery and proactively monitor user experience",
+    phases: [
+      { label: "Foundation", items: ["Git workflows", "CI/CD fundamentals", "Docker basics", "Linux scripting", "Basic monitoring concepts"], certs: ["GitHub Actions Certification", "Jenkins Fundamentals"] },
+      { label: "Practitioner", items: ["GitOps (ArgoCD, Flux)", "Kubernetes operators", "Observability stack (OTel, Prometheus, Grafana)", "Real User Monitoring (Sentry, Datadog)", "Feature flags (LaunchDarkly)", "Incident management"], certs: ["AWS DevOps Engineer Professional", "CKA", "Datadog Fundamentals"] },
+      { label: "Architect", items: ["Platform engineering", "Internal developer platforms", "SLO/SLA/Error budget design", "Chaos engineering", "Golden signals framework", "Deployment ring strategy"], certs: ["DORA DevOps Certification", "SRE Google Certificate"] },
+    ],
+    keyMetrics: ["Deployment frequency", "Change failure rate < 5%", "MTTR < 1 hour", "DORA elite metrics"],
+    deepDive: "DevOps for customer-centric platforms means every pipeline stage has a UX lens. Define SLOs tied to user experience — not just uptime, but Core Web Vitals, error rates, and conversion funnel health. Implement Real User Monitoring alongside synthetic tests. Design progressive delivery (canary, blue-green, feature flags) that lets you validate UX impact before full rollout. Build internal developer platforms that reduce cognitive load and accelerate safe delivery."
+  },
+  {
+    id: 5,
+    name: "Performance Engineering",
+    icon: "⚡",
+    color: "#FAEEDA",
+    textColor: "#854F0B",
+    barColor: "#BA7517",
+    tag: "Speed as UX",
+    goal: "Speed is a feature — every millisecond directly impacts revenue and UX",
+    phases: [
+      { label: "Foundation", items: ["Browser rendering pipeline", "HTTP/2 & HTTP/3", "Network fundamentals", "Database query basics", "Caching concepts"], certs: ["Google Web Performance Fundamentals"] },
+      { label: "Practitioner", items: ["Core Web Vitals optimization", "CDN configuration", "Redis caching patterns", "Database indexing & sharding", "Load testing (k6, Locust)", "Bundle optimization (webpack, Vite)"], certs: ["AWS CloudFront Specialty", "Redis Certified Developer"] },
+      { label: "Architect", items: ["Performance budgets as architecture", "Global edge strategy", "Database scaling (CQRS, read replicas)", "API performance (GraphQL, gRPC)", "Performance governance", "SLO definition for UX thresholds"], certs: ["Google Cloud Performance Engineering"] },
+    ],
+    keyMetrics: ["LCP < 2.5s", "FID < 100ms", "CLS < 0.1", "TTFB < 800ms", "P99 API latency"],
+    deepDive: "Performance engineering for digital platforms starts with defining performance budgets as first-class architectural constraints — not afterthoughts. LCP < 2.5s, FID < 100ms, CLS < 0.1 are not targets, they are requirements. Architect multi-layer caching strategies (CDN, application, database), design read-path optimizations (CQRS, materialized views), and implement global edge compute for < 50ms response times worldwide. Run continuous load tests in CI pipelines."
+  },
+  {
+    id: 6,
+    name: "Accessibility",
+    icon: "♿",
+    color: "#FBEAF0",
+    textColor: "#993556",
+    barColor: "#D4537E",
+    tag: "Inclusive design",
+    goal: "Build platforms that work for every human, without exception",
+    phases: [
+      { label: "Foundation", items: ["WCAG 2.1/2.2 guidelines", "Semantic HTML", "Color contrast ratios", "Alt text best practices", "Keyboard navigation basics"], certs: ["Deque University a11y Fundamentals"] },
+      { label: "Practitioner", items: ["ARIA roles & live regions", "Screen reader testing (NVDA, JAWS, VoiceOver)", "Focus management patterns", "Accessible forms & tables", "Axe / Lighthouse auditing", "Reduced motion patterns"], certs: ["IAAP WAS (Web Accessibility Specialist)", "Section 508 Trusted Tester"] },
+      { label: "Architect", items: ["Accessibility governance framework", "Definition of Done a11y criteria", "WCAG AAA strategy", "Accessibility in design systems", "Legal compliance (ADA, EN 301 549)", "Automated a11y in CI/CD"], certs: ["IAAP CPWA (Certified Professional in Web Accessibility)", "CPACC"] },
+    ],
+    keyMetrics: ["0 critical WCAG violations", "Axe score 100", "Keyboard nav 100% coverage", "Screen reader test pass rate"],
+    deepDive: "Accessibility is not a feature — it is a fundamental quality attribute. Architect it as a non-functional requirement from day one, embedded in the Definition of Done. Build automated accessibility gates in CI/CD pipelines using axe-core. Design accessible component APIs in your design system so developers cannot accidentally create inaccessible UI. Establish quarterly audit cycles with real assistive technology users. Legal compliance (ADA, EN 301 549) follows from genuine inclusion-first design."
+  },
+  {
+    id: 7,
+    name: "Microservices & Integration",
+    icon: "🔗",
+    color: "#E1F5EE",
+    textColor: "#085041",
+    barColor: "#0F6E56",
+    tag: "Composable systems",
+    goal: "Build loosely coupled systems that evolve independently at enterprise scale",
+    phases: [
+      { label: "Foundation", items: ["REST API design", "HTTP fundamentals", "JSON / Protobuf", "Basic Docker/containers", "API versioning concepts"], certs: ["Postman API Fundamentals"] },
+      { label: "Practitioner", items: ["Domain-Driven Design (DDD)", "Event-driven architecture (Kafka, RabbitMQ)", "GraphQL & gRPC", "API Gateway (Kong, Apigee)", "Service mesh (Istio)", "CQRS & Event Sourcing"], certs: ["AsyncAPI Certification", "Confluent Kafka Developer", "Kong Certified Developer"] },
+      { label: "Architect", items: ["Bounded context design", "Saga pattern for distributed transactions", "API product strategy", "Event mesh architecture", "Service mesh governance", "Platform API design"], certs: ["TOGAF 10", "AWS Microservices Architect", "Confluent Kafka Administrator"] },
+    ],
+    keyMetrics: ["Service coupling index", "API error rate < 0.1%", "Event processing latency", "Deployment independence score"],
+    deepDive: "Microservices boundaries must map to user journeys, not technical layers. Apply Domain-Driven Design to define bounded contexts that align with how users think about the product. Design APIs as products — versioned, documented, developer-friendly, and backward compatible. Build event-driven integrations for async workflows (order processing, notifications) and synchronous APIs for user-facing interactions. Service mesh gives you observability, traffic management, and security at the network layer."
+  }
+];
+
+const roadmapPhases = [
+  {
+    phase: "Phase 1",
+    title: "Digital Foundations",
+    duration: "0–6 months",
+    dotColor: "#C0DD97",
+    dotText: "#3B6D11",
+    pillars: [0, 1, 4],
+    pillarColor: "#EAF3DE",
+    pillarTextColor: "#3B6D11",
+    desc: "Build hands-on competency in the three pillars that underpin every other skill. Get comfortable with frontend frameworks, cloud fundamentals, and CI/CD pipelines. Build and deploy a real project end-to-end.",
+    outcome: "Deliver a cloud-deployed web app with a CI/CD pipeline. Can contribute to architecture discussions."
+  },
+  {
+    phase: "Phase 2",
+    title: "Security & Quality",
+    duration: "6–12 months",
+    dotColor: "#B5D4F4",
+    dotText: "#185FA5",
+    pillars: [3, 5, 6],
+    pillarColor: "#E6F1FB",
+    pillarTextColor: "#185FA5",
+    desc: "Layer security, performance, and accessibility on top of your foundations. Learn to think about non-functional requirements as first-class architectural constraints. Run your first penetration test, performance audit, and accessibility audit.",
+    outcome: "Pass a security review, hit Core Web Vitals targets, achieve WCAG 2.1 AA compliance on a real project."
+  },
+  {
+    phase: "Phase 3",
+    title: "Intelligence & Integration",
+    duration: "12–24 months",
+    dotColor: "#CECBF6",
+    dotText: "#534AB7",
+    pillars: [2, 7],
+    pillarColor: "#EEEDFE",
+    pillarTextColor: "#534AB7",
+    desc: "Extend your platform with AI/ML capabilities and master distributed systems design. Build a recommendation engine, integrate an LLM, and design a microservices architecture using DDD. This is where generalist expertise becomes architect-level depth.",
+    outcome: "Ship a personalized AI feature. Design a domain model with 5+ bounded contexts. Own architecture decisions independently."
+  },
+  {
+    phase: "Phase 4",
+    title: "Enterprise Architecture",
+    duration: "24–36 months",
+    dotColor: "#F5C4B3",
+    dotText: "#993C1D",
+    pillars: [0, 1, 2, 3, 4, 5, 6, 7],
+    pillarColor: "#FAECE7",
+    pillarTextColor: "#993C1D",
+    desc: "Synthesize all 8 pillars into holistic enterprise platform architecture. Lead cross-functional architecture reviews. Define standards, governance frameworks, and technical roadmaps. Influence build-vs-buy decisions and vendor strategy.",
+    outcome: "Lead architecture for a product used by 1M+ users. Drive org-wide technical standards. Mentor a team of engineers."
+  },
+  {
+    phase: "Phase 5",
+    title: "Thought Leadership",
+    duration: "36+ months",
+    dotColor: "#FAC775",
+    dotText: "#854F0B",
+    pillars: [0, 1, 2, 3, 4, 5, 6, 7],
+    pillarColor: "#FAEEDA",
+    pillarTextColor: "#854F0B",
+    desc: "Contribute to the broader industry. Publish architecture decision records, speak at conferences, contribute to open source, and define the future direction of your domain. Pursue senior certifications (TOGAF, CISSP, AWS Pro) and build a professional network.",
+    outcome: "Recognized thought leader. Published architecture papers. Contributing to open standards. C-suite trusted advisor."
+  }
+];
+
+let selectedPillar = 0;
+let currentView = 'pillars';
+
+function showView(v) {
+  currentView = v;
+  ['pillars','roadmap','metrics'].forEach(id => {
+    document.getElementById('view-' + id).style.display = id === v ? 'block' : 'none';
+  });
+  document.querySelectorAll('.nav button').forEach((b, i) => {
+    b.classList.toggle('active', ['pillars','roadmap','metrics'][i] === v);
+  });
+  if (v === 'roadmap' && !document.getElementById('roadmap-content').innerHTML) renderRoadmap();
+  if (v === 'metrics' && !document.getElementById('metrics-content').innerHTML) renderMetrics();
+}
+
+function renderPillars() {
+  const grid = document.getElementById('pillar-grid');
+  grid.innerHTML = pillars.map((p, i) => `
+    <div class="pillar-card ${i === selectedPillar ? 'selected' : ''}"
+      style="${i === selectedPillar ? `border-color: ${p.barColor}; background: ${p.color}20;` : ''}"
+      onclick="selectPillar(${i})">
+      <div class="pillar-icon">${p.icon}</div>
+      <div class="pillar-name">${p.name}</div>
+      <div class="pillar-tag">${p.tag}</div>
+    </div>
+  `).join('');
+  renderDetail(selectedPillar);
+}
+
+function selectPillar(i) {
+  selectedPillar = i;
+  renderPillars();
+}
+
+function renderDetail(i) {
+  const p = pillars[i];
+  const phaseLabels = ['Foundation', 'Practitioner', 'Architect'];
+  const phaseClasses = ['phase-0', 'phase-1', 'phase-2', 'phase-3'];
+  document.getElementById('detail-panel').innerHTML = `
+    <div class="detail-header">
+      <div class="detail-icon">${p.icon}</div>
+      <div>
+        <div class="detail-title">${p.name}</div>
+        <div class="detail-subtitle">${p.goal}</div>
+      </div>
+    </div>
+    ${p.phases.map((ph, idx) => `
+      <div class="phase-row">
+        <div class="phase-badge ${phaseClasses[idx+1]}">${phaseLabels[idx]}</div>
+        <div class="phase-content">
+          <div class="phase-items">${ph.items.map(it => `<span>${it}</span>`).join('')}</div>
+          ${ph.certs.length ? `<div class="certs-row">${ph.certs.map(c => `<div class="cert">🏅 ${c}</div>`).join('')}</div>` : ''}
+        </div>
+      </div>
+    `).join('')}
+    <div style="margin-top:12px; padding:12px; background:var(--color-background-secondary); border-radius:var(--border-radius-md);">
+      <div style="font-size:12px; font-weight:500; color:var(--color-text-primary); margin-bottom:6px;">Architect deep dive</div>
+      <div style="font-size:12px; color:var(--color-text-secondary); line-height:1.7;">${p.deepDive}</div>
+    </div>
+    <div style="margin-top:10px;">
+      <div style="font-size:12px; font-weight:500; color:var(--color-text-secondary); margin-bottom:6px;">Key metrics to own</div>
+      <div class="certs-row">${p.keyMetrics.map(m => `<div class="cert" style="border-color:${p.barColor}40; color:${p.textColor};">📊 ${m}</div>`).join('')}</div>
+    </div>
+    <button class="ask-btn" onclick="sendPrompt('Give me a detailed 30-day learning plan for the ${p.name} pillar as a Solution Architect')">Ask for a 30-day plan for this pillar ↗</button>
+  `;
+}
+
+function renderRoadmap() {
+  const names = pillars.map(p => p.name.split(' ')[0]);
+  document.getElementById('roadmap-content').innerHTML = roadmapPhases.map((ph, idx) => `
+    <div class="timeline-step">
+      <div class="timeline-left">
+        <div class="tl-dot" style="background:${ph.dotColor}; color:${ph.dotText};">${idx+1}</div>
+        ${idx < roadmapPhases.length-1 ? '<div class="tl-line"></div>' : ''}
+      </div>
+      <div class="timeline-right">
+        <div style="display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;">
+          <div class="tl-phase-title">${ph.title}</div>
+          <div class="tl-phase-dur" style="font-size:12px; color:var(--color-text-secondary);">${ph.duration}</div>
+        </div>
+        <div class="tl-pillars">
+          ${ph.pillars.map(pi => `<span class="tl-pillar" style="background:${pillars[pi].color}; color:${pillars[pi].textColor};">${pillars[pi].icon} ${pillars[pi].name.split(' ')[0]}</span>`).join('')}
+        </div>
+        <div class="tl-desc">${ph.desc}</div>
+        <div class="tl-outcome"><strong>Target outcome:</strong> ${ph.outcome}</div>
+        <button class="ask-btn" onclick="sendPrompt('Give me detailed resources, projects, and milestones for Phase ${idx+1}: ${ph.title} of the Solution Architect roadmap')">Expand phase ${idx+1} resources ↗</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderMetrics() {
+  const levels = ['Beginner', 'Practitioner', 'Architect'];
+  document.getElementById('metrics-content').innerHTML = `
+    <div style="font-size:13px; color:var(--color-text-secondary); margin-bottom:1rem; line-height:1.6;">Track your mastery across all 8 pillars. Update your self-assessment as you grow.</div>
+    ${pillars.map((p, i) => {
+      const stored = parseInt(localStorage.getItem ? (localStorage.getItem('sa_pillar_'+i) || '0') : '0');
+      return `
+      <div style="margin-bottom:14px; padding:12px 14px; border:0.5px solid var(--color-border-tertiary); border-radius:var(--border-radius-lg);">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:6px;">
+          <div style="font-size:13px; font-weight:500; display:flex; align-items:center; gap:8px;">${p.icon} ${p.name}</div>
+          <select id="sel_${i}" style="font-size:11px; padding:2px 6px; border-radius:8px; border:0.5px solid var(--color-border-secondary); background:var(--color-background-secondary); color:var(--color-text-secondary);" onchange="updateLevel(${i},this.value)">
+            <option value="0" ${stored===0?'selected':''}>Not started</option>
+            <option value="33" ${stored===33?'selected':''}>Foundation</option>
+            <option value="66" ${stored===66?'selected':''}>Practitioner</option>
+            <option value="100" ${stored===100?'selected':''}>Architect</option>
+          </select>
+        </div>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar" id="bar_${i}" style="width:${stored}%; background:${p.barColor};"></div>
+        </div>
+        <div style="font-size:11px; color:var(--color-text-secondary);">${p.tag}</div>
+      </div>
+    `}).join('')}
+    <button class="ask-btn" style="width:100%; text-align:center; margin-top:6px;" onclick="sendPrompt('Based on my Solution Architect skill gaps, give me a personalized 90-day study plan')">Generate my personalized study plan ↗</button>
+  `;
+}
+
+function updateLevel(i, v) {
+  document.getElementById('bar_'+i).style.width = v+'%';
+  try { localStorage.setItem('sa_pillar_'+i, v); } catch(e) {}
+}
+
+renderPillars();
+</script>
