@@ -1,5 +1,59 @@
 # Docker Complete Architecture, Flow, DevOps/DevSecOps Usage & Important Configuration Files
 
+
+- It is a tool designed to create , deploy and run applications with ease by using containers.
+
+- It allows developer to package up an application (named as image) with all requirements such as libraries & dependencies and ship it all as one package.
+
+- It ensure that application works seamlessly in any environment , be it dev / test / prod.
+
+- Build, Ship and Run Any Software Any Where.
+
+- Docker file builds a docker image and that image contains all the project codes, dependencies and supporting file and libraries.
+
+- User can run that image to create as many docker containers as you want.
+
+- Docker images can be uploaded on Docker hub from where the image can be pulled and built in a container.
+
+
+# Important Docker commands
+
+  * docker login server name / docker hub
+  * docker load < test-123.tar
+  * docker build -t webserver:v1 --- Build or rebuild services
+  * bundle ---                       Generate a Docker bundle from the Compose file
+  * config ---                       Validate and view the Compose file
+  * docker volume create wlsdata --- Create services
+  * docker-compose down ---          Stop and remove containers, networks, images, and volumes
+  * events ---                       Receive real time events from containers
+  * docker exec -it wls bash ---     Execute a command in a running container
+  * help ---                         Get help on a command
+  * docker images ---                List images
+  * kill ---                         Kill containers
+  * docker logs -f wls ---           View output from containers
+  * pause ---                        Pause services
+  * port ---                         Print the public port for a port binding
+  * docker ps -a ---                 List containers
+  * docker pull image location ---   Pull service images
+  * docker push image location ---   Push service images
+  * restart ---                      Restart services
+  * docker volume rm wlsdata ---     Remove stopped containers
+  * run ---                          Run a one-off command
+  * scale ---                        Set number of containers for a service
+  * docker-compose start ---         Start services
+  * docker-compose stop ---          Stop services
+  * top ---                          Display the running processes
+  * unpause ---                      Unpause services
+  * up ---                           Create and start containers
+  * docker version ---               Show the Docker-Compose version information
+  * docker search centos
+  * docker inspect d80da9b4a8a1
+
+
+
+==============
+
+
 Docker
 
 This is one of the MOST IMPORTANT enterprise interview topics for:
