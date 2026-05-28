@@ -1,4 +1,45 @@
-Here's a summary and consolidated list of all technical keywords and technologies mentioned across these job descriptions:
+### Skills Expected in 2026 Market
+
+* Common High-Demand Skills
+* Microservices Architecture
+* Cloud Architecture
+* Kubernetes & Docker
+* DevOps & CI/CD
+* API Management
+* Event-Driven Architecture
+* Security & IAM
+* AI/GenAI Integration
+* LLMs & RAG
+* Vector Databases
+* Semantic Search
+* Observability & Monitoring
+* System Design
+* Stakeholder Management
+
+
+### Popular Tools & Technologies
+
+
+* Kubernetes
+* Docker
+* Terraform
+* OpenTofu
+* Jenkins
+* GitHub Actions
+* LangChain
+* LangGraph
+* CrewAI
+* TensorFlow
+* PyTorch
+* Apache Kafka
+* Spring Boot
+* React
+* Angular
+* Oracle Fusion / OCI
+
+========================
+
+### Here's a summary and consolidated list of all technical keywords and technologies mentioned across these job descriptions:
 
 **Programming Languages**
 Java (J2EE, Java 11+), Python, C#, Groovy, TypeScript, JavaScript, HTML5, CSS3
