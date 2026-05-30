@@ -1,4 +1,4 @@
-Great question! Let me break down how a **Senior IT Manager's responsibilities map across different architect roles**.
+
 
 ---
 
