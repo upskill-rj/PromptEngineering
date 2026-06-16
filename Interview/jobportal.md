@@ -1,4 +1,19 @@
 
+INSTAHYRE
+==================
+
+https://www.instahyre.com/candidate/activity/
+
+
+
+
+NAUKRI
+==================
+
+https://www.naukri.com/mnjuser/homepage
+
+
+
 LINKEDIN
 ==================
 
