@@ -48,142 +48,155 @@ Overall, I see myself as someone who can bridge traditional enterprise engineeri
 ====================
 
 ________________________________________
-Executive Summary
+## Executive Summary
+
 Senior IT Professional with 18+ years of experience in enterprise digital transformation, specializing in scalable architecture, and cloud-native platforms using Java/J2EE and microservices. Experienced in supporting cloud migration, system modernization, and AI-driven ecosystems including Generative AI, AI Agents, RAG, and vector search. Strong experience in delivering complex global solutions and supporting Finance Transformation initiatives using Oracle Fusion ERP & EPM, working closely with stakeholders to ensure alignment with business priorities.
 ________________________________________
-Core Competencies
-•	Innovation & Transformation
-o	Cloud Migration & System Modernization 
-o	AI Agents, Generative AI, RAG, Vector Search & LLM Models 
-o	Finance Transformation (Oracle EPM & Oracle Fusion ERP)
-o	Product Thinking & Feature Innovation
-o	Business Requirement Analysis & Solutioning
-o	Performance Optimization & Scalability
-o	Solution Architecture & System Integration 
 
-•	Leadership & Governance 
-o	Secure SDLC & Application Security 
-o	Technical Leadership & Stakeholder Engagement 
-o	Agile Delivery & Global Program Management
-o	Roadmap Alignment, Data Retention & Prioritization
+## Core Competencies
+
+## Innovation & Transformation
+	* Cloud Migration & System Modernization 
+	* AI Agents, Generative AI, RAG, Vector Search & LLM Models 
+	* Finance Transformation (Oracle EPM & Oracle Fusion ERP)
+	* Product Thinking & Feature Innovation
+	* Business Requirement Analysis & Solutioning
+	* Performance Optimization & Scalability
+	* Solution Architecture & System Integration 
+
+## Leadership & Governance 
+	* Secure SDLC & Application Security 
+	* Technical Leadership & Stakeholder Engagement 
+	* Agile Delivery & Global Program Management
+	* Roadmap Alignment, Data Retention & Prioritization
 ________________________________________
-Technical Skills
-•	Core Technologies: Java/J2EE, Spring Boot, Hibernate, Oracle APEX, JPA, JDBC, Groovy, PL/SQL
-•	AI & Data: Fusion AI Agent Studio, Tool Integration (BO/RAG/Email), OCI Document Vision, Generative AI, AI Agents, LLMs, Prompt Engineering, Workflow Automation, Vector Search
-•	Integration: REST/SOAP, Graph API, JavaMail API, Azure-app, Webhooks, API Gateway (OCI)
-•	Cloud & Infrastructure: OCI, OKE, Docker, Kubernetes, Jenkins, Git, LBaaS, DBaaS
-•	Databases: Oracle (10g / 12c / 19c / ADB), MySQL, DB2, PostgreSQL
-•	Application Servers: WebLogic, WebSphere, JBoss, Apache TOMCAT, OC4J, Nginx, Node.js
-•	Frontend: OJET, Angular, React, JavaScript, jQuery, HTML/CSS
-•	Development Tools & IDEs: IntelliJ IDEA, JIRA, Elasticsearch, Ollama, LM Studio, VS Code, Antigravity, Claude, Codex
-•	Testing: Load Test, Post Refresh Activity, Unit Testing (JUnit, TestNG), Selenium  
-•	Security & Authentication: - OAuth2, Oracle Cloud (OCI + IDCS) Security, OCI Vault, OWASP, SonarQube
-•	Finance Systems: Oracle Fusion ERP, Oracle EPM (TRCS / EPRCS / FCCS), SDM, Task Manager, LCM, Data Integration, Data Exchange, Data Management, SmartView
-•	
+## Technical Skills
+	* Core Technologies: Java/J2EE, Spring Boot, Hibernate, Oracle APEX, JPA, JDBC, Groovy, PL/SQL
+	* AI & Data: Fusion AI Agent Studio, Tool Integration (BO/RAG/Email), OCI Document Vision, Generative AI, AI Agents, LLMs, Prompt Engineering, Workflow Automation, Vector Search
+	* Integration: REST/SOAP, Graph API, JavaMail API, Azure-app, Webhooks, API Gateway (OCI)
+	* Cloud & Infrastructure: OCI, OKE, Docker, Kubernetes, Jenkins, Git, LBaaS, DBaaS
+	* Databases: Oracle (10g / 12c / 19c / ADB), MySQL, DB2, PostgreSQL
+	* Application Servers: WebLogic, WebSphere, JBoss, Apache TOMCAT, OC4J, Nginx, Node.js
+	* Frontend: OJET, Angular, React, JavaScript, jQuery, HTML/CSS
+	* Development Tools & IDEs: IntelliJ IDEA, JIRA, Elasticsearch, Ollama, LM Studio, VS Code, Antigravity, Claude, Codex
+	* Testing: Load Test, Post Refresh Activity, Unit Testing (JUnit, TestNG), Selenium  
+	* Security & Authentication: - OAuth2, Oracle Cloud (OCI + IDCS) Security, OCI Vault, OWASP, SonarQube
+	* Finance Systems: Oracle Fusion ERP, Oracle EPM (TRCS / EPRCS / FCCS), SDM, Task Manager, LCM, Data Integration, Data Exchange, Data Management, SmartView
+
 ________________________________________
-Professional Experience
-•	Senior IT Manager - Oracle | Mar 2012 – Present
+## Professional Experience
 
-•	AI-Driven Solutions
-o	Led AI innovation initiatives leveraging Oracle Fusion AI Agent Studio, AI Agents, RAG Tools
-o	Designed AI-driven automation to improve application workflows and decision-making
-o	Integrated AI capabilities into PaaS business applications using secure OAuth2 authorization 
-o	Mentored teams in building scalable AI solutions aligned with use cases
-o	Advised stakeholders on AI strategy and innovation roadmap
+##	Senior IT Manager - Oracle | Mar 2012 – Present
 
-•	Architecture, Leadership & Stakeholder Engagement
-o	Owned end-to-end solution architecture, product delivery, and technical leadership
-o	Collaborated with leadership and business stakeholders to drive strategic initiatives
-o	Led cross-functional teams delivering high-availability financial platforms
-o	Provided technical guidance, mentoring, and governance across engineering teams
+##	AI-Driven Solutions
+	* Led AI innovation initiatives leveraging Oracle Fusion AI Agent Studio, AI Agents, RAG Tools
+	* Designed AI-driven automation to improve application workflows and decision-making
+	* Integrated AI capabilities into PaaS business applications using secure OAuth2 authorization 
+	* Mentored teams in building scalable AI solutions aligned with use cases
+	* Advised stakeholders on AI strategy and innovation roadmap
+	* 
+	* Architecture, Leadership & Stakeholder Engagement
+	* Owned end-to-end solution architecture, product delivery, and technical leadership
+	* Collaborated with leadership and business stakeholders to drive strategic initiatives
+	* Led cross-functional teams delivering high-availability financial platforms
+	* Provided technical guidance, mentoring, and governance across engineering teams
 
-•	Microservices & Cloud Modernization
-o	Migrated legacy systems to Spring Boot microservices architecture
-o	Enabled cloud-native deployment on OCI
-o	Improved scalability and reduced deployment cycles
+##	Microservices & Cloud Modernization
+	* Migrated legacy systems to Spring Boot microservices architecture
+	* Enabled cloud-native deployment on OCI
+	* Improved scalability and reduced deployment cycles
 
-•	DevOps, Performance & Release Management
-o	Implemented CI/CD pipelines and DevOps transformation improving deployment efficiency
-o	Managed release cycles, change management, and environment promotion (Dev → Prod)
-o	Performed capacity planning, performance tuning, and system optimization
-o	Enhanced system reliability, reduced downtime, and improved scalability
+##	DevOps, Performance & Release Management
+	* Implemented CI/CD pipelines and DevOps transformation improving deployment efficiency
+	* Managed release cycles, change management, and environment promotion (Dev → Prod)
+	* Performed capacity planning, performance tuning, and system optimization
+	* Enhanced system reliability, reduced downtime, and improved scalability
 
-•	 Security & Risk Management
-o	Implemented Secure SDLC processes across applications
-o	Collaborated with governance teams for architecture security reviews and approvals
-o	Identified and mitigated vulnerabilities including XSS, SQL Injection, CSRF, and authentication flaws
+##	Security & Risk Management
+	* Implemented Secure SDLC processes across applications
+	* Collaborated with governance teams for architecture security reviews and approvals
+	* Identified and mitigated vulnerabilities including XSS, SQL Injection, CSRF, and authentication flaws
 
-•	Oracle Fusion ERP Integration
-o	Designed and implemented integration between Oracle Fusion ERP and enterprise platforms
-o	Generate reports using ESS jobs & jobsets and upload generated report to SharePoint 
-o	Defined integration architecture using REST/SOAP APIs ensuring secure and reliable data exchange
-o	Collaborated with business teams to optimize financial operations and system workflows
-
-•	Key Projects
-o	Scheduler 2.0 – Scheduler application generates reports for different finance module using ESS jobs & jobsets from fusion ERP app and upload generated report for multiple entities to centralize SharePoint location used by external and internal user. This application helped Business to reduce significant time spent on number of reports to be run manually without minimal error.
-o	Design and developed application by leveraging SaaS/PaaS environment, Java, Spring Boot, Hibernate, OJET, Oracle 19c / ADB, JPA, PL/SQL, SOAP, Git, Jenkins, REMO, Graph API, SharePoint, OAuth 2.0, WebLogic
-
-o	UTIM – Utility & Telecom Invoice Management is an enterprise solution that centralizes management of utility and telecom expenses, including TEM invoice processing. It automates invoice validation, cost allocation, and dispute handling to ensure accuracy and compliance. The application supports RE&F (Real Estate & Facilities) with site-level expense tracking and optimization.
-o	Design and developed application by leveraging PaaS environment, Java, Spring Boot, Hibernate, OKE, Oracle 19c / ADB, JPA, PL/SQL, WebLogic, REST, Git, STRIDE, Vector Search, RAG, Agent Teams, Agents, Tools, OAuth 2.0, OCI Document Vision (Optical Character Recognition (OCR) / Key-Value Extraction / Table Extraction)
-
-o	Service Portal – Service Portal is an application or information manager, used mainly as an email application that lets you not only send, receive, and manage e-mail. It also includes various Reports, User Management, Org Management, Queue Management, various Alerts, notes, Autoreply, Distribution List, Folders Management, Templates, Solutions, Broadcast message, to-Do's, Merge and so on...
-o	Design and developed application by leveraging Java, J2EE, Angular, Spring Boot, Graph API, Azure-app, jQuery, JavaMailAPI, Apache POI, WebLogic, PL/SQL, Oracle 10g / 12c / 19c, Oracle APEX, SOAP, OCI, ICAP, JSP, Servlet, HTML/CSS, Java Script, jQuery, AJAX, JNDI, LDAP, JDBC, cron, Selenium
-
-o	Other custom applications like Imaging, Paymix, E-Card, and so on…
-
-•	Oracle EPM Transformation
-o	Designed and implemented quarterly Tax questionnaire using Supplemental Data Management (SDM)
-o	Designed and Integrated Groovy-based REST API integrations within Oracle EPM (FCCS, TRCS)
-o	Integrated EPM with ERP systems using Data Integration, ensuring accurate and timely financial reporting
-
-•	Project
-o	Oracle EPM TRCS – Design, Implemented and automated solutions by leveraging SaaS/PaaS environment, Groovy, Supplemental Data Manager, Task Manager, Alert, Lifecycle Management (LCM), EPM Automation, Smart View, REST API, Postman, OIC, Custom Reports, BI Publisher, Data Integration, Data Exchange, Data Management, Access Control – Roles/Group/Team, security, and workflow.
+##	Oracle Fusion ERP Integration
+	* Designed and implemented integration between Oracle Fusion ERP and enterprise platforms
+	* Generate reports using ESS jobs & jobsets and upload generated report to SharePoint 
+	* Defined integration architecture using REST/SOAP APIs ensuring secure and reliable data exchange
+	* Collaborated with business teams to optimize financial operations and system workflows
 
 
-•	Senior Engineer Development - Sopra Group | Jan 2011 – Feb 2012
-•	Project
-o	Evolan – Evolan solutions address a broad range of financial-services processes. It provides the comprehensive support retail banks and other providers of financial services need to address today’s challenges and opportunities. User can install separate modules to support specific processes or deploy a fully integrated solution for end-to-end support.	
-o	Design and developed application by leveraging Core Java, JBoss, IBM WAS7.1, Oracle10g, DB2, JIRA, HP Quality Center 10
+##	Oracle EPM Transformation
 
-o	ISRT - The Airbus People portal offers the opportunity to provide a tool to harmonize and optimize the management of IS and IT requests via ISRT application.
-o	Design and developed application by leveraging Java, Struts, Hibernate, Java Script, Maven, Oracle 10g, Apache Tomcat, HP Quality Center 10, SQL Developer
+	* Designed and implemented quarterly Tax questionnaire using Supplemental Data Management (SDM)
+	* Designed and Integrated Groovy-based REST API integrations within Oracle EPM (FCCS, TRCS)
+	* Integrated EPM with ERP systems using Data Integration, ensuring accurate and timely financial reporting
 
-•	Software Engineer - Navisite | Apr 2008 – Jan 2011
-•	Project
-o	AJE - America's Job Exchange is a national labour exchange that provides information on wages and employment trends, occupational requirements, state-by-state labour market conditions, as well as listing millions of employer contacts and career resources. NaviSite is uniquely qualified to continue to provide a site, which offers the functionality of America's Job bank but with an updated look and feel.
-o	Design and developed application by leveraging Java, Struts1.2, EJB, Hibernate, Ant, JSP, Servlet, XML, XSD, JAXB, Velocity, SOAP, IBM WAS, Apache Lucene 2.4, Oracle 10g, Fedora 8
 
-•	Associate System Engineer - IBM | 2007 – 2008
-•	Project
-o	VISTA - This was a customized BFSI application, which was developed for Swiss Government to automate the process of funds management and insurance that the government provides to its citizens.
-o	Design and developed application by leveraging Rational Software Architecture, Rational Clear Case, Core Java, Hibernate, Spring, SWT, Clear Quest, DB2, Ant
+##	Key Projects
 
-•	Trainee - Impetus | 2006 – 2007
-•	Project – IVY - Linux, JSP, HTML, Cygwin, TWiki
 
-•	Trainee - HCL | 2006
-•	Project – Threat Modelling Tool - Java, Swing, MS-Access
+##	Scheduler 2.0 – Scheduler application generates reports for different finance module using ESS jobs & jobsets from fusion ERP app and upload generated report for multiple entities to centralize SharePoint location used by external and internal user. This application helped Business to reduce significant time spent on number of reports to be run manually without minimal error.
+
+
+	* Design and developed application by leveraging SaaS/PaaS environment, Java, Spring Boot, Hibernate, OJET, Oracle 19c / ADB, JPA, PL/SQL, SOAP, Git, Jenkins, REMO, Graph API, SharePoint, OAuth 2.0, WebLogic
+
+##	UTIM – Utility & Telecom Invoice Management is an enterprise solution that centralizes management of utility and telecom expenses, including TEM invoice processing. It automates invoice validation, cost allocation, and dispute handling to ensure accuracy and compliance. The application supports RE&F (Real Estate & Facilities) with site-level expense tracking and optimization.
+
+	* Design and developed application by leveraging PaaS environment, Java, Spring Boot, Hibernate, OKE, Oracle 19c / ADB, JPA, PL/SQL, WebLogic, REST, Git, STRIDE, Vector Search, RAG, Agent Teams, Agents, Tools, OAuth 2.0, OCI Document Vision (Optical Character Recognition (OCR) / Key-Value Extraction / Table Extraction)
+
+##	Service Portal – Service Portal is an application or information manager, used mainly as an email application that lets you not only send, receive, and manage e-mail. It also includes various Reports, User Management, Org Management, Queue Management, various Alerts, notes, Autoreply, Distribution List, Folders Management, Templates, Solutions, Broadcast message, to-Do's, Merge and so on...
+
+
+	* Design and developed application by leveraging Java, J2EE, Angular, Spring Boot, Graph API, Azure-app, jQuery, JavaMailAPI, Apache POI, WebLogic, PL/SQL, Oracle 10g / 12c / 19c, Oracle APEX, SOAP, OCI, ICAP, JSP, Servlet, HTML/CSS, Java Script, jQuery, AJAX, JNDI, LDAP, JDBC, cron, Selenium
+
+	* Other custom applications like Imaging, Paymix, E-Card, and so on…
+
+	* Oracle EPM TRCS – Design, Implemented and automated solutions by leveraging SaaS/PaaS environment, Groovy, Supplemental Data Manager, Task Manager, Alert, Lifecycle Management (LCM), EPM Automation, Smart View, REST API, Postman, OIC, Custom Reports, BI Publisher, Data Integration, Data Exchange, Data Management, Access Control – Roles/Group/Team, security, and workflow.
+
+
+## Senior Engineer Development - Sopra Group | Jan 2011 – Feb 2012
+
+## Evolan – Evolan solutions address a broad range of financial-services processes. It provides the comprehensive support retail banks and other providers of financial services need to address today’s challenges and opportunities. User can install separate modules to support specific processes or deploy a fully integrated solution for end-to-end support.	
+	* Design and developed application by leveraging Core Java, JBoss, IBM WAS7.1, Oracle10g, DB2, JIRA, HP Quality Center 10
+
+## ISRT - The Airbus People portal offers the opportunity to provide a tool to harmonize and optimize the management of IS and IT requests via ISRT application.
+	* Design and developed application by leveraging Java, Struts, Hibernate, Java Script, Maven, Oracle 10g, Apache Tomcat, HP Quality Center 10, SQL Developer
+
+## Software Engineer - Navisite | Apr 2008 – Jan 2011
+
+## AJE - America's Job Exchange is a national labour exchange that provides information on wages and employment trends, occupational requirements, state-by-state labour market conditions, as well as listing millions of employer contacts and career resources. NaviSite is uniquely qualified to continue to provide a site, which offers the functionality of America's Job bank but with an updated look and feel.
+	* Design and developed application by leveraging Java, Struts1.2, EJB, Hibernate, Ant, JSP, Servlet, XML, XSD, JAXB, Velocity, SOAP, IBM WAS, Apache Lucene 2.4, Oracle 10g, Fedora 8
+
+## Associate System Engineer - IBM | 2007 – 2008
+
+## VISTA - This was a customized BFSI application, which was developed for Swiss Government to automate the process of funds management and insurance that the government provides to its citizens.
+	* Design and developed application by leveraging Rational Software Architecture, Rational Clear Case, Core Java, Hibernate, Spring, SWT, Clear Quest, DB2, Ant
+
+## Trainee - Impetus | 2006 – 2007
+	* Project – IVY - Linux, JSP, HTML, Cygwin, TWiki
+
+## Trainee - HCL | 2006
+	* Project – Threat Modelling Tool - Java, Swing, MS-Access
 ________________________________________
-Education
-•	Master’s Degree: - M.C.A from Madan Mohan Malviya University of Technology
-•	Bachelor’s Degree: - B.Sc. Physics (Hons.) from B.S.B.R.A.B. University
+## Education
+	* Master’s Degree: - M.C.A from Madan Mohan Malviya University of Technology
+	* Bachelor’s Degree: - B.Sc. Physics (Hons.) from B.S.B.R.A.B. University
 ________________________________________
-Certifications
-•	Oracle Fusion AI Agent Studio Certified Developer Professional
-•	Oracle AI Vector Search Certified Professional
-•	Oracle Generative AI Professional
-•	Oracle AI Foundations Associate
-•	Oracle EPM Process Essentials Certified
-•	Oracle Cloud Infrastructure 2025 Certified Data Science Professional
-•	Certified SAFe® 6 Practitioner
+## Certifications
+	* Oracle Fusion AI Agent Studio Certified Developer Professional
+	* Oracle AI Vector Search Certified Professional
+	* Oracle Generative AI Professional
+	* Oracle AI Foundations Associate
+	* Oracle EPM Process Essentials Certified
+	* Oracle Cloud Infrastructure 2025 Certified Data Science Professional
+	* Certified SAFe® 6 Practitioner
 ________________________________________
-Achievements
-•	Recognized for Certificate of Excellence at Oracle India Pvt. Ltd.
-•	Rock Star Platinum / Gold Team Award at Oracle India Pvt. Ltd.
-•	Recognized contributor in Oracle Cloud Customer Connect community – Blue, Red & Green Ribbon Member 
-•	Certificate of Excellence for being a NaviStar at Navisite India Pvt. Ltd.
-•	NCC: ‘A’ Certificate
-•	Football and Cricket: Represented the high school team
+## Achievements
+	* Recognized for Certificate of Excellence at Oracle India Pvt. Ltd.
+	* Rock Star Platinum / Gold Team Award at Oracle India Pvt. Ltd.
+	* Recognized contributor in Oracle Cloud Customer Connect community – Blue, Red & Green Ribbon Member 
+	* Certificate of Excellence for being a NaviStar at Navisite India Pvt. Ltd.
+	* NCC: ‘A’ Certificate
+	* Football and Cricket: Represented the high school team
 
 
 --------------
@@ -192,12 +205,12 @@ Achievements
 
 ## Leadership & Delivery
 
-* Lead multiple engineering teams, architects, and technical leads.
-* Own end-to-end delivery of enterprise applications/platforms.
-* Define engineering roadmap aligned with business goals.
-* Drive Agile/Scrum execution and release planning.
-* Manage project timelines, risks, dependencies, and escalations.
-* Ensure high-quality software delivery and operational stability.
+	* Lead multiple engineering teams, architects, and technical leads.
+	* Own end-to-end delivery of enterprise applications/platforms.
+	* Define engineering roadmap aligned with business goals.
+	* Drive Agile/Scrum execution and release planning.
+	* Manage project timelines, risks, dependencies, and escalations.
+	* Ensure high-quality software delivery and operational stability.
 
 ## Technical Leadership
 
