@@ -1,43 +1,41 @@
-7 Types of AI Explained:
-Reactive Machines: These are the most basic types of AI, designed to act only on current data and scenarios. They do not store memories or use past experiences to inform future actions. Example: IBM’s Deep Blue.
+# 7 Types of AI Explained:
 
-Limited Memory AI: These systems can store past data for a short period to make decisions. Most modern AI, such as chatbots and self-driving cars, falls into this category.
-
-Theory of Mind AI: A future, theoretical type of AI that aims to understand human emotions, beliefs, and thoughts to interact socially.
-Self-Aware AI: A hypothetical stage where AI possesses its own consciousness, self-awareness, and emotions.
-Artificial Narrow Intelligence (ANI): Also known as "Weak AI," this type is designed and trained for a specific task, such as voice recognition, face recognition, or web searches.
-
-Artificial General Intelligence (AGI): Also known as "Strong AI," this is a theoretical AI that can understand, learn, and apply knowledge in a manner similar to human intelligence across diverse tasks.
-
-Artificial Superintelligence (ASI): A hypothetical future AI that surpasses human intelligence in every field, including scientific creativity, general wisdom, and social skills.
+* Reactive Machines: These are the most basic types of AI, designed to act only on current data and scenarios. They do not store memories or use past experiences to inform future actions. Example: IBM’s Deep Blue.
+* Limited Memory AI: These systems can store past data for a short period to make decisions. Most modern AI, such as chatbots and self-driving cars, falls into this category.
+* Theory of Mind AI: A future, theoretical type of AI that aims to understand human emotions, beliefs, and thoughts to interact socially.
+* Self-Aware AI: A hypothetical stage where AI possesses its own consciousness, self-awareness, and emotions.
+* Artificial Narrow Intelligence (ANI): Also known as "Weak AI," this type is designed and trained for a specific task, such as voice recognition, face recognition, or web searches.
+* Artificial General Intelligence (AGI): Also known as "Strong AI," this is a theoretical AI that can understand, learn, and apply knowledge in a manner similar to human intelligence across diverse tasks.
+* Artificial Superintelligence (ASI): A hypothetical future AI that surpasses human intelligence in every field, including scientific creativity, general wisdom, and social skills.
 
 
-Vercel(Hosting)	-- 	Zero-config deployment with global edge network. Automatic HTTPS, preview deployments for staging, and serverless API routes eliminate the need for a separate backend server. steps to host simple html to Vercel
+# Vercel(Hosting)	-- 	
 
-Vercel AI -- Vercel AI is a comprehensive platform and open-source TypeScript SDK designed for developers to build, deploy, and manage AI-powered applications, particularly frontend chat and streaming interfaces. Key features include the AI SDK (for UI and model integration), AI Gateway (managing API keys/rate limits across models), and Fluid Compute for specialized AI workloads. 
+* Zero-config deployment with global edge network. Automatic HTTPS, preview deployments for staging, and serverless API routes eliminate the need for a separate backend server. steps to host simple html to Vercel
+* Vercel AI -- Vercel AI is a comprehensive platform and open-source TypeScript SDK designed for developers to build, deploy, and manage AI-powered applications, particularly frontend chat and streaming interfaces. Key features include the AI SDK (for UI and model integration), AI Gateway (managing API keys/rate limits across models), and Fluid Compute for specialized AI workloads. 
 
-github - Repository
+* github - Repository
 
-webhook -- A webhook is an HTTP-based, event-driven mechanism used to automatically send real-time data between applications
+* webhook -- A webhook is an HTTP-based, event-driven mechanism used to automatically send real-time data between applications
 
-Supabase -- Supabase is an open-source "Backend-as-a-Service" (BaaS) platform built on PostgreSQL that provides developers with a full backend stack, including a database, authentication, real-time APIs, file storage, and serverless edge functions. It acts as an open-source alternative to Firebase, designed to speed up development by eliminating the need to manage infrastructure.
+* Supabase -- Supabase is an open-source "Backend-as-a-Service" (BaaS) platform built on PostgreSQL that provides developers with a full backend stack, including a database, authentication, real-time APIs, file storage, and serverless edge functions. It acts as an open-source alternative to Firebase, designed to speed up development by eliminating the need to manage infrastructure.
 
-Edge functions - Edge functions are lightweight, server-side code snippets that execute on global Content Delivery Networks (CDNs) nearest to the user, rather than a centralized server. They enable low-latency, personalized web experiences by processing requests closer to the source. Common use cases include authentication, A/B testing, and real-time data modification.
+* Edge functions - Edge functions are lightweight, server-side code snippets that execute on global Content Delivery Networks (CDNs) nearest to the user, rather than a centralized server. They enable low-latency, personalized web experiences by processing requests closer to the source. Common use cases include authentication, A/B testing, and real-time data modification.
 
-N8N -- n8n is a powerful, low-code workflow automation tool used to connect applications, manipulate data, and automate repetitive tasks. It allows users to build complex, multi-step workflows using a visual node-based interface, supporting over 400 integrations (e.g., Slack, Google Sheets, Jira) and offering both self-hosted and cloud-based options.
+* N8N -- n8n is a powerful, low-code workflow automation tool used to connect applications, manipulate data, and automate repetitive tasks. It allows users to build complex, multi-step workflows using a visual node-based interface, supporting over 400 integrations (e.g., Slack, Google Sheets, Jira) and offering both self-hosted and cloud-based options.
 
-Amazon Bedrock -- Amazon Bedrock is a fully managed AWS service that provides a single API to access high-performing foundation models (FMs) from AI companies like Anthropic, Meta, Mistral, and Amazon. It is a serverless platform designed for building generative AI applications with security, privacy, and customization capabilities (like fine-tuning and RAG), allowing developers to build without managing infrastructure.
+* Amazon Bedrock -- Amazon Bedrock is a fully managed AWS service that provides a single API to access high-performing foundation models (FMs) from AI companies like Anthropic, Meta, Mistral, and Amazon. It is a serverless platform designed for building generative AI applications with security, privacy, and customization capabilities (like fine-tuning and RAG), allowing developers to build without managing infrastructure.
 
-Hugging Face -- Hugging Face is a leading open-source AI community and platform often called the "GitHub of Machine Learning," designed for collaborating on AI models, datasets, and applications. It enables users to easily share, discover, and deploy state-of-the-art models for NLP, computer vision, and audio, largely through its popular transformers library.
+* Hugging Face -- Hugging Face is a leading open-source AI community and platform often called the "GitHub of Machine Learning," designed for collaborating on AI models, datasets, and applications. It enables users to easily share, discover, and deploy state-of-the-art models for NLP, computer vision, and audio, largely through its popular transformers library.
 
-Claude Cowork -- Claude Cowork is an agentic AI assistant from Anthropic designed to function as a digital coworker by operating directly on a user’s desktop to automate multi-step tasks, such as managing files, organizing data, and interacting with applications.
+* Claude Cowork -- Claude Cowork is an agentic AI assistant from Anthropic designed to function as a digital coworker by operating directly on a user’s desktop to automate multi-step tasks, such as managing files, organizing data, and interacting with applications.
 
-Claude Code -- Claude Code is an agentic AI coding tool developed by Anthropic that operates directly in the terminal to read, write, test, and debug code across projects. Unlike chatbot assistants, it acts as an autonomous agent, making Git commits and executing multi-step development tasks from simple English prompts. It is optimized for speed, autonomy, and deep codebase understanding, often referred to as a "coding agent" or "AI pair programmer".
+* Claude Code -- Claude Code is an agentic AI coding tool developed by Anthropic that operates directly in the terminal to read, write, test, and debug code across projects. Unlike chatbot assistants, it acts as an autonomous agent, making Git commits and executing multi-step development tasks from simple English prompts. It is optimized for speed, autonomy, and deep codebase understanding, often referred to as a "coding agent" or "AI pair programmer".
 
-Claude Cowork -- Claude Cowork is an agentic AI feature within the Anthropic Claude Desktop app designed to act as a digital teammate rather than just a chat interface. It works directly on a user’s local computer, reading, writing, and organizing files, managing projects, and running multi-step tasks across apps, allowing users to delegate complex workflows entirely.
+* Claude Cowork -- Claude Cowork is an agentic AI feature within the Anthropic Claude Desktop app designed to act as a digital teammate rather than just a chat interface. It works directly on a user’s local computer, reading, writing, and organizing files, managing projects, and running multi-step tasks across apps, allowing users to delegate complex workflows entirely.
 
-Pomelli -- Pomelli by Google Labs is an experimental AI marketing tool designed to help businesses, particularly small ones, generate on-brand content and marketing campaigns.
+* Pomelli -- Pomelli by Google Labs is an experimental AI marketing tool designed to help businesses, particularly small ones, generate on-brand content and marketing campaigns.
 
-Miro -- Miro AI is an AI-powered innovation workspace that integrates generative artificial intelligence directly into Miro's visual collaboration platform to accelerate workflows. It helps teams brainstorm, visualize complex ideas, summarize content, and automate tasks within an infinite whiteboard.
+* Miro -- Miro AI is an AI-powered innovation workspace that integrates generative artificial intelligence directly into Miro's visual collaboration platform to accelerate workflows. It helps teams brainstorm, visualize complex ideas, summarize content, and automate tasks within an infinite whiteboard.
 
-Roo Code -- Roo Code (formerly Roo Cline) is an open-source, autonomous AI coding agent designed as a VS Code extension. It acts as a digital partner that can read, write, refactor, and debug code across multiple files, running terminals and browser tasks to complete software development work. Key features include high customizability, permission-based actions, and support for various LLMs. 
+* Roo Code -- Roo Code (formerly Roo Cline) is an open-source, autonomous AI coding agent designed as a VS Code extension. It acts as a digital partner that can read, write, refactor, and debug code across multiple files, running terminals and browser tasks to complete software development work. Key features include high customizability, permission-based actions, and support for various LLMs. 
